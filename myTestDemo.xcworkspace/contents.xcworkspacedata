@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:JKChartViewDemo/JKChartViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftTest01/SwiftTest01.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Swift02Test/Swift02Test.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JKADPageViewDemo/JKADPageViewDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FDFullscreenPopGesture-master/FDFullscreenPopGestureDemo/FDFullscreenPopGestureDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StretchTableHeaderDemo/StretchTableHeaderDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SprityBird-master/spritybird.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:IDontCare/I&apos;Don&apos;tCare/I&apos;Don&apos;tCare.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CardStanford/CardGame/CardGame.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:blockAndPopMenu/Demo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MultiThreadTest/MultiThreadTest/MultiThreadTest.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TVU-x2-c1r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="EEC-2W-6mQ">
+            <objects>
+                <navigationController id="TVU-x2-c1r" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gq-3N-iN6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8Z8-or-mes" kind="relationship" relationship="rootViewController" id="ugl-8r-wBa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FnO-IO-Egd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-608" y="323"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MPe-fk-fsg">
+            <objects>
+                <viewController id="8Z8-or-mes" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJk-Gv-nGL"/>
+                        <viewControllerLayoutGuide type="bottom" id="vrX-Iw-sGO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uF6-8h-5uc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aef-Oi-SbL">
+                                <rect key="frame" x="137" y="251" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uV7-R4-Zgg" kind="push" id="ROJ-2J-CgY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uT5-IT-wcd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kc2-Lo-Wkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="323"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="IXH-en-vJ2">
+            <objects>
+                <viewController id="uV7-R4-Zgg" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vGS-Mq-WiE"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Pr-tm-fXy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NEZ-zf-8oO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1Y-5y-EiH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="b1Y-5y-EiH" secondAttribute="trailing" constant="-16" id="6A2-BC-11P"/>
+                            <constraint firstItem="b1Y-5y-EiH" firstAttribute="top" secondItem="NEZ-zf-8oO" secondAttribute="topMargin" id="DnT-Vl-Tw9"/>
+                            <constraint firstItem="b1Y-5y-EiH" firstAttribute="leading" secondItem="NEZ-zf-8oO" secondAttribute="leadingMargin" constant="-16" id="RK0-jv-fdm"/>
+                            <constraint firstItem="8Pr-tm-fXy" firstAttribute="top" secondItem="b1Y-5y-EiH" secondAttribute="bottom" id="an9-1D-ofk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="l5Q-hu-UyZ"/>
+                    <connections>
+                        <outlet property="scrollview" destination="b1Y-5y-EiH" id="ebY-sS-TH5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvb-bx-RCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="325"/>
+        </scene>
+    </scenes>
+</document>
