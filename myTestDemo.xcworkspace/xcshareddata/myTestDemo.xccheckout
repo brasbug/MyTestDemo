@@ -10,14 +10,14 @@
 	<string>myTestDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EF7754D3CFAB28C9E9F1FB0617DE8E5F42F1FA1E</key>
+		<key>A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429</key>
 		<string>https://github.com/brasbug/MyTestDemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>myTestDemo.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EF7754D3CFAB28C9E9F1FB0617DE8E5F42F1FA1E</key>
+		<key>A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EF7754D3CFAB28C9E9F1FB0617DE8E5F42F1FA1E</string>
+	<string>A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EF7754D3CFAB28C9E9F1FB0617DE8E5F42F1FA1E</string>
+			<string>A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MyTestDemo</string>
 		</dict>
