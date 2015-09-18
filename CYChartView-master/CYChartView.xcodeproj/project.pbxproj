@@ -454,6 +454,7 @@
 				7DE102511B29663D00AC73F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DE102521B29663D00AC73F5 /* Build configuration list for PBXNativeTarget "CYChartViewTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				7DE102541B29663D00AC73F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

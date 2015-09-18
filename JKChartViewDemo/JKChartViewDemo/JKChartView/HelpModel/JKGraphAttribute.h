@@ -27,6 +27,10 @@
 @property (nonatomic, retain) NSString* graphName; // 图形名称，用于显示某个点的数据时使用
 
 
+@property (nonatomic, assign) CGFloat dotGapWith;
+
+
+
 
 @property (nonatomic, assign) float pointRadiu; // 点的半径大小
 @property (nonatomic, assign) float lineSize; // 线条粗细

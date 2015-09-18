@@ -11,7 +11,7 @@
 
 
 
-@interface JKViewController ()
+@interface JKViewController ()<JKChartViewDelegate>
 
 @property (nonatomic, strong) JKChartView *chartView;
 
@@ -37,6 +37,30 @@
     [self.chartView reloadChartData];
 }
 
+
+- (NSInteger)numberOfChartGroup:(JKChartView *)chartView
+{
+    return 1;
+}
+- (JKPointButton *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath
+{
+    JKPointButton *pointBtn;
+    return pointBtn;
+}
+
+
+- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group
+{
+    JKGraphAttribute *graphAtt ;
+    
+    
+    
+    
+    
+    
+    return graphAtt;
+    
+}
 
 
 - (void)viewDidLoad {

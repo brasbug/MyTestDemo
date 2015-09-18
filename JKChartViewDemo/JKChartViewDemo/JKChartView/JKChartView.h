@@ -18,18 +18,14 @@
 @protocol JKChartViewDelegate <NSObject>
 
 
-@required
+//@required
 - (NSInteger)chartView:(JKChartView *)chartView numbersOfRowsInSection:(NSInteger )section;
 
 - (JKPointButton *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
 
+- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group;
 
-//- ()
-
-@optional
 - (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
-
-- (CGFloat)chartView:(JKChartView *)chartView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 
 
