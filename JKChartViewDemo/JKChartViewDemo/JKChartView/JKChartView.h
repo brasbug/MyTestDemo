@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JKChartViewDelegate <NSObject>
+
+- (NSInteger)numberOfChartGroup;
+
+//- ()
+
+@end
+
+
+
+
 @interface JKChartView : UIView
+
+- (void)reloadChartData;
+
 
 @end

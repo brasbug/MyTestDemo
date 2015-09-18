@@ -7,16 +7,41 @@
 //
 
 #import "ViewController.h"
+#import "JKChartView.h"
+
+
 
 @interface ViewController ()
+
+@property (nonatomic, strong) JKChartView *chartView;
+
 
 @end
 
 @implementation ViewController
 
+- (JKChartView *)chartView
+{
+    if (_chartView) {
+        return _chartView;
+    }
+    _chartView = [[JKChartView alloc]init];
+    _chartView.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 200);
+    _chartView.backgroundColor = [UIColor lightGrayColor];
+//    _chartView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width *2, 200);
+    return _chartView;
+    
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    [self.view addSubview:self.chartView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

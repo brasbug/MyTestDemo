@@ -16,6 +16,7 @@
 		045E55CF1BA81B580026F03C /* JKChartViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E55CE1BA81B580026F03C /* JKChartViewDemoTests.m */; };
 		045E55DB1BA81B9D0026F03C /* JKChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E55DA1BA81B9D0026F03C /* JKChartView.m */; };
 		045E55DC1BA81B9D0026F03C /* JKChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E55DA1BA81B9D0026F03C /* JKChartView.m */; };
+		04834C9E1BAAD98C008BE50E /* JKGraphAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 04834C9D1BAAD98C008BE50E /* JKGraphAttribute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		045E55CE1BA81B580026F03C /* JKChartViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKChartViewDemoTests.m; sourceTree = "<group>"; };
 		045E55D91BA81B9D0026F03C /* JKChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKChartView.h; sourceTree = "<group>"; };
 		045E55DA1BA81B9D0026F03C /* JKChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKChartView.m; sourceTree = "<group>"; };
+		04834C9C1BAAD98C008BE50E /* JKGraphAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGraphAttribute.h; sourceTree = "<group>"; };
+		04834C9D1BAAD98C008BE50E /* JKGraphAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGraphAttribute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,10 +130,20 @@
 		045E55D81BA81B840026F03C /* JKChartView */ = {
 			isa = PBXGroup;
 			children = (
+				04834C981BAAD46D008BE50E /* HelpModel */,
 				045E55D91BA81B9D0026F03C /* JKChartView.h */,
 				045E55DA1BA81B9D0026F03C /* JKChartView.m */,
 			);
 			path = JKChartView;
+			sourceTree = "<group>";
+		};
+		04834C981BAAD46D008BE50E /* HelpModel */ = {
+			isa = PBXGroup;
+			children = (
+				04834C9C1BAAD98C008BE50E /* JKGraphAttribute.h */,
+				04834C9D1BAAD98C008BE50E /* JKGraphAttribute.m */,
+			);
+			path = HelpModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +249,7 @@
 				045E55BB1BA81B580026F03C /* ViewController.m in Sources */,
 				045E55B81BA81B580026F03C /* AppDelegate.m in Sources */,
 				045E55DB1BA81B9D0026F03C /* JKChartView.m in Sources */,
+				04834C9E1BAAD98C008BE50E /* JKGraphAttribute.m in Sources */,
 				045E55B51BA81B580026F03C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +446,7 @@
 				045E55D41BA81B580026F03C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		045E55D51BA81B580026F03C /* Build configuration list for PBXNativeTarget "JKChartViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +455,7 @@
 				045E55D71BA81B580026F03C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

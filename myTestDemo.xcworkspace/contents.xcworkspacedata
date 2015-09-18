@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CYChartView-master/CYChartView.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:JKChartViewDemo/JKChartViewDemo.xcodeproj">
    </FileRef>
    <FileRef

@@ -8,14 +8,42 @@
 
 #import "JKChartView.h"
 
-@implementation JKChartView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+@interface JKChartView ()
+{
+    UIScrollView *chartScrollView;
 }
-*/
+
+
+
+@end
+
+@implementation JKChartView
+//- (void)drawRect:(CGRect)rect
+//{
+//
+//    
+//}
+
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (void)initDefaultViews
+{
+    
+}
+
+
+- (void)reloadChartData
+{
+    
+}
+
 
 @end
