@@ -25,6 +25,11 @@
 @property (nonatomic, assign) NSInteger tempRowInSection;
 
 
+@property (nonatomic, strong) CAShapeLayer *referenceLineLayer;
+
+@property (nonatomic, strong) JKGraphAttribute *graphAttribute;
+
+
 @end
 
 @implementation JKChartView
@@ -80,13 +85,7 @@
     for (long i = 0; i < self.chatGroupCount; i++) {
         _tempRowInSection = [self.delegate chartView:self numbersOfRowsInSection:i];
         for (long j = 0; j < _tempRowInSection; j ++) {
-            
-            
-            
-            
-            
-            
-            
+
             
         }
         
@@ -100,11 +99,40 @@
 }
 
 
+- (void)setReferenceLine
+{
+    
+    JKGraphAttribute *graphAttribute = [[JKGraphAttribute alloc]init];
+    graphAttribute.pointsCount = 10;
+    graphAttribute.xAxisLineCount = 5;
+    graphAttribute.yMaxValue = 100;
+    graphAttribute.yMinValue = 0;
+    graphAttribute.dotGapWith = 44;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
+
 - (void)clearViewsAndLayers
 {
     
-    [self.chartScrollView removeFromSuperview];
-    self.chartScrollView = nil;
+    NSArray* subViewsAry = self.subviews;
+    for (NSInteger i=0,len=[subViewsAry count]; i<len; i++) {
+        UIView* subView = (UIView*)[subViewsAry objectAtIndex:i];
+        [subView removeFromSuperview];
+    }
+    
+    [self.layer setSublayers:nil];
+    _chartScrollView = nil;
 
     
 }
