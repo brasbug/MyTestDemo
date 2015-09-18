@@ -51,14 +51,21 @@
 
 - (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group
 {
-    JKGraphAttribute *graphAtt ;
+    
+    JKGraphAttribute *graphAttribute = [[JKGraphAttribute alloc]init];
+    graphAttribute.pointsCount = 10;
+    graphAttribute.xAxisLineCount = 5;
+    graphAttribute.yMaxValue = 100;
+    graphAttribute.yMinValue = 0;
+    graphAttribute.dotGapWith = 44;
     
     
     
     
     
     
-    return graphAtt;
+    
+    return graphAttribute;
     
 }
 
