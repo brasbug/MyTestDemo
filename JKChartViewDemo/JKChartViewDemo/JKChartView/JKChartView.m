@@ -117,8 +117,9 @@
     }
     
     CGFloat dotGapWith = graphAttribute.dotGapWith;
-    CGFloat contentSizeWith = dotGapWith * graphAttribute.pointsCount;
-    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN)/(graphAttribute.xAxisLineCount );
+    CGFloat contentSizeWith = dotGapWith * graphAttribute.pointsCount + AXIS_WIDTH_MARGIN *2;
+    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(graphAttribute.xAxisLineCount);
+    CGFloat contentSizeHeight = self.chartScrollView.bounds.size.height;
     
     _referenceLineLayer = [CAShapeLayer layer];
     _referenceLineLayer.frame = self.bounds;
@@ -134,8 +135,13 @@
 
     for (long i = 0; i <= graphAttribute.xAxisLineCount; i ++) {
         CGPathMoveToPoint(linesPath, NULL, 30, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
-        CGPathAddLineToPoint(linesPath, NULL, contentSizeWith - AXIS_HEIGHT_MARGIN, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
+        CGPathAddLineToPoint(linesPath, NULL, contentSizeWith - AXIS_HEIGHT_MARGIN + 5, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
 
+    }
+    
+    for (long i = 0; i <= graphAttribute.pointsCount ; i ++) {
+        CGPathMoveToPoint(linesPath, NULL, 35 + dotGapWith *i, AXIS_HEIGHT_MARGIN - 25);
+        CGPathAddLineToPoint(linesPath, NULL, 35 + dotGapWith *i, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
     }
     
     _referenceLineLayer.path = linesPath;
