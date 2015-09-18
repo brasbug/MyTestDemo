@@ -116,9 +116,12 @@
         graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
     }
     
-    CGFloat dotGapWith = graphAttribute.dotGapWith;
+    long yValueGap = (graphAttribute.yMaxValue - graphAttribute.yMinValue)/(graphAttribute.xAxisLineCount);
+    
+    
+    CGFloat dotGapWith = graphAttribute.dotGapWith;  //x参考线间距
     CGFloat contentSizeWith = dotGapWith * graphAttribute.pointsCount + AXIS_WIDTH_MARGIN *2;
-    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(graphAttribute.xAxisLineCount);
+    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(graphAttribute.xAxisLineCount); //Y参考线间距
     CGFloat contentSizeHeight = self.chartScrollView.bounds.size.height;
     
     _referenceLineLayer = [CAShapeLayer layer];
@@ -136,12 +139,26 @@
     for (long i = 0; i <= graphAttribute.xAxisLineCount; i ++) {
         CGPathMoveToPoint(linesPath, NULL, 30, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
         CGPathAddLineToPoint(linesPath, NULL, contentSizeWith - AXIS_HEIGHT_MARGIN + 5, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
+        UILabel *yValueLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 , yGapWith *i + AXIS_HEIGHT_MARGIN - 25, 30, 20)];
+        yValueLabel.text = [NSString stringWithFormat:@"%ld",yValueGap * (graphAttribute.xAxisLineCount -i)];
+        yValueLabel.textAlignment  = NSTextAlignmentCenter;
+        yValueLabel.textColor = [UIColor blackColor];
+        yValueLabel.font = [UIFont systemFontOfSize:12];
+        [self addSubview:yValueLabel];
 
     }
     
     for (long i = 0; i <= graphAttribute.pointsCount ; i ++) {
+        
+        
         CGPathMoveToPoint(linesPath, NULL, 35 + dotGapWith *i, AXIS_HEIGHT_MARGIN - 25);
         CGPathAddLineToPoint(linesPath, NULL, 35 + dotGapWith *i, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
+        
+     
+        
+        
+        
+        
     }
     
     _referenceLineLayer.path = linesPath;
