@@ -6,31 +6,35 @@
 //  Copyright (c) 2015年 Jack. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "JKViewController.h"
 #import "JKChartView.h"
 
 
 
-@interface ViewController ()
+@interface JKViewController ()
 
 @property (nonatomic, strong) JKChartView *chartView;
 
 
 @end
 
-@implementation ViewController
+@implementation JKViewController
 
 - (JKChartView *)chartView
 {
     if (_chartView) {
         return _chartView;
     }
-    _chartView = [[JKChartView alloc]init];
-    _chartView.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 200);
+    _chartView = [[JKChartView alloc]initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 200)];
     _chartView.backgroundColor = [UIColor lightGrayColor];
 //    _chartView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width *2, 200);
     return _chartView;
     
+}
+
+- (IBAction)reloadBtnPressed:(id)sender
+{
+    [self.chartView reloadChartData];
 }
 
 

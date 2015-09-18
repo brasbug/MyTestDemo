@@ -4,20 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StretchTableHeaderDemo.xcscheme</key>
+		<key>CoredataDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>12</integer>
+		</dict>
+		<key>CoredataDemoTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04D8CE231B8DAFCF009A1D5C</key>
+		<key>04339CFF1BABB0A6000AC64B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>04D8CE3C1B8DAFCF009A1D5C</key>
+		<key>04339D1E1BABB0A6000AC64B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

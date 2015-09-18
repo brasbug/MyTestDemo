@@ -7,12 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JKPointButton.h"
+#import "JKPointModel.h"
+
+#import "JKGraphAttribute.h"
+
+
+@class JKChartView;
 
 @protocol JKChartViewDelegate <NSObject>
 
-- (NSInteger)numberOfChartGroup;
+
+@required
+- (NSInteger)chartView:(JKChartView *)chartView numbersOfRowsInSection:(NSInteger )section;
+
+- (JKPointButton *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
+
 
 //- ()
+
+@optional
+- (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
+
+- (CGFloat)chartView:(JKChartView *)chartView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
 
 @end
 
@@ -20,6 +39,14 @@
 
 
 @interface JKChartView : UIView
+
+@property (nonatomic, assign) CGFloat dotGapFloat;
+
+@property (nonatomic, assign) long yMaxValue;
+@property (nonatomic, assign) long yMinValue;
+
+@property (nonatomic, assign) id<JKChartViewDelegate> delegate;
+
 
 - (void)reloadChartData;
 

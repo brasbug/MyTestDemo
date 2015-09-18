@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "JKPointModel.h"
+
 
 @interface JKGraphAttribute : NSObject
+
+
+
+@property (nonatomic, retain) NSArray *pointModelArr;
 
 
 @property (nonatomic, assign) NSInteger pointsCount; // 点的个数

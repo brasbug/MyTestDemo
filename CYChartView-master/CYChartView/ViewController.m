@@ -202,7 +202,7 @@
  *  @return 图形组数
  */
 - (NSInteger)numberOfChartGroup{
-    return 2; // 暂时只显示一组吧，另一组隐藏了
+    return 1; // 暂时只显示一组吧，另一组隐藏了
 }
 
 /**
@@ -220,9 +220,9 @@
     model.minValue = _minValue;
     model.pointsCount = _totalCount; // 用于计算x轴各点的间距
     
-    if (group == 1) { // 设置第二组图形颜色为蓝色，第一组的group值为0，颜色默认为浅绿色
-        model.graphColor = [UIColor colorWithRed:30.0/255.0f green:176.0/255.0f blue:255.0/255.0f alpha:1.0f];
-    }
+//    if (group == 1) { // 设置第二组图形颜色为蓝色，第一组的group值为0，颜色默认为浅绿色
+//        model.graphColor = [UIColor colorWithRed:30.0/255.0f green:176.0/255.0f blue:255.0/255.0f alpha:1.0f];
+//    }
     return model;
 }
 
@@ -241,32 +241,37 @@
     
     // x/yvalue为真实值，会被用来转换计算坐标值；x/ylabeltext用于显示x/y轴和选中点后的提示层文字
     point.xValue = [NSString stringWithFormat:@"%ld", pointIndex+1];
-    if (chartGroup == 1) {
-        point.yValue = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-        point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
-        point.yLabelText = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-        
-        if (chartGroup==1) {
-            point.xValue = [NSString stringWithFormat:@"%ld", pointIndex+1+20];
-            point.yValue = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-            point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
-            point.yLabelText = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-            
-        }
-    }else{
-        
-        point.yValue = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-        point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
-        point.yLabelText = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-        
-        if (chartGroup==1) {
-            point.xValue = [NSString stringWithFormat:@"%ld", pointIndex+1+20];
-            point.yValue = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-            point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
-            point.yLabelText = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
-            
-        }
-    }
+//    if (chartGroup == 1) {
+//        point.yValue = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//        point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
+//        point.yLabelText = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//        
+//        if (chartGroup==1) {
+//            point.xValue = [NSString stringWithFormat:@"%ld", pointIndex+1+20];
+//            point.yValue = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//            point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
+//            point.yLabelText = [_dic objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//            
+//        }
+//    }else{
+//        
+//        point.yValue = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//        point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
+//        point.yLabelText = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//        
+//        if (chartGroup==1) {
+//            point.xValue = [NSString stringWithFormat:@"%ld", pointIndex+1+20];
+//            point.yValue = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//            point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
+//            point.yLabelText = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+//            
+//        }
+//    }
+    
+    point.yValue = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+    point.xLabelText = [NSString stringWithFormat:@"%ld", pointIndex+1];
+    point.yLabelText = [_dic1 objectForKey:[NSString stringWithFormat:@"%ld", pointIndex+1]];
+    
     
     return point;
 }

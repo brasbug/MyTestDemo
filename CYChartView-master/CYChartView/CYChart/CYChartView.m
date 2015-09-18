@@ -352,7 +352,7 @@
         backgroundLayer.fillColor = [UIColor whiteColor].CGColor;
         backgroundLayer.backgroundColor = [UIColor clearColor].CGColor;
         [backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
-        [backgroundLayer setLineWidth:2];
+        [backgroundLayer setLineWidth:1];
         CGMutablePathRef backgroundPath = CGPathCreateMutable();
         
         
@@ -416,9 +416,9 @@
             }
             
             // 设置点击响应事件，动态显示参考线
-            CYPointButton* selectBtn = [[CYPointButton alloc] initWithFrame:CGRectMake(x-22, y-22, 44, 44)];
-            selectBtn.backgroundColor = [UIColor clearColor];
-            [selectBtn setTitle:@"" forState:UIControlStateNormal];
+            CYPointButton* selectBtn = [[CYPointButton alloc] initWithFrame:CGRectMake(x-11, y-11, 22, 22)];
+            selectBtn.backgroundColor = [UIColor redColor];
+//            [selectBtn setTitle:@"01" forState:UIControlStateNormal];
             
             point.x = [NSNumber numberWithDouble:x];
             point.y = [NSNumber numberWithDouble:y];
