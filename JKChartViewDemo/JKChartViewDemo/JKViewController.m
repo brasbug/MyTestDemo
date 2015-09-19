@@ -44,7 +44,10 @@
 }
 - (JKPointButton *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath
 {
-    JKPointButton *pointBtn;
+    JKPointButton *pointBtn = [[JKPointButton alloc]init];
+    JKPointModel *model = [[JKPointModel alloc]init];
+    
+    
     return pointBtn;
 }
 
