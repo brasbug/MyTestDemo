@@ -66,7 +66,7 @@
         
     }
     _graphAttribute.pointsCount = _mutArrlist.count;
-    _graphAttribute.pointModelArr = _mutArrlist;
+    _graphAttribute.pointModelArr = _mutArrlist.mutableCopy;
     
     
 }
@@ -79,11 +79,8 @@
 //}
 - (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath
 {
-//    JKPointButton *pointBtn = [[JKPointButton alloc]init];
-//    pointBtn.frame = CGRectMake(0, 0, 30, 30);
-//    pointBtn.backColor = [UIColor redColor];
-//    pointBtn.pointModel = [_mutArrlist objectAtIndex:indextPath.row];;
-    JKPointModel *pointModel =  [_mutArrlist objectAtIndex:indextPath.row];;
+    
+    JKPointModel *pointModel =  [_graphAttribute.pointModelArr objectAtIndex:indextPath.row];;
     
     return pointModel ;
 }
@@ -91,15 +88,7 @@
 
 - (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group
 {
-    
-//    JKGraphAttribute *graphAttribute = [[JKGraphAttribute alloc]init];
-//    graphAttribute.pointsCount = 10;
-//    graphAttribute.xAxisLineCount = 5;
-//    graphAttribute.yMaxValue = 100;
-//    graphAttribute.yMinValue = 0;
-//    graphAttribute.dotGapWith = 44;
-//
-    
+
     return _graphAttribute;
     
 }

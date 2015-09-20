@@ -8,6 +8,8 @@
 
 #import "JKChartView.h"
 #import "JKPointButton.h"
+#import "UIButton+Extensions.h"
+
 
 #define ZERO_POINT_MARGIN 40
 #define AXIS_HEIGHT_MARGIN 40
@@ -63,8 +65,11 @@
     _chartScrollView.backgroundColor = [UIColor clearColor];
     //    _chartScrollView.showsHorizontalScrollIndicator = NO;
     //    _chartScrollView.showsVerticalScrollIndicator = NO;
-//    _chartScrollView.delegate = self;
+    _chartScrollView.delegate = self;
     _chartScrollView.contentSize = CGSizeMake(self.bounds.size.width *2, self.bounds.size.height);
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sigleTapGestureRecognizerHandle:)];
+    [_chartScrollView addGestureRecognizer:tapGestureRecognizer];
+    
     return _chartScrollView;
     
     
@@ -234,8 +239,11 @@
        
         
         NSLog(@"%@",pointmodel);
-        JKPointButton * pointbtn= [[JKPointButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        JKPointButton * pointbtn= [[JKPointButton alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
         pointbtn.backgroundColor = [UIColor clearColor];
+        [pointbtn setHitTestEdgeInsets:UIEdgeInsetsMake(-20, -20, -20, -20)];
+        pointbtn.pointModel = pointmodel;
+        [pointbtn addTarget:self action:@selector(pointBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
         pointbtn.center = dotCenterPoint;
         [self.chartScrollView addSubview:pointbtn];
         
@@ -259,15 +267,88 @@
     [self.chartScrollView.layer addSublayer:graphLayer];
     [self.chartScrollView.layer addSublayer:circleLayer];
 //    [self.chartScrollView.layer addSublayer:_backgroundLayer];
+
+}
+
+
+
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (BOOL)becomeFirstResponder
+{
+    return [super becomeFirstResponder];
+}
+
+
+- (void)popMenuMess:(id)sender
+{
+    
+}
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    return (action == @selector(popMenuMess:));
+}
+
+/**
+ *  统一一个方法隐藏MenuController，多处需要调用
+ */
+- (void)setupNormalMenuController
+{
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    if (menu.isMenuVisible) {
+        [menu setMenuVisible:NO animated:YES];
+    }
+}
+
+- (void)pointBtnPressed:(JKPointButton *)sender
+{
+    NSLog(@"%f,%f",sender.center.x,sender.center.y);
+    [self becomeFirstResponder];
+    
+    UIMenuItem *popMenu = [[UIMenuItem alloc] initWithTitle:@"test" action:@selector(popMenuMess:)];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setMenuItems:[NSArray arrayWithObjects:popMenu, nil]];
     
     
-    
-    
-    
-    
+    CGRect targetRect = [self convertRect:sender.frame
+                                 fromView:self];
+
+    [menu setTargetRect:CGRectInset(targetRect, 0.0f, 4.0f) inView:self.chartScrollView];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleMenuWillShowNotification:)
+                                                 name:UIMenuControllerWillShowMenuNotification
+                                               object:nil];
+    [menu setMenuVisible:YES animated:YES];
     
 }
 
+#pragma mark - Notifications
+- (void)handleMenuWillHideNotification:(NSNotification *)notification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIMenuControllerWillHideMenuNotification
+                                                  object:nil];
+}
+
+- (void)handleMenuWillShowNotification:(NSNotification *)notification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIMenuControllerWillShowMenuNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleMenuWillHideNotification:)
+                                                 name:UIMenuControllerWillHideMenuNotification
+                                               object:nil];
+}
+
+- (void)sigleTapGestureRecognizerHandle:(UITapGestureRecognizer *)tapGestureRecognizer {
+    
+    if (tapGestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        [self setupNormalMenuController];
+
+    }
+}
 
 
 - (void)clearViewsAndLayers
@@ -299,8 +380,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [self setupNormalMenuController];
     
-
 }
 
 
