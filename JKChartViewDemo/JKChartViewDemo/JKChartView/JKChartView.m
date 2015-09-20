@@ -35,6 +35,7 @@
 @property (nonatomic, strong) CAShapeLayer *referenceLineLayer;
 
 @property (nonatomic, strong) JKGraphAttribute *graphAttribute;
+@property (nonatomic, strong) JKPointModel *popTempModel;
 
 @property (nonatomic, assign) CGPoint zeroPoint;
 @property (nonatomic, strong) CAShapeLayer *backgroundLayer;
@@ -286,7 +287,14 @@
 - (void)popMenuMess:(id)sender
 {
     
+    
+//    NSLog(@"%@",sender);
+//    NSLog(@"%@",self.popTempModel);
+    
+    
 }
+
+
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     return (action == @selector(popMenuMess:));
 }
@@ -304,13 +312,14 @@
 
 - (void)pointBtnPressed:(JKPointButton *)sender
 {
-    NSLog(@"%f,%f",sender.center.x,sender.center.y);
+//    NSLog(@"%f,%f",sender.center.x,sender.center.y);
     [self becomeFirstResponder];
     
     UIMenuItem *popMenu = [[UIMenuItem alloc] initWithTitle:@"test" action:@selector(popMenuMess:)];
     UIMenuController *menu = [UIMenuController sharedMenuController];
     [menu setMenuItems:[NSArray arrayWithObjects:popMenu, nil]];
     
+    self.popTempModel = sender.pointModel;
     
     CGRect targetRect = [self convertRect:sender.frame
                                  fromView:self];
