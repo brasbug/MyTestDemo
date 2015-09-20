@@ -28,9 +28,13 @@
  */
 - (void)setDefaultAttri
 {
+    _yMaxValue = 0;
+    _yMinValue = 100000;
+    
     _pointsCount = 1;
-    _yMaxValue = 10;
-    _yMinValue = 0;
+    _xAxisLineCount = 5;
+    
+    _dotGapWith = 44;
     
     _graphColor = [UIColor colorWithRed:0.51f green:0.84f blue:0.34f alpha:1.0f];
     _pointRadiu = 3;

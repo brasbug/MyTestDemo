@@ -19,14 +19,14 @@
 
 
 //@required
-- (NSInteger)chartView:(JKChartView *)chartView numbersOfRowsInSection:(NSInteger )section;
 
-- (JKPointButton *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
+- (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
 
 - (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group;
 
-- (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
 
+@optional
+- (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
 
 
 @end

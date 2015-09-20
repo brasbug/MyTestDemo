@@ -10,9 +10,12 @@
 
 @interface JKPointModel : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, strong) NSString *internalBaseClassIdentifier;
+@property (nonatomic, strong) NSString *id_m;
 @property (nonatomic, strong) NSString *yPoint;
 @property (nonatomic, strong) NSString *xPoint;
+
+@property (nonatomic, assign) double yValueFloat;
+
 @property (nonatomic, assign) double indext;
 @property (nonatomic, strong) NSDictionary *ext;
 

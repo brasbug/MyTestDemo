@@ -21,8 +21,8 @@
 @property (nonatomic, assign) NSInteger pointsCount; // 点的个数
 @property (nonatomic, assign) NSInteger xAxisLineCount;
 
-@property (nonatomic, assign) NSInteger yMaxValue; // y轴上最大值
-@property (nonatomic, assign) NSInteger yMinValue; // y轴最小值
+@property (nonatomic, assign) double yMaxValue; // y轴上最大值
+@property (nonatomic, assign) double yMinValue; // y轴最小值
 
 @property (nonatomic, retain) UIColor* graphColor; // 图形颜色
 @property (nonatomic, retain) NSString* graphName; // 图形名称，用于显示某个点的数据时使用

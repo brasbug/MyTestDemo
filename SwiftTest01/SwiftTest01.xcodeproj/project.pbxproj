@@ -156,6 +156,7 @@
 		0495E6131B9D7EFC007DA22E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Jack;
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				0495E63C1B9D7EFC007DA22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0495E63D1B9D7EFC007DA22E /* Build configuration list for PBXNativeTarget "SwiftTest01Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				0495E63F1B9D7EFC007DA22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
