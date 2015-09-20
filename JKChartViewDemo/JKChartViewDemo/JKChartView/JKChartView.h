@@ -17,15 +17,14 @@
 
 @protocol JKChartViewDelegate <NSObject>
 
-
-//@required
-
-- (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
-
-- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group;
-
-
 @optional
+
+
+//- (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
+//
+- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group;
+//
+//
 - (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
 
 
