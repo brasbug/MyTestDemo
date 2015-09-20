@@ -20,7 +20,8 @@
 
 
 
-@interface JKChartView ()
+@interface JKChartView ()<UIScrollViewDelegate>
+
 @property (nonatomic, strong) UIScrollView *chartScrollView;
 
 
@@ -34,6 +35,8 @@
 @property (nonatomic, strong) JKGraphAttribute *graphAttribute;
 
 @property (nonatomic, assign) CGPoint zeroPoint;
+@property (nonatomic, strong) CAShapeLayer *backgroundLayer;
+@property (nonatomic, assign) CGRect shapeLayerFrame;
 
 
 @end
@@ -60,6 +63,7 @@
     _chartScrollView.backgroundColor = [UIColor clearColor];
     //    _chartScrollView.showsHorizontalScrollIndicator = NO;
     //    _chartScrollView.showsVerticalScrollIndicator = NO;
+//    _chartScrollView.delegate = self;
     _chartScrollView.contentSize = CGSizeMake(self.bounds.size.width *2, self.bounds.size.height);
     return _chartScrollView;
     
@@ -114,28 +118,29 @@
 - (void)setReferenceLine
 {
     
-    JKGraphAttribute *graphAttribute = [[JKGraphAttribute alloc]init];
+    _graphAttribute = [[JKGraphAttribute alloc]init];
 
-    
     if ([self.delegate respondsToSelector:@selector(chartView:graphAttributeForGroup:)]) {
-        graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
+        _graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
     }
+
+    long yValueGap = (_graphAttribute.yMaxValue - _graphAttribute.yMinValue)/(_graphAttribute.xAxisLineCount);
     
-    long yValueGap = (graphAttribute.yMaxValue - graphAttribute.yMinValue)/(graphAttribute.xAxisLineCount);
     
-    
-    CGFloat dotGapWith = graphAttribute.dotGapWith;  //x参考线间距
-    CGFloat contentSizeWith = dotGapWith * graphAttribute.pointsCount + AXIS_WIDTH_MARGIN;
-    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(graphAttribute.xAxisLineCount); //Y参考线间距
+    CGFloat dotGapWith = _graphAttribute.dotGapWith;  //x参考线间距
+    CGFloat contentSizeWith = dotGapWith * _graphAttribute.pointsCount + AXIS_WIDTH_MARGIN;
+    CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(_graphAttribute.xAxisLineCount); //Y参考线间距
     CGFloat contentSizeHeight = self.chartScrollView.bounds.size.height;
     
-    CGFloat yLinesHeight = yGapWith *graphAttribute.xAxisLineCount;
+    CGFloat yLinesHeight = yGapWith *_graphAttribute.xAxisLineCount;
     
     self.zeroPoint= CGPointMake(35, AXIS_HEIGHT_MARGIN - 15 + yLinesHeight);
     
     
+    CGRect shapeLayerFrame = CGRectMake(0, 0, contentSizeWith, contentSizeHeight);
+    
     _referenceLineLayer = [CAShapeLayer layer];
-    _referenceLineLayer.frame = self.bounds;
+    _referenceLineLayer.frame =shapeLayerFrame;
     _referenceLineLayer.fillColor = [UIColor clearColor].CGColor;
     _referenceLineLayer.backgroundColor = [UIColor clearColor].CGColor;
     _referenceLineLayer.strokeColor = [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4].CGColor;
@@ -152,11 +157,11 @@
     
     self.chartScrollView.contentSize = CGSizeMake(contentSizeWith, self.chartScrollView.bounds.size.height);
 
-    for (long i = 0; i <= graphAttribute.xAxisLineCount; i ++) {
+    for (long i = 0; i <= _graphAttribute.xAxisLineCount; i ++) {
         CGPathMoveToPoint(linesPath, NULL, 30, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
         CGPathAddLineToPoint(linesPath, NULL, contentSizeWith - AXIS_HEIGHT_MARGIN + 5, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
         UILabel *yValueLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 , yGapWith *i + AXIS_HEIGHT_MARGIN - 25, 30, 20)];
-        yValueLabel.text = [NSString stringWithFormat:@"%.0f",yValueGap * (graphAttribute.xAxisLineCount -i) + graphAttribute.yMinValue];
+        yValueLabel.text = [NSString stringWithFormat:@"%.0f",yValueGap * (_graphAttribute.xAxisLineCount -i) + _graphAttribute.yMinValue];
         yValueLabel.textAlignment  = NSTextAlignmentCenter;
         yValueLabel.textColor = [UIColor blackColor];
         yValueLabel.font = [UIFont systemFontOfSize:12];
@@ -167,26 +172,36 @@
     // 连接线绘制层
     CGMutablePathRef graphPath = CGPathCreateMutable();
     CAShapeLayer *graphLayer = [CAShapeLayer layer];
-    graphLayer.frame = self.bounds;
+    graphLayer.frame = shapeLayerFrame;
     graphLayer.fillColor = [UIColor clearColor].CGColor;
     graphLayer.backgroundColor = [UIColor clearColor].CGColor;
-    [graphLayer setStrokeColor:graphAttribute.graphColor.CGColor];
-    [graphLayer setLineWidth:graphAttribute.lineSize];
+    [graphLayer setStrokeColor:_graphAttribute.graphColor.CGColor];
+    [graphLayer setLineWidth:_graphAttribute.lineSize];
     
     
     // 背景阴影
-    CAShapeLayer *backgroundLayer = [CAShapeLayer layer];
-    backgroundLayer.frame = self.bounds;
-    backgroundLayer.fillColor = [UIColor colorWithRed:0.25 green:0.67 blue:0.48 alpha:0.5].CGColor;
-    backgroundLayer.backgroundColor = [UIColor clearColor].CGColor;
-    [backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
-    [backgroundLayer setLineWidth:1];
+    _backgroundLayer = [CAShapeLayer layer];
+    _backgroundLayer.frame = shapeLayerFrame;
+    _backgroundLayer.fillColor = [UIColor colorWithRed:0.25 green:0.67 blue:0.48 alpha:0.5].CGColor;
+    _backgroundLayer.backgroundColor = [UIColor clearColor].CGColor;
+    [_backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
+    [_backgroundLayer setLineWidth:1];
     CGMutablePathRef backgroundPath = CGPathCreateMutable();
     
     
+    CGMutablePathRef circlePath = CGPathCreateMutable();
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    circleLayer.frame = self.bounds;
+    circleLayer.fillColor = [UIColor whiteColor].CGColor;
+    circleLayer.backgroundColor = [UIColor clearColor].CGColor;
+    // 给不同图形设置线条和点的颜色，后续优化
+    [circleLayer setStrokeColor:_graphAttribute.graphColor.CGColor];
+    [circleLayer setLineWidth:1];
     
     
-    for (long i = 0; i < graphAttribute.pointModelArr.count  ; i ++) {
+    
+    
+    for (long i = 0; i < _graphAttribute.pointModelArr.count  ; i ++) {
         
         CGFloat xPointValue = 35 + dotGapWith *i;
         CGFloat yPointValue = AXIS_HEIGHT_MARGIN - 15;
@@ -198,7 +213,9 @@
         NSIndexPath *indextPaht = [NSIndexPath indexPathForRow:i inSection:0];
         JKPointModel * pointmodel= [self.delegate chartView:self pointModelAtIndextPath:indextPaht];
         
-        CGPoint dotCenterPoint = CGPointMake(xPointValue, yPointValue + yLinesHeight *(graphAttribute.yMaxValue - pointmodel.yValueFloat)/graphAttribute.yMaxValue);
+        CGPoint dotCenterPoint = CGPointMake(xPointValue, yPointValue + yLinesHeight *(_graphAttribute.yMaxValue - pointmodel.yValueFloat)/_graphAttribute.yMaxValue);
+        CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(dotCenterPoint.x-3, dotCenterPoint.y-3, 6, 6)); // 绘制点
+
         
         if (i == 0) {
             CGPathMoveToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
@@ -210,7 +227,7 @@
             CGPathAddLineToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
             CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
         }
-        if (i == graphAttribute.pointModelArr.count - 1) {
+        if (i == _graphAttribute.pointModelArr.count - 1) {
             CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
         }
         
@@ -227,16 +244,21 @@
     }
     
     _referenceLineLayer.path = linesPath;
-//    CGPathRelease(linesPath);
+    CGPathRelease(linesPath);
     
-    backgroundLayer.path = backgroundPath;
-//    CGPathRelease(backgroundPath);
-//    [self gradientBackground:backgroundLayer color:graphAttribute.graphColor];
+    _backgroundLayer.path = backgroundPath;
+    CGPathRelease(backgroundPath);
+    
+    circleLayer.path = circlePath;
+    CGPathRelease(circlePath);
+    
     graphLayer.path = graphPath;
+    [self gradientBackground:_backgroundLayer color:_graphAttribute.graphColor];
     
     [self.chartScrollView.layer addSublayer:_referenceLineLayer];
     [self.chartScrollView.layer addSublayer:graphLayer];
-    [self.chartScrollView.layer addSublayer:backgroundLayer];
+    [self.chartScrollView.layer addSublayer:circleLayer];
+//    [self.chartScrollView.layer addSublayer:_backgroundLayer];
     
     
     
@@ -275,7 +297,11 @@
 }
 
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
 
+}
 
 
 /**
@@ -286,7 +312,7 @@
 - (void)gradientBackground:(CAShapeLayer*)targetLayer color:(UIColor*)color
 {
     CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);;
+    gradient.frame = CGRectMake(0, 0, self.chartScrollView.contentSize.width, self.chartScrollView.contentSize.height);;
     gradient.colors = [NSArray arrayWithObjects:
                        (id)color.CGColor,
                        (id)[UIColor colorWithWhite:1.0 alpha:0.4].CGColor,

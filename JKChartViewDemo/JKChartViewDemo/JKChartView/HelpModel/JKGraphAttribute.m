@@ -36,7 +36,7 @@
     
     _dotGapWith = 44;
     
-    _graphColor = [UIColor colorWithRed:0.51f green:0.84f blue:0.34f alpha:1.0f];
+    _graphColor = [UIColor blueColor];
     _pointRadiu = 3;
     _lineSize = 1;
 }

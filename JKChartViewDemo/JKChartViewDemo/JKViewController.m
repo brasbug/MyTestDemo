@@ -13,6 +13,7 @@
 
 @interface JKViewController ()<JKChartViewDelegate>
 
+
 @property (nonatomic, strong) JKChartView *chartView;
 
 @property (nonatomic, strong) NSMutableArray *mutArrlist;
@@ -28,7 +29,7 @@
         return _chartView;
     }
     _chartView = [[JKChartView alloc]initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 200)];
-    _chartView.backgroundColor = [UIColor lightGrayColor];
+    _chartView.backgroundColor = [UIColor whiteColor];
     _chartView.delegate  = self;
 //    _chartView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width *2, 200);
     return _chartView;
@@ -54,7 +55,7 @@
     _mutArrlist = [NSMutableArray array];
     for (long i = 0; i< 20 ; i ++) {
         JKPointModel *model = [[JKPointModel alloc]init];
-        model.yValueFloat = arc4random()%100;
+        model.yValueFloat = arc4random()%80 +20;
 //        _graphAttribute.yMaxValue = MAX(model.yValueFloat, _graphAttribute.yMaxValue);
 //        _graphAttribute.yMinValue = MIN(model.yValueFloat, _graphAttribute.yMinValue);
         

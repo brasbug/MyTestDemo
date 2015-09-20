@@ -328,7 +328,7 @@
         CAShapeLayer *circleLayer = [CAShapeLayer layer];
         circleLayer.frame = self.bounds;
         circleLayer.fillColor = [UIColor clearColor].CGColor;
-        circleLayer.backgroundColor = [UIColor clearColor].CGColor;
+        circleLayer.backgroundColor = [UIColor whiteColor].CGColor;
         
         // 给不同图形设置线条和点的颜色，后续优化
         [circleLayer setStrokeColor:graphAttri.graphColor.CGColor];
