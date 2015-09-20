@@ -23,6 +23,9 @@
 
 
 @interface JKChartView ()<UIScrollViewDelegate>
+{
+    
+}
 
 @property (nonatomic, strong) UIScrollView *chartScrollView;
 
@@ -95,27 +98,17 @@
     //获取图像组数
     [self setGroupCount];
     
+    //画参考下
     [self setReferenceLine];
+   
     
     
-//    for (long i = 0; i < self.chatGroupCount; i++) {
-//        _graphAttribute = [self.delegate chartView:self graphAttributeForGroup:i];
-//        for (long j = 0; j < _graphAttribute.pointModelArr.count; j ++) {
-//            NSIndexPath *indextPaht = [NSIndexPath indexPathForRow:j inSection:i];
-//
-//            JKPointButton *pointBtn = [self.delegate chartView:self pointModelAtIndextPath:indextPaht];
-//            
-//            
-//            
-//
-//        }
-//        
-//        
-//        
-//    }
+}
 
-    
-    
+
+
+- (void)showLineChartView
+{
     
 }
 
@@ -262,6 +255,18 @@
         pointbtn.center = dotCenterPoint;
         [self.chartScrollView addSubview:pointbtn];
         
+        UILabel *xValueLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 , self.chartScrollView.bounds.size.height - 30 , 40, 20)];
+        xValueLabel.text = pointmodel.xPoint;
+        xValueLabel.textAlignment  = NSTextAlignmentCenter;
+        xValueLabel.textColor = [UIColor blackColor];
+        xValueLabel.font = [UIFont systemFontOfSize:12];
+        xValueLabel.center = CGPointMake(dotCenterPoint.x, xValueLabel.center.y);
+        [self.chartScrollView addSubview:xValueLabel];
+     
+        
+        
+        
+        
 
         
     }
@@ -327,13 +332,14 @@
 - (void)pointBtnPressed:(JKPointButton *)sender
 {
 //    NSLog(@"%f,%f",sender.center.x,sender.center.y);
+    self.popTempModel = sender.pointModel;
+
     [self becomeFirstResponder];
     
-    UIMenuItem *popMenu = [[UIMenuItem alloc] initWithTitle:@"test" action:@selector(popMenuMess:)];
+    UIMenuItem *popMenu = [[UIMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"%@",sender.pointModel.yPoint] action:@selector(popMenuMess:)];
     UIMenuController *menu = [UIMenuController sharedMenuController];
     [menu setMenuItems:[NSArray arrayWithObjects:popMenu, nil]];
     
-    self.popTempModel = sender.pointModel;
     
     CGRect targetRect = [self convertRect:sender.frame
                                  fromView:self];
