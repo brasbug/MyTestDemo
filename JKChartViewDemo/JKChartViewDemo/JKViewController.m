@@ -40,7 +40,7 @@
 {
     
     [self formatSomeData];
-    
+    self.chartView.graphAttribute = self.graphAttribute;
     [self.chartView reloadChartData];
 }
 
@@ -69,20 +69,6 @@
     _graphAttribute.pointModelArr = _mutArrlist.mutableCopy;
     
     
-}
-
-
-
-//- (NSInteger)numberOfChartGroup:(JKChartView *)chartView
-//{
-//    return 1;
-//}
-- (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath
-{
-    
-    JKPointModel *pointModel =  [_graphAttribute.pointModelArr objectAtIndex:indextPath.row];;
-    
-    return pointModel ;
 }
 
 

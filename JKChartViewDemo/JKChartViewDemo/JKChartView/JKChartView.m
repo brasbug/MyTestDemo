@@ -34,7 +34,6 @@
 
 @property (nonatomic, strong) CAShapeLayer *referenceLineLayer;
 
-@property (nonatomic, strong) JKGraphAttribute *graphAttribute;
 @property (nonatomic, strong) JKPointModel *popTempModel;
 
 @property (nonatomic, assign) CGPoint zeroPoint;
@@ -67,7 +66,7 @@
     //    _chartScrollView.showsHorizontalScrollIndicator = NO;
     //    _chartScrollView.showsVerticalScrollIndicator = NO;
     _chartScrollView.delegate = self;
-    _chartScrollView.contentSize = CGSizeMake(self.bounds.size.width *2, self.bounds.size.height);
+    _chartScrollView.contentSize = CGSizeMake(self.bounds.size.width , self.bounds.size.height);
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sigleTapGestureRecognizerHandle:)];
     [_chartScrollView addGestureRecognizer:tapGestureRecognizer];
     
@@ -123,28 +122,47 @@
 
 - (void)setReferenceLine
 {
-    
-    _graphAttribute = [[JKGraphAttribute alloc]init];
+ 
+    //数据源
 
-    if ([self.delegate respondsToSelector:@selector(chartView:graphAttributeForGroup:)]) {
-        _graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
+    if (!_graphAttribute) {
+        if ([self.delegate respondsToSelector:@selector(chartView:graphAttributeForGroup:)]) {
+            _graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
+        }
+        else
+        {
+            return;
+        }
     }
+    
 
     long yValueGap = (_graphAttribute.yMaxValue - _graphAttribute.yMinValue)/(_graphAttribute.xAxisLineCount);
     
-    
+    //点x间距
     CGFloat dotGapWith = _graphAttribute.dotGapWith;  //x参考线间距
+    //可滑动区域宽度
     CGFloat contentSizeWith = dotGapWith * _graphAttribute.pointsCount + AXIS_WIDTH_MARGIN;
+    //line参考线间距
     CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(_graphAttribute.xAxisLineCount); //Y参考线间距
+    //滑动区域的高度
     CGFloat contentSizeHeight = self.chartScrollView.bounds.size.height;
     
+    //折线垂直显示高度范围
     CGFloat yLinesHeight = yGapWith *_graphAttribute.xAxisLineCount;
     
+    //起始坐标
     self.zeroPoint= CGPointMake(35, AXIS_HEIGHT_MARGIN - 15 + yLinesHeight);
     
-    
+    //折线显示区域
     CGRect shapeLayerFrame = CGRectMake(0, 0, contentSizeWith, contentSizeHeight);
     
+    //设置滑动区域
+    self.chartScrollView.contentSize = CGSizeMake(contentSizeWith, self.chartScrollView.bounds.size.height);
+
+    
+    
+    
+    //参考线
     _referenceLineLayer = [CAShapeLayer layer];
     _referenceLineLayer.frame =shapeLayerFrame;
     _referenceLineLayer.fillColor = [UIColor clearColor].CGColor;
@@ -159,9 +177,6 @@
     
     
     
-    
-    
-    self.chartScrollView.contentSize = CGSizeMake(contentSizeWith, self.chartScrollView.bounds.size.height);
 
     for (long i = 0; i <= _graphAttribute.xAxisLineCount; i ++) {
         CGPathMoveToPoint(linesPath, NULL, 30, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
@@ -216,8 +231,7 @@
         CGPathAddLineToPoint(linesPath, NULL, xPointValue, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
     
         
-        NSIndexPath *indextPaht = [NSIndexPath indexPathForRow:i inSection:0];
-        JKPointModel * pointmodel= [self.delegate chartView:self pointModelAtIndextPath:indextPaht];
+        JKPointModel * pointmodel= [_graphAttribute.pointModelArr objectAtIndex:i];
         
         CGPoint dotCenterPoint = CGPointMake(xPointValue, yPointValue + yLinesHeight *(_graphAttribute.yMaxValue - pointmodel.yValueFloat)/_graphAttribute.yMaxValue);
         CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(dotCenterPoint.x-3, dotCenterPoint.y-3, 6, 6)); // 绘制点

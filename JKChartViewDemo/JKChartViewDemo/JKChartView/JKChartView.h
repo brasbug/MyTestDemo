@@ -41,6 +41,10 @@
 @property (nonatomic, assign) long yMaxValue;
 @property (nonatomic, assign) long yMinValue;
 
+
+@property (nonatomic, strong) JKGraphAttribute *graphAttribute;
+
+
 @property (nonatomic, assign) id<JKChartViewDelegate> delegate;
 
 
