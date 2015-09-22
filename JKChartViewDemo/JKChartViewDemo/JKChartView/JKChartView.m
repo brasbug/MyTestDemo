@@ -301,7 +301,7 @@
     CGPathRelease(_backgroundPath);
     [self gradientBackground:_backgroundLayer color:_graphAttribute.graphColor];
 
-  
+    
     [self.chartScrollView.layer addSublayer:_referenceLineLayer];
     [self.chartScrollView.layer addSublayer:graphLayer];
     [self.chartScrollView.layer addSublayer:circleLayer];
