@@ -28,10 +28,10 @@
  */
 - (void)setDefaultAttri
 {
-    _yMaxValue = 0;
-    _yMinValue = 100000;
+    _yMaxValue = 10;
+    _yMinValue = 0;
     
-    _pointsCount = 1;
+    _pointsCount = 10;
     _xAxisLineCount = 5;
     
     _dotGapWith = 44;

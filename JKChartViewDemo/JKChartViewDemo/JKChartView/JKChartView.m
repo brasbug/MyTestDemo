@@ -41,6 +41,8 @@
 
 @property (nonatomic, assign) CGPoint zeroPoint;
 @property (nonatomic, strong) CAShapeLayer *backgroundLayer;
+@property (nonatomic, assign) CGMutablePathRef backgroundPath;
+
 @property (nonatomic, assign) CGRect shapeLayerFrame;
 
 
@@ -125,6 +127,8 @@
         else
         {
             return;
+//            _graphAttribute = [[JKGraphAttribute alloc]init];
+
         }
     }
     
@@ -200,7 +204,7 @@
     _backgroundLayer.backgroundColor = [UIColor clearColor].CGColor;
     [_backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
     [_backgroundLayer setLineWidth:1];
-    CGMutablePathRef backgroundPath = CGPathCreateMutable();
+    _backgroundPath = CGPathCreateMutable();
     
     
     CGMutablePathRef circlePath = CGPathCreateMutable();
@@ -214,8 +218,16 @@
     
     
     
+    //创建动画
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
+    animation.fromValue = @0.0;
+    animation.toValue = @1.0;
+    animation.delegate = self;
+    animation.duration = 5.0;
+    [graphLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
+    [_backgroundLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
     
-    for (long i = 0; i < _graphAttribute.pointModelArr.count  ; i ++) {
+    for (long i = 0; i < _graphAttribute.pointsCount  ; i ++) {
         
         CGFloat xPointValue = 35 + dotGapWith *i;
         CGFloat yPointValue = AXIS_HEIGHT_MARGIN - 15;
@@ -223,6 +235,9 @@
         CGPathMoveToPoint(linesPath, NULL, xPointValue, AXIS_HEIGHT_MARGIN - 25);
         CGPathAddLineToPoint(linesPath, NULL, xPointValue, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
     
+        if (i >= _graphAttribute.pointModelArr.count) {
+            continue;
+        }
         
         JKPointModel * pointmodel= [_graphAttribute.pointModelArr objectAtIndex:i];
         
@@ -232,16 +247,16 @@
         
         if (i == 0) {
             CGPathMoveToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
-            CGPathMoveToPoint(backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
-            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
+            CGPathMoveToPoint(_backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
+            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
         }
         else
         {
             CGPathAddLineToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
-            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
+            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
         }
         if (i == _graphAttribute.pointModelArr.count - 1) {
-            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
+            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
         }
         
        
@@ -274,15 +289,19 @@
     _referenceLineLayer.path = linesPath;
     CGPathRelease(linesPath);
     
-    _backgroundLayer.path = backgroundPath;
-    CGPathRelease(backgroundPath);
+   
     
     circleLayer.path = circlePath;
     CGPathRelease(circlePath);
     
     graphLayer.path = graphPath;
-    [self gradientBackground:_backgroundLayer color:_graphAttribute.graphColor];
+    CGPathRelease(graphPath);
     
+    _backgroundLayer.path = _backgroundPath;
+    CGPathRelease(_backgroundPath);
+    [self gradientBackground:_backgroundLayer color:_graphAttribute.graphColor];
+
+  
     [self.chartScrollView.layer addSublayer:_referenceLineLayer];
     [self.chartScrollView.layer addSublayer:graphLayer];
     [self.chartScrollView.layer addSublayer:circleLayer];
@@ -291,6 +310,11 @@
 }
 
 
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+   
+    
+}
 
 
 - (BOOL)canBecomeFirstResponder

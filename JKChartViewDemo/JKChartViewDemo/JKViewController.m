@@ -74,12 +74,12 @@
 }
 
 
-- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group
-{
-
-    return _graphAttribute;
-    
-}
+//- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group
+//{
+//
+//    return _graphAttribute;
+//    
+//}
 
 
 - (void)viewDidLoad {
