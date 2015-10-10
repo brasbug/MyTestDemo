@@ -8,13 +8,13 @@
 #import "JKPointModel.h"
 
 
-NSString *const kJKPointModelId = @"id";
+NSString *const kJKPointModelPointindext = @"pointindext";
 NSString *const kJKPointModelYPoint = @"yPoint";
 NSString *const kJKPointModelXPoint = @"xPoint";
 NSString *const kJKPointModelIndext = @"indext";
 NSString *const kJKPointModelExt = @"ext";
 NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
-
+NSString *const kJKPointModelYPointValue = @"yPointValue";
 
 @interface JKPointModel ()
 
@@ -24,7 +24,7 @@ NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
 
 @implementation JKPointModel
 
-@synthesize id_m = _id_m;
+@synthesize pointindext = _pointindext;
 @synthesize yPoint = _yPoint;
 @synthesize xPoint = _xPoint;
 @synthesize indext = _indext;
@@ -44,12 +44,13 @@ NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.id_m = [self objectOrNilForKey:kJKPointModelId fromDictionary:dict];
+            self.pointindext = [self objectOrNilForKey:kJKPointModelPointindext fromDictionary:dict];
             self.yPoint = [self objectOrNilForKey:kJKPointModelYPoint fromDictionary:dict];
             self.xPoint = [self objectOrNilForKey:kJKPointModelXPoint fromDictionary:dict];
             self.indext = [[self objectOrNilForKey:kJKPointModelIndext fromDictionary:dict] doubleValue];
             self.ext = [self objectOrNilForKey:kJKPointModelExt fromDictionary:dict];
         self.yValueFloat = [[self objectOrNilForKey:kJKPointModelYvalueFloat fromDictionary:dict]doubleValue];
+        self.yPointValue = [self objectOrNilForKey:kJKPointModelYPointValue fromDictionary:dict];
     }
     
     return self;
@@ -59,14 +60,14 @@ NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
 - (NSDictionary *)dictionaryRepresentation
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
-    [mutableDict setValue:self.id_m forKey:kJKPointModelId];
+    [mutableDict setValue:self.pointindext forKey:kJKPointModelPointindext];
     [mutableDict setValue:self.yPoint forKey:kJKPointModelYPoint];
     [mutableDict setValue:self.xPoint forKey:kJKPointModelXPoint];
     [mutableDict setValue:[NSNumber numberWithDouble:self.indext] forKey:kJKPointModelIndext];
     [mutableDict setValue:self.ext forKey:kJKPointModelExt];
     [mutableDict setValue:[NSNumber numberWithDouble:self.yValueFloat] forKey:kJKPointModelYvalueFloat];
     
-    
+    [mutableDict setValue:self.yPointValue forKey:kJKPointModelYPointValue];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
@@ -89,24 +90,26 @@ NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
 {
     self = [super init];
 
-    self.id_m = [aDecoder decodeObjectForKey:kJKPointModelId];
+    self.pointindext = [aDecoder decodeObjectForKey:kJKPointModelPointindext];
     self.yPoint = [aDecoder decodeObjectForKey:kJKPointModelYPoint];
     self.xPoint = [aDecoder decodeObjectForKey:kJKPointModelXPoint];
     self.indext = [aDecoder decodeDoubleForKey:kJKPointModelIndext];
     self.ext = [aDecoder decodeObjectForKey:kJKPointModelExt];
     self.yValueFloat = [aDecoder decodeDoubleForKey:kJKPointModelYvalueFloat];
+    self.yPointValue = [aDecoder decodeObjectForKey:kJKPointModelYPointValue];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 
-    [aCoder encodeObject:_id_m forKey:kJKPointModelId];
+    [aCoder encodeObject:_pointindext forKey:kJKPointModelPointindext];
     [aCoder encodeObject:_yPoint forKey:kJKPointModelYPoint];
     [aCoder encodeObject:_xPoint forKey:kJKPointModelXPoint];
     [aCoder encodeDouble:_indext forKey:kJKPointModelIndext];
     [aCoder encodeObject:_ext forKey:kJKPointModelExt];
     [aCoder encodeDouble:_yValueFloat forKey:kJKPointModelYvalueFloat];
+    [aCoder encodeObject:_yPointValue forKey:kJKPointModelYPointValue];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -115,12 +118,13 @@ NSString *const kJKPointModelYvalueFloat = @"yValueFloat";
     
     if (copy) {
 
-        copy.id_m = [self.id_m copyWithZone:zone];
+        copy.pointindext = [self.pointindext copyWithZone:zone];
         copy.yPoint = [self.yPoint copyWithZone:zone];
         copy.xPoint = [self.xPoint copyWithZone:zone];
         copy.indext = self.indext;
         copy.ext = [self.ext copyWithZone:zone];
         copy.yValueFloat = self.yValueFloat;
+        copy.yPointValue  = [self.yPointValue copyWithZone:zone];
     }
     
     return copy;

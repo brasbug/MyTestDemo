@@ -9,27 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "JKPointButton.h"
 #import "JKPointModel.h"
+#import "NSDate+TuanHelper.h"
 
 #import "JKGraphAttribute.h"
-
-
-@class JKChartView;
-
-@protocol JKChartViewDelegate <NSObject>
-
-@optional
-
-
-//- (JKPointModel *)chartView:(JKChartView *)chartView pointModelAtIndextPath:(NSIndexPath *)indextPath;
-//
-- (JKGraphAttribute *)chartView:(JKChartView *)chartView graphAttributeForGroup:(NSInteger)group;
-//
-//
-- (NSInteger)numberOfChartGroup:(JKChartView *)chartView;
-
-
-@end
-
 
 
 
@@ -43,11 +25,8 @@
 
 @property (nonatomic, strong) JKGraphAttribute *graphAttribute;
 
+- (void)reloadChartData:(JKGraphAttribute *)graphAtribute;
 
-@property (nonatomic, assign) id<JKChartViewDelegate> delegate;
-
-
-- (void)reloadChartData;
 
 
 @end

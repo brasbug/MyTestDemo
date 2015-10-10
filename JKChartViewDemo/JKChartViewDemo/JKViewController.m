@@ -11,7 +11,7 @@
 
 
 
-@interface JKViewController ()<JKChartViewDelegate>
+@interface JKViewController ()
 
 
 @property (nonatomic, strong) JKChartView *chartView;
@@ -30,7 +30,6 @@
     }
     _chartView = [[JKChartView alloc]initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 200)];
     _chartView.backgroundColor = [UIColor whiteColor];
-    _chartView.delegate  = self;
 //    _chartView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width *2, 200);
     return _chartView;
     
@@ -41,7 +40,7 @@
     
     [self formatSomeData];
     self.chartView.graphAttribute = self.graphAttribute;
-    [self.chartView reloadChartData];
+    [self.chartView reloadChartData:self.graphAttribute];
 }
 
 
@@ -50,20 +49,20 @@
 {
     _graphAttribute = [[JKGraphAttribute alloc]init];
     _graphAttribute.yMinValue = 0;
-    _graphAttribute.yMaxValue = 100;
+    _graphAttribute.yMaxValue = 0;
     
     _mutArrlist = [NSMutableArray array];
     for (long i = 0; i< 20 ; i ++) {
         JKPointModel *model = [[JKPointModel alloc]init];
-        model.yValueFloat = arc4random()%80 +20;
-//        _graphAttribute.yMaxValue = MAX(model.yValueFloat, _graphAttribute.yMaxValue);
+        model.yValueFloat = (arc4random()%80 +20 )/100.01;
+        _graphAttribute.yMaxValue = MAX(model.yValueFloat, _graphAttribute.yMaxValue);
 //        _graphAttribute.yMinValue = MIN(model.yValueFloat, _graphAttribute.yMinValue);
         
-        model.id_m = [NSString stringWithFormat:@"%ld",i];
+        model.pointindext = [NSString stringWithFormat:@"%ld",i];
         model.indext = i;
         model.xPoint = [NSString stringWithFormat:@"%ld月",i +1];
-        model.yPoint = [NSString stringWithFormat:@"%.0f万",model.yValueFloat];
-
+        model.yPoint = [NSString stringWithFormat:@"%.3f",model.yValueFloat];
+        model.yPointValue =  [NSString stringWithFormat:@"%.0f万",model.yValueFloat];;
         [_mutArrlist addObject:model];
         
     }

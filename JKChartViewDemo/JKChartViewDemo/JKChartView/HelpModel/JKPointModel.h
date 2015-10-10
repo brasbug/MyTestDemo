@@ -10,9 +10,10 @@
 
 @interface JKPointModel : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, strong) NSString *id_m;
-@property (nonatomic, strong) NSString *yPoint;
-@property (nonatomic, strong) NSString *xPoint;
+@property (nonatomic, strong) NSString *pointindext;
+@property (nonatomic, strong) NSString *yPoint; //y坐标显示value
+@property (nonatomic, strong) NSString *xPoint; //x坐标显示value
+@property (nonatomic, strong) NSString *yPointValue; //y坐标点击显示的内容
 
 @property (nonatomic, assign) double yValueFloat;
 

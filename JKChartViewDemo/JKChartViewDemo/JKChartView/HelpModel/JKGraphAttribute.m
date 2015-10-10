@@ -12,7 +12,7 @@
 
 
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -28,10 +28,10 @@
  */
 - (void)setDefaultAttri
 {
-    _yMaxValue = 10;
-    _yMinValue = 0;
+    _yMaxValue = 0;
+    _yMinValue = 100000;
     
-    _pointsCount = 10;
+    _pointsCount = 1;
     _xAxisLineCount = 5;
     
     _dotGapWith = 44;
@@ -41,7 +41,16 @@
     _lineSize = 1;
 }
 
-
+//- (void)setYMaxValue:(double)yMaxValue
+//{
+////    if (yMaxValue == 0) {
+////        _yMaxValue = 10;
+////    }
+////    else
+////    {
+////        _yMaxValue = yMaxValue;
+////    }
+//}
 
 - (void)setGraphColor:(UIColor *)graphColor
 {

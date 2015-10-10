@@ -99,6 +99,106 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
 #pragma mark - Managing Popup Menu
 
+- (void)showInScrollView:(UIScrollView *)view targetRect:(CGRect)targetRect animated:(BOOL)animated
+{
+    if ([self isVisible]) {
+        return;
+    }
+    
+    self.view = view;
+    self.targetRect = targetRect;
+    
+    // Decide arrow direction
+    QBPopupMenuArrowDirection arrowDirection = self.arrowDirection;
+    
+    if (arrowDirection == QBPopupMenuArrowDirectionDefault) {
+        if ((targetRect.origin.y - (self.height + self.arrowSize)) >= self.popupMenuInsets.top) {
+            arrowDirection = QBPopupMenuArrowDirectionDown;
+        }
+        else if ((targetRect.origin.y + targetRect.size.height + (self.height + self.arrowSize)) < (view.contentSize.height - self.popupMenuInsets.bottom)) {
+            arrowDirection = QBPopupMenuArrowDirectionUp;
+        }
+        else {
+            CGFloat left = targetRect.origin.x - self.popupMenuInsets.left;
+            CGFloat right = view.contentSize.width - (targetRect.origin.x + targetRect.size.width + self.popupMenuInsets.right);
+            
+            arrowDirection = (left > right) ? QBPopupMenuArrowDirectionLeft : QBPopupMenuArrowDirectionRight;
+        }
+    }
+    
+    self.actualArrorDirection = arrowDirection;
+    
+    // Calculate width
+    CGFloat maximumWidth = 0;
+    CGFloat minimumWidth = 40;
+    
+    switch (arrowDirection) {
+        case QBPopupMenuArrowDirectionDown:
+        case QBPopupMenuArrowDirectionUp:
+            maximumWidth = view.contentSize.width - (self.popupMenuInsets.left + self.popupMenuInsets.right);
+//            if (maximumWidth < minimumWidth) maximumWidth = minimumWidth;
+            break;
+            
+        case QBPopupMenuArrowDirectionLeft:
+            maximumWidth = targetRect.origin.x - self.popupMenuInsets.left;
+            break;
+            
+        case QBPopupMenuArrowDirectionRight:
+            maximumWidth = view.contentSize.width - (targetRect.origin.x + targetRect.size.width + self.popupMenuInsets.right);
+            break;
+            
+        default:
+            break;
+    }
+    
+    // Layout item views
+    [self groupItemViewsWithMaximumWidth:maximumWidth];
+    
+    // Show page
+    [self showPage:0];
+    
+    // Create overlay view
+    self.overlayView = ({
+        QBPopupMenuOverlayView *overlayView = [[QBPopupMenuOverlayView alloc] initWithFrame:view.bounds];
+        overlayView.popupMenu = self;
+        
+        overlayView;
+    });
+    
+    // Delegate
+    if (self.delegate && [self.delegate respondsToSelector:@selector(popupMenuWillAppear:)]) {
+        [self.delegate popupMenuWillAppear:self];
+    }
+    
+    // Show
+    [view addSubview:self.overlayView];
+    
+    if (animated) {
+        self.alpha = 0;
+        [self.overlayView addSubview:self];
+        
+        [UIView animateWithDuration:kQBPopupMenuAnimationDuration animations:^(void) {
+            self.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            self.visible = YES;
+            
+            // Delegate
+            if (self.delegate && [self.delegate respondsToSelector:@selector(popupMenuDidAppear:)]) {
+                [self.delegate popupMenuDidAppear:self];
+            }
+        }];
+    } else {
+        [self.overlayView addSubview:self];
+        
+        self.visible = YES;
+        
+        // Delegate
+        if (self.delegate && [self.delegate respondsToSelector:@selector(popupMenuDidAppear:)]) {
+            [self.delegate popupMenuDidAppear:self];
+        }
+    }
+}
+
 - (void)showInView:(UIView *)view targetRect:(CGRect)targetRect animated:(BOOL)animated
 {
     if ([self isVisible]) {

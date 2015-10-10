@@ -8,7 +8,9 @@
 
 #import "JKChartView.h"
 #import "JKPointButton.h"
-#import "UIButton+Extensions.h"
+#import "UIButton+TuanExtensions.h"
+
+
 
 
 #define ZERO_POINT_MARGIN 40
@@ -27,6 +29,7 @@
     
 }
 
+
 @property (nonatomic, strong) UIScrollView *chartScrollView;
 
 
@@ -36,14 +39,15 @@
 
 
 @property (nonatomic, strong) CAShapeLayer *referenceLineLayer;
+@property (nonatomic, strong) CAShapeLayer *referenceLineLayer1;
 
 @property (nonatomic, strong) JKPointModel *popTempModel;
 
 @property (nonatomic, assign) CGPoint zeroPoint;
 @property (nonatomic, strong) CAShapeLayer *backgroundLayer;
-@property (nonatomic, assign) CGMutablePathRef backgroundPath;
-
 @property (nonatomic, assign) CGRect shapeLayerFrame;
+
+@property (nonatomic, assign) BOOL isReferenceLineShow;
 
 
 @end
@@ -51,10 +55,11 @@
 @implementation JKChartView
 
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        _isReferenceLineShow = NO;
         [self initDefaultViews];
     }
     return self;
@@ -68,8 +73,8 @@
     }
     _chartScrollView  = [[UIScrollView alloc]initWithFrame:self.bounds];
     _chartScrollView.backgroundColor = [UIColor clearColor];
-    //    _chartScrollView.showsHorizontalScrollIndicator = NO;
-    //    _chartScrollView.showsVerticalScrollIndicator = NO;
+    _chartScrollView.showsHorizontalScrollIndicator = NO;
+    _chartScrollView.showsVerticalScrollIndicator = NO;
     _chartScrollView.delegate = self;
     _chartScrollView.contentSize = CGSizeMake(self.bounds.size.width , self.bounds.size.height);
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sigleTapGestureRecognizerHandle:)];
@@ -89,8 +94,11 @@
 }
 
 
-- (void)reloadChartData
+- (void)reloadChartData:(JKGraphAttribute *)graphAtribute
 {
+    if (graphAtribute) {
+        self.graphAttribute = graphAtribute;
+    }
     //移除原画布
     [self clearViewsAndLayers];
     
@@ -100,7 +108,7 @@
     //获取图像组数
     [self setGroupCount];
     
-    //画参考下
+    //画参考线、折线、点
     [self setReferenceLine];
    
     
@@ -108,37 +116,54 @@
 }
 
 
-
-- (void)showLineChartView
+//计算小数点后位数
+- (NSInteger)decimalDigitsAfterDot:(NSString *)decimalStr
 {
-    
+
+    NSString *maxValueStr = [self getYMaxValueStr];
+    NSInteger indext = [maxValueStr rangeOfString:@"."].location;
+    return maxValueStr.length - indext - 1;
 }
 
 
-- (void)setReferenceLine
+- (NSString *)getYMaxValueStr
 {
- 
-    //数据源
-
-    if (!_graphAttribute) {
-        if ([self.delegate respondsToSelector:@selector(chartView:graphAttributeForGroup:)]) {
-            _graphAttribute = [self.delegate chartView:self graphAttributeForGroup:0];
-        }
-        else
-        {
-            return;
-//            _graphAttribute = [[JKGraphAttribute alloc]init];
-
+    NSString *maxValueStr = @"0";
+    double maxValue = 0;
+    for (NSInteger i = 0; i < _graphAttribute.pointsCount  ; i ++) {
+        JKPointModel * pointmodel= [_graphAttribute.pointModelArr objectAtIndex:i];
+        maxValue = MAX(maxValue, pointmodel.yValueFloat);
+        if (maxValue == pointmodel.yValueFloat) {
+            maxValueStr = pointmodel.yPoint;
         }
     }
-    
+    return maxValueStr;
+}
 
-    long yValueGap = (_graphAttribute.yMaxValue - _graphAttribute.yMinValue)/(_graphAttribute.xAxisLineCount);
+- (void)setReferenceLine
+{
+
+    if (_graphAttribute.yMaxValue == 0) {
+        _graphAttribute.yMaxValue = 10;
+    }
+
+    NSInteger decimalDigitsInteger = [self decimalDigitsAfterDot:_graphAttribute.yMaxValueStr];
+    NSInteger  baseInterger = 1;
+    if (decimalDigitsInteger > 0) {
+        baseInterger = pow(10, decimalDigitsInteger);
+    }
+    long yValueGap = baseInterger*(_graphAttribute.yMaxValue - _graphAttribute.yMinValue)/(_graphAttribute.xAxisLineCount);
+    long yStartValue = (long)(baseInterger*(_graphAttribute.yMaxValue - _graphAttribute.yMinValue))%(_graphAttribute.xAxisLineCount);
+    if (yStartValue) {
+        _graphAttribute.yMaxValue = _graphAttribute.yMaxValue + (double)(_graphAttribute.xAxisLineCount - yStartValue)/baseInterger;
+        yValueGap = baseInterger*(_graphAttribute.yMaxValue - _graphAttribute.yMinValue)/(_graphAttribute.xAxisLineCount);
+    }
+    
     
     //点x间距
     CGFloat dotGapWith = _graphAttribute.dotGapWith;  //x参考线间距
     //可滑动区域宽度
-    CGFloat contentSizeWith = dotGapWith * _graphAttribute.pointsCount + AXIS_WIDTH_MARGIN;
+    CGFloat contentSizeWith = dotGapWith * _graphAttribute.pointsCount + 20;
     //line参考线间距
     CGFloat yGapWith = (self.chartScrollView.bounds.size.height - AXIS_HEIGHT_MARGIN  * 1.5)/(_graphAttribute.xAxisLineCount); //Y参考线间距
     //滑动区域的高度
@@ -166,25 +191,55 @@
     _referenceLineLayer.backgroundColor = [UIColor clearColor].CGColor;
     _referenceLineLayer.strokeColor = [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4].CGColor;
     _referenceLineLayer.lineWidth = 1;
-    
+
     CGMutablePathRef linesPath = CGPathCreateMutable();
    
+    //参考线
+    _referenceLineLayer1 = [CAShapeLayer layer];
+    _referenceLineLayer1.frame =shapeLayerFrame;
+    _referenceLineLayer1.fillColor = [UIColor clearColor].CGColor;
+    _referenceLineLayer1.backgroundColor = [UIColor clearColor].CGColor;
+    _referenceLineLayer1.strokeColor = [UIColor colorWithRed:0.48 green:0.48 blue:0.49 alpha:0.4].CGColor;
+    _referenceLineLayer1.lineWidth = 1;
+    
+    CGMutablePathRef linesPath1 = CGPathCreateMutable();
+    
+    
+    //创建动画
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
+    animation.fromValue = @0.0;
+    animation.toValue = @1.0;
+    animation.delegate = self;
+    animation.duration = 1.0 * self.graphAttribute.pointsCount/20;
     
     
     
     
+    
+    
+    
+    if (!_isReferenceLineShow) {
+        [_referenceLineLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
+        animation.duration = 2.0 * self.graphAttribute.pointsCount/20;
+        [_referenceLineLayer1 addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
+        _isReferenceLineShow = YES;
+    }
     
 
-    for (long i = 0; i <= _graphAttribute.xAxisLineCount; i ++) {
+    for (NSInteger i = 0; i <= _graphAttribute.xAxisLineCount; i ++) {
         CGPathMoveToPoint(linesPath, NULL, 30, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
-        CGPathAddLineToPoint(linesPath, NULL, contentSizeWith - AXIS_HEIGHT_MARGIN + 5, yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
+        CGPathAddLineToPoint(linesPath, NULL, contentSizeWith -  20 , yGapWith *i + AXIS_HEIGHT_MARGIN - 15);
         UILabel *yValueLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 , yGapWith *i + AXIS_HEIGHT_MARGIN - 25, 30, 20)];
         yValueLabel.text = [NSString stringWithFormat:@"%.0f",yValueGap * (_graphAttribute.xAxisLineCount -i) + _graphAttribute.yMinValue];
+        if (baseInterger > 1) {
+                 yValueLabel.text = [NSString stringWithFormat:@"%.2f",(double)(yValueGap * (_graphAttribute.xAxisLineCount -i) + _graphAttribute.yMinValue)/baseInterger];
+        }
         yValueLabel.textAlignment  = NSTextAlignmentCenter;
         yValueLabel.textColor = [UIColor blackColor];
         yValueLabel.font = [UIFont systemFontOfSize:12];
         [self addSubview:yValueLabel];
 
+        
     }
     
     // 连接线绘制层
@@ -195,7 +250,11 @@
     graphLayer.backgroundColor = [UIColor clearColor].CGColor;
     [graphLayer setStrokeColor:_graphAttribute.graphColor.CGColor];
     [graphLayer setLineWidth:_graphAttribute.lineSize];
+
+    animation.duration = 3.0  * self.graphAttribute.pointsCount/20;;
     
+    [graphLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
+
     
     // 背景阴影
     _backgroundLayer = [CAShapeLayer layer];
@@ -204,9 +263,10 @@
     _backgroundLayer.backgroundColor = [UIColor clearColor].CGColor;
     [_backgroundLayer setStrokeColor:[UIColor clearColor].CGColor];
     [_backgroundLayer setLineWidth:1];
-    _backgroundPath = CGPathCreateMutable();
+    CGMutablePathRef backgroundPath = CGPathCreateMutable();
     
     
+    //圆点
     CGMutablePathRef circlePath = CGPathCreateMutable();
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     circleLayer.frame = self.bounds;
@@ -216,58 +276,52 @@
     [circleLayer setStrokeColor:_graphAttribute.graphColor.CGColor];
     [circleLayer setLineWidth:1];
     
+    [circleLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
     
     
-    //创建动画
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(strokeEnd))];
-    animation.fromValue = @0.0;
-    animation.toValue = @1.0;
-    animation.delegate = self;
-    animation.duration = 5.0;
-    [graphLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
-    [_backgroundLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
     
-    for (long i = 0; i < _graphAttribute.pointsCount  ; i ++) {
+    
+    
+    for (NSInteger i = 0; i < _graphAttribute.pointsCount  ; i ++) {
         
         CGFloat xPointValue = 35 + dotGapWith *i;
         CGFloat yPointValue = AXIS_HEIGHT_MARGIN - 15;
         
-        CGPathMoveToPoint(linesPath, NULL, xPointValue, AXIS_HEIGHT_MARGIN - 25);
-        CGPathAddLineToPoint(linesPath, NULL, xPointValue, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
+        CGPathMoveToPoint(linesPath1, NULL, xPointValue, AXIS_HEIGHT_MARGIN - 25);
+        CGPathAddLineToPoint(linesPath1, NULL, xPointValue, contentSizeHeight - AXIS_HEIGHT_MARGIN + 10);
     
+        
+        
         if (i >= _graphAttribute.pointModelArr.count) {
-            continue;
+            return;
         }
-        
         JKPointModel * pointmodel= [_graphAttribute.pointModelArr objectAtIndex:i];
-        
+
         CGPoint dotCenterPoint = CGPointMake(xPointValue, yPointValue + yLinesHeight *(_graphAttribute.yMaxValue - pointmodel.yValueFloat)/_graphAttribute.yMaxValue);
         CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(dotCenterPoint.x-3, dotCenterPoint.y-3, 6, 6)); // 绘制点
 
         
         if (i == 0) {
             CGPathMoveToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
-            CGPathMoveToPoint(_backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
-            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
+            CGPathMoveToPoint(backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
+            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
         }
         else
         {
             CGPathAddLineToPoint(graphPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
-            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
+            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, dotCenterPoint.y);
         }
         if (i == _graphAttribute.pointModelArr.count - 1) {
-            CGPathAddLineToPoint(_backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
+            CGPathAddLineToPoint(backgroundPath, NULL, dotCenterPoint.x, self.zeroPoint.y);
         }
         
-       
-        
-        NSLog(@"%@",pointmodel);
         JKPointButton * pointbtn= [[JKPointButton alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
         pointbtn.backgroundColor = [UIColor clearColor];
         [pointbtn setHitTestEdgeInsets:UIEdgeInsetsMake(-20, -20, -20, -20)];
         pointbtn.pointModel = pointmodel;
         [pointbtn addTarget:self action:@selector(pointBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
         pointbtn.center = dotCenterPoint;
+
         [self.chartScrollView addSubview:pointbtn];
         
         UILabel *xValueLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 , self.chartScrollView.bounds.size.height - 30 , 40, 20)];
@@ -276,45 +330,34 @@
         xValueLabel.textColor = [UIColor blackColor];
         xValueLabel.font = [UIFont systemFontOfSize:12];
         xValueLabel.center = CGPointMake(dotCenterPoint.x, xValueLabel.center.y);
+
         [self.chartScrollView addSubview:xValueLabel];
-     
-        
-        
-        
-        
 
         
     }
     
     _referenceLineLayer.path = linesPath;
     CGPathRelease(linesPath);
+    _referenceLineLayer1.path = linesPath1;
     
-   
+    _backgroundLayer.path = backgroundPath;
+    CGPathRelease(backgroundPath);
     
     circleLayer.path = circlePath;
     CGPathRelease(circlePath);
     
     graphLayer.path = graphPath;
     CGPathRelease(graphPath);
-    
-    _backgroundLayer.path = _backgroundPath;
-    CGPathRelease(_backgroundPath);
     [self gradientBackground:_backgroundLayer color:_graphAttribute.graphColor];
-
     
     [self.chartScrollView.layer addSublayer:_referenceLineLayer];
+    [self.chartScrollView.layer addSublayer:_referenceLineLayer1];
     [self.chartScrollView.layer addSublayer:graphLayer];
     [self.chartScrollView.layer addSublayer:circleLayer];
-//    [self.chartScrollView.layer addSublayer:_backgroundLayer];
-
-}
-
-
--(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-   
     
 }
+
+
 
 
 - (BOOL)canBecomeFirstResponder
@@ -330,9 +373,6 @@
 - (void)popMenuMess:(id)sender
 {
     
-    
-//    NSLog(@"%@",sender);
-//    NSLog(@"%@",self.popTempModel);
     
     
 }
@@ -351,11 +391,11 @@
     if (menu.isMenuVisible) {
         [menu setMenuVisible:NO animated:YES];
     }
+    
 }
 
 - (void)pointBtnPressed:(JKPointButton *)sender
 {
-//    NSLog(@"%f,%f",sender.center.x,sender.center.y);
     self.popTempModel = sender.pointModel;
 
     [self becomeFirstResponder];
@@ -367,7 +407,6 @@
     
     CGRect targetRect = [self convertRect:sender.frame
                                  fromView:self];
-
     [menu setTargetRect:CGRectInset(targetRect, 0.0f, 4.0f) inView:self.chartScrollView];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleMenuWillShowNotification:)
@@ -423,10 +462,6 @@
 - (void)setGroupCount
 {
     _chatGroupCount = 1;
-    if ([self.delegate respondsToSelector:@selector(numberOfChartGroup:)]) {
-        _chatGroupCount = [_delegate numberOfChartGroup:self];
-    }
-    _chatGroupCount = _chatGroupCount >0 ?_chatGroupCount:1;
     
 }
 
@@ -454,7 +489,6 @@
     
     [gradient setMask:targetLayer]; // 用targetLayer来截取渐变层gradient
     [self.chartScrollView.layer addSublayer:gradient];
-    //    [self.layer insertSublayer:gradient atIndex:0];
 }
 
 

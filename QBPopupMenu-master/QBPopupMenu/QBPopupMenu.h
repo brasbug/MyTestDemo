@@ -51,6 +51,8 @@ typedef NS_ENUM(NSUInteger, QBPopupMenuArrowDirection) {
 + (instancetype)popupMenuWithItems:(NSArray *)items;
 - (instancetype)initWithItems:(NSArray *)items;
 
+- (void)showInScrollView:(UIScrollView *)view targetRect:(CGRect)targetRect animated:(BOOL)animated;
+
 - (void)showInView:(UIView *)view targetRect:(CGRect)targetRect animated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated;
 - (void)updateWithTargetRect:(CGRect)targetRect;

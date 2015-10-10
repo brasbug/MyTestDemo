@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) QBPopupMenu *popupMenu;
 @property (nonatomic, strong) QBPlasticPopupMenu *plasticPopupMenu;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+@property (nonatomic, strong) UIButton *button;
+
 
 @end
 
@@ -23,6 +26,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.scrollview.contentSize  = CGSizeMake([UIScreen mainScreen].bounds.size.width *2, self.scrollview.frame.size.height);
+    
+    _button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_button setTitle:@"test" forState:UIControlStateNormal];
+    _button.frame = CGRectMake(500, 100, 60, 44);
+    [_scrollview addSubview:_button];
+    
     
     QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Hello" target:self action:@selector(action)];
     QBPopupMenuItem *item2 = [QBPopupMenuItem itemWithTitle:@"Cut" target:self action:@selector(action)];
@@ -45,8 +56,8 @@
 
 - (IBAction)showPopupMenu:(id)sender
 {
-    UIButton *button = (UIButton *)sender;
-    [self.popupMenu showInView:self.view targetRect:button.frame animated:YES];
+//    UIButton *button = (UIButton *)sender;
+    [self.popupMenu showInScrollView:self.scrollview targetRect:_button.frame animated:YES];
 }
 
 - (IBAction)showPlasticPopupMenu:(id)sender
