@@ -61,7 +61,7 @@
         model.pointindext = [NSString stringWithFormat:@"%ld",i];
         model.indext = i;
         model.xPoint = [NSString stringWithFormat:@"%ld月",i +1];
-        model.yPoint = [NSString stringWithFormat:@"%.3f",model.yValueFloat];
+        model.yPoint = [NSString stringWithFormat:@"%.2f",model.yValueFloat];
         model.yPointValue =  [NSString stringWithFormat:@"%.0f万",model.yValueFloat];;
         [_mutArrlist addObject:model];
         
