@@ -54,7 +54,7 @@
     _mutArrlist = [NSMutableArray array];
     for (long i = 0; i< 20 ; i ++) {
         JKPointModel *model = [[JKPointModel alloc]init];
-        model.yValueFloat = (arc4random()%80 +20 )/100.01;
+        model.yValueFloat = (arc4random()%80 +20 );
         _graphAttribute.yMaxValue = MAX(model.yValueFloat, _graphAttribute.yMaxValue);
 //        _graphAttribute.yMinValue = MIN(model.yValueFloat, _graphAttribute.yMinValue);
         

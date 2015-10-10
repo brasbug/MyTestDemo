@@ -8,9 +8,6 @@
       location = "group:CoredataDemo/CoredataDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CYChartView-master/CYChartView.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:JKChartViewDemo/JKChartViewDemo.xcodeproj">
    </FileRef>
    <FileRef
