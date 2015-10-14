@@ -100,8 +100,7 @@ typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:fileName error:nil];
-    
-    
+ 
     if (![fileManager createFileAtPath:fileName contents:nil attributes:nil]) {
         NSLog(@"不能创建文件");
     }
@@ -118,7 +117,7 @@ typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
     }
     else
     {
-        NSString *head = @"学号,姓名\n";
+        NSString *head = @"学号,姓名,性别,手机号\n";
         const uint8_t *headerString = (const uint8_t *)[head cStringUsingEncoding:NSUTF8StringEncoding];
         NSInteger headerLength = [head lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
         NSInteger result = [output write:headerString maxLength:headerLength];
@@ -127,7 +126,7 @@ typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
         }
         for (long i = 0; i < _mutArr.count; i ++) {
             Student *stu = _mutArr[i];
-            NSString *row = [NSString stringWithFormat:@"%@,%@\n",stu.name,stu.num];
+            NSString *row = [NSString stringWithFormat:@"%@,%@,%@,%@\n",stu.name,stu.num,stu.name,stu.num];
             const uint8_t *rowString = (const uint8_t *)[row cStringUsingEncoding:NSUTF8StringEncoding];
             NSInteger rowLength = [row lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
             result = [output write:rowString maxLength:rowLength];
@@ -156,6 +155,13 @@ typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+//    NSLog(@"1"); // 任务1
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSLog(@"2"); // 任务2
+//    });
+//    NSLog(@"3"); // 任务3
+//    
+    
     
 //    void (^printBlock)(NSString *x);
     _printBlock = ^(NSString *str)

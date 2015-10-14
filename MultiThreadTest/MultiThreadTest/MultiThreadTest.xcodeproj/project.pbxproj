@@ -26,6 +26,69 @@
 			remoteGlobalIDString = 0448671C1B86C62C00A7A94C;
 			remoteInfo = MultiThreadTest;
 		};
+		04E8F6BD1BCE2B8F00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC37B1BCCD8C60039177D;
+			remoteInfo = "签到";
+		};
+		04E8F6BF1BCE2B8F00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC3941BCCD8C60039177D;
+			remoteInfo = "签到Tests";
+		};
+		04E8F6C11BCE2B8F00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC39F1BCCD8C60039177D;
+			remoteInfo = "签到UITests";
+		};
+		04E8F6C91BCE2B9600E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC37B1BCCD8C60039177D;
+			remoteInfo = "签到";
+		};
+		04E8F6CB1BCE2B9600E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC3941BCCD8C60039177D;
+			remoteInfo = "签到Tests";
+		};
+		04E8F6CD1BCE2B9600E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC39F1BCCD8C60039177D;
+			remoteInfo = "签到UITests";
+		};
+		04E8F6D51BCE2B9D00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC37B1BCCD8C60039177D;
+			remoteInfo = "签到";
+		};
+		04E8F6D71BCE2B9D00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC3941BCCD8C60039177D;
+			remoteInfo = "签到Tests";
+		};
+		04E8F6D91BCE2B9D00E5EE2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04FAC39F1BCCD8C60039177D;
+			remoteInfo = "签到UITests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +107,9 @@
 		0448673C1B86C62C00A7A94C /* MultiThreadTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadTestTests.m; sourceTree = "<group>"; };
 		044867891B8732EA00A7A94C /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		0448678A1B8732EA00A7A94C /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "签到.xcodeproj"; path = "../../签到/签到.xcodeproj"; sourceTree = "<group>"; };
+		04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "签到.xcodeproj"; path = "../../签到/签到.xcodeproj"; sourceTree = "<group>"; };
+		04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "签到.xcodeproj"; path = "../../签到/签到.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +133,9 @@
 		044867141B86C62C00A7A94C = {
 			isa = PBXGroup;
 			children = (
+				04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */,
+				04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */,
+				04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */,
 				0448671F1B86C62C00A7A94C /* MultiThreadTest */,
 				044867391B86C62C00A7A94C /* MultiThreadTestTests */,
 				0448671E1B86C62C00A7A94C /* Products */,
@@ -123,6 +192,36 @@
 				0448673B1B86C62C00A7A94C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04E8F6B81BCE2B8F00E5EE2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E8F6BE1BCE2B8F00E5EE2C /* 签到.app */,
+				04E8F6C01BCE2B8F00E5EE2C /* 签到Tests.xctest */,
+				04E8F6C21BCE2B8F00E5EE2C /* 签到UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E8F6C41BCE2B9600E5EE2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E8F6CA1BCE2B9600E5EE2C /* 签到.app */,
+				04E8F6CC1BCE2B9600E5EE2C /* 签到Tests.xctest */,
+				04E8F6CE1BCE2B9600E5EE2C /* 签到UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04E8F6D01BCE2B9D00E5EE2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04E8F6D61BCE2B9D00E5EE2C /* 签到.app */,
+				04E8F6D81BCE2B9D00E5EE2C /* 签到Tests.xctest */,
+				04E8F6DA1BCE2B9D00E5EE2C /* 签到UITests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +291,20 @@
 			mainGroup = 044867141B86C62C00A7A94C;
 			productRefGroup = 0448671E1B86C62C00A7A94C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04E8F6B81BCE2B8F00E5EE2C /* Products */;
+					ProjectRef = 04E8F6B71BCE2B8F00E5EE2C /* 签到.xcodeproj */;
+				},
+				{
+					ProductGroup = 04E8F6C41BCE2B9600E5EE2C /* Products */;
+					ProjectRef = 04E8F6C31BCE2B9600E5EE2C /* 签到.xcodeproj */;
+				},
+				{
+					ProductGroup = 04E8F6D01BCE2B9D00E5EE2C /* Products */;
+					ProjectRef = 04E8F6CF1BCE2B9D00E5EE2C /* 签到.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0448671C1B86C62C00A7A94C /* MultiThreadTest */,
@@ -199,6 +312,72 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04E8F6BE1BCE2B8F00E5EE2C /* 签到.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "签到.app";
+			remoteRef = 04E8F6BD1BCE2B8F00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6C01BCE2B8F00E5EE2C /* 签到Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到Tests.xctest";
+			remoteRef = 04E8F6BF1BCE2B8F00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6C21BCE2B8F00E5EE2C /* 签到UITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到UITests.xctest";
+			remoteRef = 04E8F6C11BCE2B8F00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6CA1BCE2B9600E5EE2C /* 签到.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "签到.app";
+			remoteRef = 04E8F6C91BCE2B9600E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6CC1BCE2B9600E5EE2C /* 签到Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到Tests.xctest";
+			remoteRef = 04E8F6CB1BCE2B9600E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6CE1BCE2B9600E5EE2C /* 签到UITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到UITests.xctest";
+			remoteRef = 04E8F6CD1BCE2B9600E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6D61BCE2B9D00E5EE2C /* 签到.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "签到.app";
+			remoteRef = 04E8F6D51BCE2B9D00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6D81BCE2B9D00E5EE2C /* 签到Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到Tests.xctest";
+			remoteRef = 04E8F6D71BCE2B9D00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04E8F6DA1BCE2B9D00E5EE2C /* 签到UITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "签到UITests.xctest";
+			remoteRef = 04E8F6D91BCE2B9D00E5EE2C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0448671B1B86C62C00A7A94C /* Resources */ = {
@@ -424,6 +603,7 @@
 				044867421B86C62C00A7A94C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		044867431B86C62C00A7A94C /* Build configuration list for PBXNativeTarget "MultiThreadTestTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +612,7 @@
 				044867451B86C62C00A7A94C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

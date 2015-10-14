@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04FAC3C41BCCDD970039177D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3C31BCCDD970039177D /* main.m */; };
+		04FAC3C71BCCDD970039177D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3C61BCCDD970039177D /* AppDelegate.m */; };
+		04FAC3CA1BCCDD970039177D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3C91BCCDD970039177D /* ViewController.m */; };
+		04FAC3CD1BCCDD970039177D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FAC3CB1BCCDD970039177D /* Main.storyboard */; };
+		04FAC3CF1BCCDD970039177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FAC3CE1BCCDD970039177D /* Assets.xcassets */; };
+		04FAC3D21BCCDD970039177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FAC3D01BCCDD970039177D /* LaunchScreen.storyboard */; };
+		04FAC3DD1BCCDD970039177D /* CheckAppStoreUpdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3DC1BCCDD970039177D /* CheckAppStoreUpdateTests.m */; };
+		04FAC3E81BCCDD970039177D /* CheckAppStoreUpdateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3E71BCCDD970039177D /* CheckAppStoreUpdateUITests.m */; };
+		04FAC3F71BCCDDD90039177D /* CheckUpdateMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3F61BCCDDD90039177D /* CheckUpdateMethod.m */; settings = {ASSET_TAGS = (); }; };
+		04FAC3F81BCCDDD90039177D /* CheckUpdateMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3F61BCCDDD90039177D /* CheckUpdateMethod.m */; settings = {ASSET_TAGS = (); }; };
+		04FAC3F91BCCDDD90039177D /* CheckUpdateMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3F61BCCDDD90039177D /* CheckUpdateMethod.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04FAC3D91BCCDD970039177D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FAC3B71BCCDD960039177D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04FAC3BE1BCCDD970039177D;
+			remoteInfo = CheckAppStoreUpdate;
+		};
+		04FAC3E41BCCDD970039177D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04FAC3B71BCCDD960039177D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04FAC3BE1BCCDD970039177D;
+			remoteInfo = CheckAppStoreUpdate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04FAC3BF1BCCDD970039177D /* CheckAppStoreUpdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckAppStoreUpdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FAC3C31BCCDD970039177D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04FAC3C51BCCDD970039177D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04FAC3C61BCCDD970039177D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04FAC3C81BCCDD970039177D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04FAC3C91BCCDD970039177D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04FAC3CC1BCCDD970039177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04FAC3CE1BCCDD970039177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04FAC3D11BCCDD970039177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04FAC3D31BCCDD970039177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FAC3D81BCCDD970039177D /* CheckAppStoreUpdateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckAppStoreUpdateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FAC3DC1BCCDD970039177D /* CheckAppStoreUpdateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckAppStoreUpdateTests.m; sourceTree = "<group>"; };
+		04FAC3DE1BCCDD970039177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FAC3E31BCCDD970039177D /* CheckAppStoreUpdateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckAppStoreUpdateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FAC3E71BCCDD970039177D /* CheckAppStoreUpdateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckAppStoreUpdateUITests.m; sourceTree = "<group>"; };
+		04FAC3E91BCCDD970039177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FAC3F51BCCDDD90039177D /* CheckUpdateMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckUpdateMethod.h; path = CheckAppStoreUpdate/CheckUpdateMethod.h; sourceTree = SOURCE_ROOT; };
+		04FAC3F61BCCDDD90039177D /* CheckUpdateMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckUpdateMethod.m; path = CheckAppStoreUpdate/CheckUpdateMethod.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04FAC3BC1BCCDD970039177D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3D51BCCDD970039177D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3E01BCCDD970039177D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04FAC3B61BCCDD960039177D = {
+			isa = PBXGroup;
+			children = (
+				04FAC3C11BCCDD970039177D /* CheckAppStoreUpdate */,
+				04FAC3DB1BCCDD970039177D /* CheckAppStoreUpdateTests */,
+				04FAC3E61BCCDD970039177D /* CheckAppStoreUpdateUITests */,
+				04FAC3C01BCCDD970039177D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04FAC3C01BCCDD970039177D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3BF1BCCDD970039177D /* CheckAppStoreUpdate.app */,
+				04FAC3D81BCCDD970039177D /* CheckAppStoreUpdateTests.xctest */,
+				04FAC3E31BCCDD970039177D /* CheckAppStoreUpdateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04FAC3C11BCCDD970039177D /* CheckAppStoreUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3FA1BCCDDE50039177D /* CheckUpdateMethod */,
+				04FAC3C51BCCDD970039177D /* AppDelegate.h */,
+				04FAC3C61BCCDD970039177D /* AppDelegate.m */,
+				04FAC3C81BCCDD970039177D /* ViewController.h */,
+				04FAC3C91BCCDD970039177D /* ViewController.m */,
+				04FAC3CB1BCCDD970039177D /* Main.storyboard */,
+				04FAC3CE1BCCDD970039177D /* Assets.xcassets */,
+				04FAC3D01BCCDD970039177D /* LaunchScreen.storyboard */,
+				04FAC3D31BCCDD970039177D /* Info.plist */,
+				04FAC3C21BCCDD970039177D /* Supporting Files */,
+			);
+			path = CheckAppStoreUpdate;
+			sourceTree = "<group>";
+		};
+		04FAC3C21BCCDD970039177D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3C31BCCDD970039177D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04FAC3DB1BCCDD970039177D /* CheckAppStoreUpdateTests */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3DC1BCCDD970039177D /* CheckAppStoreUpdateTests.m */,
+				04FAC3DE1BCCDD970039177D /* Info.plist */,
+			);
+			path = CheckAppStoreUpdateTests;
+			sourceTree = "<group>";
+		};
+		04FAC3E61BCCDD970039177D /* CheckAppStoreUpdateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3E71BCCDD970039177D /* CheckAppStoreUpdateUITests.m */,
+				04FAC3E91BCCDD970039177D /* Info.plist */,
+			);
+			path = CheckAppStoreUpdateUITests;
+			sourceTree = "<group>";
+		};
+		04FAC3FA1BCCDDE50039177D /* CheckUpdateMethod */ = {
+			isa = PBXGroup;
+			children = (
+				04FAC3F51BCCDDD90039177D /* CheckUpdateMethod.h */,
+				04FAC3F61BCCDDD90039177D /* CheckUpdateMethod.m */,
+			);
+			path = CheckUpdateMethod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04FAC3BE1BCCDD970039177D /* CheckAppStoreUpdate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FAC3EC1BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdate" */;
+			buildPhases = (
+				04FAC3BB1BCCDD970039177D /* Sources */,
+				04FAC3BC1BCCDD970039177D /* Frameworks */,
+				04FAC3BD1BCCDD970039177D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CheckAppStoreUpdate;
+			productName = CheckAppStoreUpdate;
+			productReference = 04FAC3BF1BCCDD970039177D /* CheckAppStoreUpdate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04FAC3D71BCCDD970039177D /* CheckAppStoreUpdateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FAC3EF1BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdateTests" */;
+			buildPhases = (
+				04FAC3D41BCCDD970039177D /* Sources */,
+				04FAC3D51BCCDD970039177D /* Frameworks */,
+				04FAC3D61BCCDD970039177D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04FAC3DA1BCCDD970039177D /* PBXTargetDependency */,
+			);
+			name = CheckAppStoreUpdateTests;
+			productName = CheckAppStoreUpdateTests;
+			productReference = 04FAC3D81BCCDD970039177D /* CheckAppStoreUpdateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04FAC3E21BCCDD970039177D /* CheckAppStoreUpdateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04FAC3F21BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdateUITests" */;
+			buildPhases = (
+				04FAC3DF1BCCDD970039177D /* Sources */,
+				04FAC3E01BCCDD970039177D /* Frameworks */,
+				04FAC3E11BCCDD970039177D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04FAC3E51BCCDD970039177D /* PBXTargetDependency */,
+			);
+			name = CheckAppStoreUpdateUITests;
+			productName = CheckAppStoreUpdateUITests;
+			productReference = 04FAC3E31BCCDD970039177D /* CheckAppStoreUpdateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04FAC3B71BCCDD960039177D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Jack;
+				TargetAttributes = {
+					04FAC3BE1BCCDD970039177D = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					04FAC3D71BCCDD970039177D = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 04FAC3BE1BCCDD970039177D;
+					};
+					04FAC3E21BCCDD970039177D = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 04FAC3BE1BCCDD970039177D;
+					};
+				};
+			};
+			buildConfigurationList = 04FAC3BA1BCCDD960039177D /* Build configuration list for PBXProject "CheckAppStoreUpdate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04FAC3B61BCCDD960039177D;
+			productRefGroup = 04FAC3C01BCCDD970039177D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04FAC3BE1BCCDD970039177D /* CheckAppStoreUpdate */,
+				04FAC3D71BCCDD970039177D /* CheckAppStoreUpdateTests */,
+				04FAC3E21BCCDD970039177D /* CheckAppStoreUpdateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04FAC3BD1BCCDD970039177D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FAC3D21BCCDD970039177D /* LaunchScreen.storyboard in Resources */,
+				04FAC3CF1BCCDD970039177D /* Assets.xcassets in Resources */,
+				04FAC3CD1BCCDD970039177D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3D61BCCDD970039177D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3E11BCCDD970039177D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04FAC3BB1BCCDD970039177D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FAC3F71BCCDDD90039177D /* CheckUpdateMethod.m in Sources */,
+				04FAC3CA1BCCDD970039177D /* ViewController.m in Sources */,
+				04FAC3C71BCCDD970039177D /* AppDelegate.m in Sources */,
+				04FAC3C41BCCDD970039177D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3D41BCCDD970039177D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FAC3F81BCCDDD90039177D /* CheckUpdateMethod.m in Sources */,
+				04FAC3DD1BCCDD970039177D /* CheckAppStoreUpdateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FAC3DF1BCCDD970039177D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04FAC3F91BCCDDD90039177D /* CheckUpdateMethod.m in Sources */,
+				04FAC3E81BCCDD970039177D /* CheckAppStoreUpdateUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04FAC3DA1BCCDD970039177D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04FAC3BE1BCCDD970039177D /* CheckAppStoreUpdate */;
+			targetProxy = 04FAC3D91BCCDD970039177D /* PBXContainerItemProxy */;
+		};
+		04FAC3E51BCCDD970039177D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04FAC3BE1BCCDD970039177D /* CheckAppStoreUpdate */;
+			targetProxy = 04FAC3E41BCCDD970039177D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04FAC3CB1BCCDD970039177D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04FAC3CC1BCCDD970039177D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04FAC3D01BCCDD970039177D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04FAC3D11BCCDD970039177D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04FAC3EA1BCCDD970039177D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04FAC3EB1BCCDD970039177D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04FAC3ED1BCCDD970039177D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CheckAppStoreUpdate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04FAC3EE1BCCDD970039177D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CheckAppStoreUpdate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		04FAC3F01BCCDD970039177D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CheckAppStoreUpdateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckAppStoreUpdate.app/CheckAppStoreUpdate";
+			};
+			name = Debug;
+		};
+		04FAC3F11BCCDD970039177D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CheckAppStoreUpdateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheckAppStoreUpdate.app/CheckAppStoreUpdate";
+			};
+			name = Release;
+		};
+		04FAC3F31BCCDD970039177D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CheckAppStoreUpdateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CheckAppStoreUpdate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		04FAC3F41BCCDD970039177D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CheckAppStoreUpdateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Jack.GuestSign.CheckAppStoreUpdateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CheckAppStoreUpdate;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04FAC3BA1BCCDD960039177D /* Build configuration list for PBXProject "CheckAppStoreUpdate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FAC3EA1BCCDD970039177D /* Debug */,
+				04FAC3EB1BCCDD970039177D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04FAC3EC1BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FAC3ED1BCCDD970039177D /* Debug */,
+				04FAC3EE1BCCDD970039177D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04FAC3EF1BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FAC3F01BCCDD970039177D /* Debug */,
+				04FAC3F11BCCDD970039177D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04FAC3F21BCCDD970039177D /* Build configuration list for PBXNativeTarget "CheckAppStoreUpdateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04FAC3F31BCCDD970039177D /* Debug */,
+				04FAC3F41BCCDD970039177D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04FAC3B71BCCDD960039177D /* Project object */;
+}
