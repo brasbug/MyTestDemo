@@ -43,4 +43,7 @@
    <FileRef
       location = "group:MultiThreadTest/MultiThreadTest/MultiThreadTest.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:&#x7b7e;&#x5230;/&#x7b7e;&#x5230;.xcodeproj">
+   </FileRef>
 </Workspace>
