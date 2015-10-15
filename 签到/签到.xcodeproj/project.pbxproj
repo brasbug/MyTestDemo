@@ -24,9 +24,6 @@
 		04FAC38E1BCCD8C60039177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FAC38C1BCCD8C60039177D /* LaunchScreen.storyboard */; };
 		04FAC3991BCCD8C60039177D /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3981BCCD8C60039177D /* __Tests.m */; };
 		04FAC3A41BCCD8C60039177D /* __UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3A31BCCD8C60039177D /* __UITests.m */; };
-		04FAC3B31BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3B21BCCDAEB0039177D /* UINavigationController+Autorotate.m */; settings = {ASSET_TAGS = (); }; };
-		04FAC3B41BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3B21BCCDAEB0039177D /* UINavigationController+Autorotate.m */; settings = {ASSET_TAGS = (); }; };
-		04FAC3B51BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FAC3B21BCCDAEB0039177D /* UINavigationController+Autorotate.m */; settings = {ASSET_TAGS = (); }; };
 		B29E49D64435C5808F4500A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAC817AAFF8FAA4320CB9A8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +67,6 @@
 		04FAC39F1BCCD8C60039177D /* 签到UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "签到UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FAC3A31BCCD8C60039177D /* __UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __UITests.m; sourceTree = "<group>"; };
 		04FAC3A51BCCD8C60039177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04FAC3B11BCCDAEB0039177D /* UINavigationController+Autorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Autorotate.h"; path = "../../../../../Downloads/TestLandscape/UINavigationController+Autorotate.h"; sourceTree = "<group>"; };
-		04FAC3B21BCCDAEB0039177D /* UINavigationController+Autorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Autorotate.m"; path = "../../../../../Downloads/TestLandscape/UINavigationController+Autorotate.m"; sourceTree = "<group>"; };
 		3AAC817AAFF8FAA4320CB9A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		63661914FA27A57FD84D6ACA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BA16FE917D804A1152770A29 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,8 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				0468C6A01BCF700600B4E6B4 /* HelpModel */,
-				04FAC3B11BCCDAEB0039177D /* UINavigationController+Autorotate.h */,
-				04FAC3B21BCCDAEB0039177D /* UINavigationController+Autorotate.m */,
 				04FAC3811BCCD8C60039177D /* AppDelegate.h */,
 				04FAC3821BCCD8C60039177D /* AppDelegate.m */,
 				04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */,
@@ -371,7 +364,6 @@
 				04FAC3801BCCD8C60039177D /* main.m in Sources */,
 				04E44B1C1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */,
-				04FAC3B31BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */,
 				04A94C621BCF7BA30024C341 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +373,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FAC3991BCCD8C60039177D /* __Tests.m in Sources */,
-				04FAC3B41BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */,
 				04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				04A94C631BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */,
@@ -393,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04FAC3A41BCCD8C60039177D /* __UITests.m in Sources */,
-				04FAC3B51BCCDAEB0039177D /* UINavigationController+Autorotate.m in Sources */,
 				04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				04A94C641BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */,
