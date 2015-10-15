@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:XCMultiSortTableView/XCMultiSortTableDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CheckAppStoreUpdate/CheckAppStoreUpdate.xcodeproj">
    </FileRef>
    <FileRef
