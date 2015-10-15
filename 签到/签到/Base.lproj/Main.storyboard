@@ -34,13 +34,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0r-2R-mdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="1480"/>
+            <point key="canvasLocation" x="-242" y="2624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U68-xl-chD">
             <objects>
                 <navigationController id="Wda-L2-fyr" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BD7-xh-mxx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +52,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX0-NL-XWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="782"/>
+            <point key="canvasLocation" x="-227" y="-116"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="pWR-PV-FN1">
@@ -63,16 +63,17 @@
                         <viewControllerLayoutGuide type="bottom" id="MXx-Fa-1uk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Z2n-UP-0DA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="WRF-9S-WPQ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxl-rx-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="793"/>
+            <point key="canvasLocation" x="-222" y="1130"/>
         </scene>
     </scenes>
 </document>
