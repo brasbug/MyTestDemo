@@ -9,11 +9,15 @@
 #import "ViewController.h"
 #import "JKPopMenu.h"
 #import "Student.h"
-
+#import <MessageUI/MFMailComposeViewController.h>
 
 typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
 
-@interface ViewController ()
+@interface ViewController ()<MFMailComposeViewControllerDelegate>
+
+@property (nonatomic, strong) MFMailComposeViewController *maillController;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *menuBtn;
 @property (nonatomic, strong) JKPopMenu *popMenu;
 @property (nonatomic, copy) myTempBlock myblock;
@@ -93,7 +97,70 @@ typedef void(^myTempBlock)(NSInteger  intext, NSString *str, NSDictionary *dic);
     [self formatDates];
     [self createFile:filePath];
     [self exportCSV:filePath];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    
+    _maillController = [[MFMailComposeViewController alloc]init];
+    _maillController.mailComposeDelegate = self;
+    
+    if (![[MFMailComposeViewController class]canSendMail]) {
+        return;
+    }
+    
+    [_maillController addAttachmentData:data mimeType:@"txt/csv" fileName:filePath];
+
+    UIWindow *keyWindow = [[UIApplication sharedApplication]keyWindow];
+    [keyWindow.rootViewController presentViewController:_maillController animated:YES completion:^{
+    }];
+    
+    
 }
+
+- (void)alertWithTitle:(NSString *)title  msg:(NSString *)msg
+{
+    if (title && msg)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:msg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+}
+
+
+
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    NSString *msg;
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            msg = @"邮件发送取消";
+            break;
+        case MFMailComposeResultSaved:
+            msg = @"邮件保存成功";
+            [self alertWithTitle:nil msg:msg];
+            break;
+        case MFMailComposeResultSent:
+            msg = @"邮件发送成功";
+            break;
+        case MFMailComposeResultFailed:
+            msg = @"邮件发送失败";
+            [self alertWithTitle:nil msg:msg];
+            break;
+        default:
+            break;
+    }
+    
+    [_maillController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 
 
 - (void)createFile:(NSString *)fileName {

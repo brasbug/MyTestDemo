@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A94C4E1BCF78CA0024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C3C1BCF78CA0024C341 /* SQFileItem.m */; settings = {ASSET_TAGS = (); }; };
+		04A94C4F1BCF78CA0024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C3C1BCF78CA0024C341 /* SQFileItem.m */; settings = {ASSET_TAGS = (); }; };
 		04AD9B581B7061EA004FCE48 /* JKPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD9B571B7061EA004FCE48 /* JKPopMenu.m */; };
 		04AD9B591B7061EA004FCE48 /* JKPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD9B571B7061EA004FCE48 /* JKPopMenu.m */; };
 		04AD9B5C1B706633004FCE48 /* JKPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD9B5B1B706633004FCE48 /* JKPopMenuItem.m */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A94C3B1BCF78CA0024C341 /* SQFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQFileItem.h; sourceTree = "<group>"; };
+		04A94C3C1BCF78CA0024C341 /* SQFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQFileItem.m; sourceTree = "<group>"; };
 		04AD9B561B7061EA004FCE48 /* JKPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPopMenu.h; sourceTree = "<group>"; };
 		04AD9B571B7061EA004FCE48 /* JKPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPopMenu.m; sourceTree = "<group>"; };
 		04AD9B5A1B706633004FCE48 /* JKPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPopMenuItem.h; sourceTree = "<group>"; };
@@ -81,6 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A94C3A1BCF78CA0024C341 /* HelpModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A94C3B1BCF78CA0024C341 /* SQFileItem.h */,
+				04A94C3C1BCF78CA0024C341 /* SQFileItem.m */,
+			);
+			path = HelpModel;
+			sourceTree = "<group>";
+		};
+		04A94C3D1BCF78CA0024C341 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		04AD9B551B7061CC004FCE48 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +136,8 @@
 		04D6E04D1A3874AB00C697E6 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				04A94C3A1BCF78CA0024C341 /* HelpModel */,
+				04A94C3D1BCF78CA0024C341 /* Lib */,
 				04AD9B551B7061CC004FCE48 /* New Group */,
 				04D6E0521A3874AB00C697E6 /* AppDelegate.h */,
 				04D6E0531A3874AB00C697E6 /* AppDelegate.m */,
@@ -207,6 +229,7 @@
 				TargetAttributes = {
 					04D6E04A1A3874AB00C697E6 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = BRH78G7TM3;
 					};
 					04D6E0661A3874AB00C697E6 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -267,6 +290,7 @@
 				04D6E05A1A3874AB00C697E6 /* ViewController.m in Sources */,
 				04D6E0511A3874AB00C697E6 /* main.m in Sources */,
 				04AD9B581B7061EA004FCE48 /* JKPopMenu.m in Sources */,
+				04A94C4E1BCF78CA0024C341 /* SQFileItem.m in Sources */,
 				04AD9B601B7068AB004FCE48 /* JKPopMenuItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +303,7 @@
 				04D6E06E1A3874AB00C697E6 /* DemoTests.m in Sources */,
 				04F8C7EB1B7B429800443AB2 /* Student.m in Sources */,
 				04AD9B611B7068AB004FCE48 /* JKPopMenuItemCell.m in Sources */,
+				04A94C4F1BCF78CA0024C341 /* SQFileItem.m in Sources */,
 				04AD9B5D1B706633004FCE48 /* JKPopMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,9 +419,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.xxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,9 +432,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Jack.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.xxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
