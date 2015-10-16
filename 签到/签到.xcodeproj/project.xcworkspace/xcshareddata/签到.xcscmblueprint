@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429" : 0,
+    "E0528CE4FD43A49AA003D4BD912E2B2BA4D47C83" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E97C046B-673E-4708-9DF8-1F38D83A0DB8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429" : "MyTestDemo\/",
+    "E0528CE4FD43A49AA003D4BD912E2B2BA4D47C83" : "..\/..\/GitHub\/Whosv-SQClientV3"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "签到",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "签到\/签到.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brasbug\/MyTestDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A15B6C4C09A0ABEABFBCCB8FFB9F493C0557B429"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/gitlab.whosv.net\/WHOSV-iOS\/Whosv-SQClientV3.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E0528CE4FD43A49AA003D4BD912E2B2BA4D47C83"
+    }
+  ]
+}

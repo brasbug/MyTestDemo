@@ -8,7 +8,6 @@
         <!--Test View Controller-->
         <scene sceneID="kuU-yx-MLn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K0r-2R-mdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="p39-P4-h9H" customClass="testViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rV6-8Q-g4l"/>
@@ -33,6 +32,7 @@
                     <navigationItem key="navigationItem" id="tch-gk-gwA"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0r-2R-mdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-283" y="1422"/>
         </scene>

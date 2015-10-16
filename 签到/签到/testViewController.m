@@ -35,13 +35,8 @@
     [self.view setTransform:CGAffineTransformMakeRotation(M_PI/2)];
     // Do any additional setup after loading the view, typically from a nib.
 }
-//
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-//            
-//            interfaceOrientation == UIInterfaceOrientationLandscapeRight );
-//}
+
+
 
 
 -(void)viewWillAppear:(BOOL)animated
@@ -74,10 +69,10 @@
     [self formatDates];
     [self createFile:filePath];
     [self exportCSV:filePath];
-    ZipArchive *za = [[ZipArchive alloc] init];
-    NSString *zipFilePath = [docementDir stringByAppendingPathComponent:@"sign.zip"];
-    [za CreateZipFile2: zipFilePath];
-    [za addFileToZip:filePath newname:@"student.csv"];
+//    ZipArchive *za = [[ZipArchive alloc] init];
+//    NSString *zipFilePath = [docementDir stringByAppendingPathComponent:@"sign.zip"];
+//    [za CreateZipFile2: zipFilePath];
+//    [za addFileToZip:filePath newname:@"student.csv"];
 
     
     
@@ -169,7 +164,7 @@
     }
     else
     {
-        NSString *head = @"学号,姓名,性别,手机号\n";
+        NSString *head = @"学号,姓名,性别,手机号,学号,姓名,性别,手机号,手机号,学号,姓名,性别,手机号\n";
         const uint8_t *headerString = (const uint8_t *)[head cStringUsingEncoding:NSUTF8StringEncoding];
         NSInteger headerLength = [head lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
         NSInteger result = [output write:headerString maxLength:headerLength];
@@ -178,7 +173,7 @@
         }
         for (long i = 0; i < _mutArr.count; i ++) {
             Student *stu = _mutArr[i];
-            NSString *row = [NSString stringWithFormat:@"%@,%@,%@,%@\n",stu.name,stu.num,stu.name,stu.num];
+            NSString *row = [NSString stringWithFormat:@"%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@\n",stu.name,stu.num,stu.name,stu.num,stu.name,stu.num,stu.name,stu.num,stu.num,stu.name,stu.num,stu.name,stu.num];
             const uint8_t *rowString = (const uint8_t *)[row cStringUsingEncoding:NSUTF8StringEncoding];
             NSInteger rowLength = [row lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
             result = [output write:rowString maxLength:rowLength];
