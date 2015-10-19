@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "SignGuest.h"
+#import "SignUserInfoModel.h"
 #import "UserInfo+CoreDataProperties.h"
 
 
@@ -29,9 +29,7 @@
 -(void)saveContext;
 
 
-- (UserInfo *)insertGuestWithModel:(SignGuest *)model;
-
-//- (Guest *)
+- (UserInfo *)insertGuestWithModel:(SignUserInfoModel *)model;
 
 
 

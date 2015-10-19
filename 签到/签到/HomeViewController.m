@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 
 #import "testViewController.h"
+#import "ManageCoreData.h"
+#import "SignUserInfoModel.h"
 
 
 @interface HomeViewController ()
@@ -21,14 +23,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    
 
-
-
-
-
-
+    SignUserInfoModel *model = [[SignUserInfoModel alloc]init];
+    model.userID = @"001";
+    model.name = @"asdfasdf";
+    
+    
+    [[ManageCoreData instance] insertGuestWithModel:model];
+    
 
 }
+
+
+
+
 - (IBAction)testBtnPressed:(id)sender {
     testViewController *vc = [[testViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];

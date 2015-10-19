@@ -108,4 +108,59 @@
 
 
 
+- (UserInfo *)insertGuestWithModel:(SignUserInfoModel *)model
+{
+    UserInfo *info = [self fechGuestWithId:model.userID];
+    info = [info updateUserInfoWithModel:model];
+    [self saveContext];
+    return info;
+}
+
+
+
+
+- (id)fechGuestWithId:(NSString *)userID
+{
+    NSString *entityName = NSStringFromClass([self class]);
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([self class])];
+    request.predicate = [NSPredicate predicateWithFormat:@"userID = %@",userID];
+    NSArray *arr = [self.managedObjectContext executeFetchRequest:request error:nil];
+    if (arr.count) {
+        return arr.firstObject;
+    }
+    UserInfo *userInfo = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                       inManagedObjectContext:self.managedObjectContext];
+    userInfo.userID = userID;
+    return userInfo;
+    
+    return nil;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

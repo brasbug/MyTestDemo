@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "SignUserInfoModel.h"
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserInfo : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
+
+- (UserInfo *)updateUserInfoWithModel:(SignUserInfoModel *)model;
+
 
 @end
 

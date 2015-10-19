@@ -14,23 +14,11 @@
 
 
 
-- (id)fechGuestWithId:(NSString *)userID
+- (UserInfo *)updateUserInfoWithModel:(SignUserInfoModel *)model
 {
-    NSString *entityName = NSStringFromClass([self class]);
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([self class])];
-    request.predicate = [NSPredicate predicateWithFormat:@"userID = %@",userID];
-    NSArray *arr = [self.managedObjectContext executeFetchRequest:request error:nil];
-    if (arr.count) {
-        return arr.firstObject;
-    }
-    UserInfo *userInfo = [NSEntityDescription insertNewObjectForEntityForName:entityName
-                                                    inManagedObjectContext:self.managedObjectContext];
-    userInfo.userID = userID;
-    return userInfo;
-    
-    return nil;
+    [self setValuesForKeysWithDictionary:[model dictionaryRepresentation]];
+    return self;
 }
-
 
 
 
