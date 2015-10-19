@@ -28,14 +28,15 @@
 
 #pragma mark -
 #pragma mark - Save Context
--(void)saveContext{
+-(BOOL)saveContext{
     NSError *error = NULL;
     NSManagedObjectContext *moc = self.managedObjectContext;
     if (moc && [moc hasChanges] && ![moc save:&error]) {
         NSLog(@"Error %@ ,%@",error,[error localizedDescription]);
         abort();
+        return NO;
     }
-    
+    return YES;
 }
 
 #pragma mark - Core Data Stack

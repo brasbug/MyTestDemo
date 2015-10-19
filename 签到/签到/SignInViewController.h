@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SigninfoModel.h"
 
 @interface SignInViewController : UIViewController
+
+@property (nonatomic, strong) SigninfoModel *model;
+
 
 @end

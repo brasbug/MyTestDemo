@@ -26,7 +26,7 @@
 - (NSManagedObject *)createEntity:(NSString *)entityName;
 
 +(ManageCoreData*)instance;
--(void)saveContext;
+-(BOOL)saveContext;
 
 
 - (UserInfo *)insertGuestWithModel:(SigninfoModel *)model;

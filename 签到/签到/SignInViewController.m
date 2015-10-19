@@ -11,6 +11,17 @@
 @interface SignInViewController ()
 @property (nonatomic, strong) UIImageView *backImageView;
 
+@property (nonatomic, weak) IBOutlet UIButton *maleBtn;
+@property (nonatomic, weak) IBOutlet UIButton *femaleBtn;
+@property (nonatomic, weak) IBOutlet UIButton *maleBtn1;
+@property (nonatomic, weak) IBOutlet UIButton *femaleBtn1;
+
+@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
+@property (nonatomic, weak) IBOutlet UITextField *phoneTextField;
+@property (nonatomic, weak) IBOutlet UITextField *eMailTextField;
+
+
+
 @end
 
 @implementation SignInViewController
@@ -39,14 +50,76 @@
     // Do any additional setup after loading the view from its nib.
 //    [self.view addSubview:self.backImageView];
     
+    self.nameTextField.layer.masksToBounds = YES;
+    self.nameTextField.layer.cornerRadius = 10;
+
+    self.phoneTextField.layer.masksToBounds = YES;
+    self.phoneTextField.layer.cornerRadius = 10;
+    
+    self.eMailTextField.layer.masksToBounds = YES;
+    self.eMailTextField.layer.cornerRadius = 10;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackView)];
+    [self.view addGestureRecognizer:tapGesture];
     
     
     
+}
+
+- (void)tapBackView
+{
+    [self.view endEditing:YES];
     
 }
 - (IBAction)signBtnPressed:(id)sender {
+    
+    
+    
+    
     [self.navigationController popViewControllerAnimated:NO];
 }
+
+
+- (BOOL)isEmpty
+{
+    if (self.nameTextField.text.length == 0 ) {
+        [self showAlertViewWith:@"请输入您的姓名"];
+        return YES;
+    }
+    if (self.phoneTextField.text.length == 0 ) {
+        [self showAlertViewWith:@"请输入您的手机号"];
+        return YES;
+    }
+    if (self.nameTextField.text.length == 0 ) {
+        [self showAlertViewWith:@"请输入您的邮箱"];
+        return YES;
+    }
+    
+    return YES;
+}
+
+
+- (void)showAlertViewWith:(NSString *)message
+{
+    UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alertview show];
+}
+
+
+- (IBAction)maileBtnPressed:(id)sender {
+    self.maleBtn1.enabled = YES;
+    self.femaleBtn1.enabled = NO;
+    
+    
+}
+
+- (IBAction)femalebtnPressed:(id)sender {
+    self.maleBtn1.enabled = NO;
+    self.femaleBtn1.enabled = YES;
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

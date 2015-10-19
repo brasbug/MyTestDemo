@@ -53,6 +53,8 @@
 //@property (nonatomic, strong) UIButton *femaleBtn;
 //
 
+@property (nonatomic, strong) SigninfoModel *model;
+
 @end
 
 @implementation HomeViewController
@@ -165,6 +167,7 @@
     NSDate *selectedDate = self.datePicker.date;
     NSString *birthday    = [dateFormatter stringFromDate:selectedDate];
     [self.birthdayBtn setTitle:birthday forState:UIControlStateNormal];
+    self.model.date = birthday;
     _isBirthdaySelected = YES;
     self.signBtn.enabled = YES;
 
@@ -186,7 +189,10 @@
 
 - (IBAction)signBtnPressed:(id)sender {
     
+    
+    
     SignInViewController *vc = [[SignInViewController alloc]init];
+    vc.model = self.model;
     [self.navigationController pushViewController:vc animated:NO];
     
     [self.birthdayBtn setTitle:@"" forState:UIControlStateNormal];

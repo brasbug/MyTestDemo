@@ -7,6 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController">
             <connections>
+                <outlet property="eMailTextField" destination="8zV-U3-E1q" id="BhK-qz-dei"/>
+                <outlet property="femaleBtn" destination="pbe-a6-hSA" id="Lbn-cc-s9O"/>
+                <outlet property="femaleBtn1" destination="Wb8-UJ-egn" id="7j3-q5-Qll"/>
+                <outlet property="maleBtn" destination="fFW-On-de6" id="Hnw-wq-9oo"/>
+                <outlet property="maleBtn1" destination="Mmc-1y-Ee3" id="XVW-yr-cGW"/>
+                <outlet property="nameTextField" destination="gpL-Bk-UAV" id="N20-r4-JSX"/>
+                <outlet property="phoneTextField" destination="Usr-dV-sxc" id="nbo-bt-6vZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,6 +41,72 @@
                         <action selector="signBtnPressed:" destination="-1" eventType="touchUpInside" id="7aR-ys-YaY"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请输入您的姓名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H03-UX-dCz">
+                    <rect key="frame" x="163" y="305" width="270" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                    <color key="textColor" red="0.56862745100000001" green="0.4039215686" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmc-1y-Ee3" userLabel="mailBtn1">
+                    <rect key="frame" x="435" y="336" width="85" height="75"/>
+                    <animations/>
+                    <state key="normal" image="malebtnImage"/>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Usr-dV-sxc">
+                    <rect key="frame" x="163" y="480" width="442" height="60"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="手机" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNt-ps-do6">
+                    <rect key="frame" x="163" y="437" width="442" height="28"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                    <color key="textColor" red="0.56862745100000001" green="0.4039215686" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zV-U3-E1q">
+                    <rect key="frame" x="163" y="641" width="442" height="60"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="邮箱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUR-4d-aX1">
+                    <rect key="frame" x="163" y="586" width="442" height="28"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                    <color key="textColor" red="0.56862745100000001" green="0.4039215686" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wb8-UJ-egn" userLabel="femailBtn1">
+                    <rect key="frame" x="520" y="336" width="85" height="75"/>
+                    <animations/>
+                    <state key="normal" image="femalebtnImage"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFW-On-de6" userLabel="malebtn">
+                    <rect key="frame" x="441" y="334" width="79" height="65.5"/>
+                    <animations/>
+                    <connections>
+                        <action selector="maileBtnPressed:" destination="-1" eventType="touchUpInside" id="yil-Gv-QLp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-a6-hSA" userLabel="femalebtn">
+                    <rect key="frame" x="520" y="332" width="79" height="65.5"/>
+                    <animations/>
+                    <connections>
+                        <action selector="femalebtnPressed:" destination="-1" eventType="touchUpInside" id="gCl-zd-eai"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpL-Bk-UAV">
+                    <rect key="frame" x="163" y="337" width="270" height="60"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,5 +124,7 @@
     <resources>
         <image name="backImage" width="886" height="1169"/>
         <image name="btnbackImage" width="320" height="95"/>
+        <image name="femalebtnImage" width="85" height="75"/>
+        <image name="malebtnImage" width="85" height="75"/>
     </resources>
 </document>
