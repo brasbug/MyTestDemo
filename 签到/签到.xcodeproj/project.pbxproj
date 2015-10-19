@@ -28,9 +28,9 @@
 		04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; settings = {ASSET_TAGS = (); }; };
 		04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; settings = {ASSET_TAGS = (); }; };
 		04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; settings = {ASSET_TAGS = (); }; };
-		04B2E6C41BD4CB630029DF1A /* SignUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C31BD4CB630029DF1A /* SignUserInfoModel.m */; settings = {ASSET_TAGS = (); }; };
-		04B2E6C51BD4CB630029DF1A /* SignUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C31BD4CB630029DF1A /* SignUserInfoModel.m */; settings = {ASSET_TAGS = (); }; };
-		04B2E6C61BD4CB630029DF1A /* SignUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C31BD4CB630029DF1A /* SignUserInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6C91BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		04E44B1C1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -75,8 +75,8 @@
 		04A94C611BCF7BA30024C341 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = ../../../blockAndPopMenu/Demo/Student.m; sourceTree = "<group>"; };
 		04A94C651BCF7D290024C341 /* SQFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQFileItem.h; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.h"; sourceTree = "<group>"; };
 		04A94C661BCF7D290024C341 /* SQFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQFileItem.m; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.m"; sourceTree = "<group>"; };
-		04B2E6C21BD4CB630029DF1A /* SignUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUserInfoModel.h; sourceTree = "<group>"; };
-		04B2E6C31BD4CB630029DF1A /* SignUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUserInfoModel.m; sourceTree = "<group>"; };
+		04B2E6C71BD4CEFD0029DF1A /* SigninfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninfoModel.h; sourceTree = "<group>"; };
+		04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninfoModel.m; sourceTree = "<group>"; };
 		04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04FAC37B1BCCD8C60039177D /* 签到.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "签到.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +129,8 @@
 		0468C6A01BCF700600B4E6B4 /* HelpModel */ = {
 			isa = PBXGroup;
 			children = (
-				04B2E6C21BD4CB630029DF1A /* SignUserInfoModel.h */,
-				04B2E6C31BD4CB630029DF1A /* SignUserInfoModel.m */,
+				04B2E6C71BD4CEFD0029DF1A /* SigninfoModel.h */,
+				04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */,
 				04A94C651BCF7D290024C341 /* SQFileItem.h */,
 				04A94C661BCF7D290024C341 /* SQFileItem.m */,
 				04A94C601BCF7BA30024C341 /* Student.h */,
@@ -416,7 +416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B2E6C41BD4CB630029DF1A /* SignUserInfoModel.m in Sources */,
 				04891D611BD4B66C00F43261 /* ManageCoreData.m in Sources */,
 				04FAC3861BCCD8C60039177D /* testViewController.m in Sources */,
 				04FAC3831BCCD8C60039177D /* AppDelegate.m in Sources */,
@@ -424,6 +423,7 @@
 				04FAC3801BCCD8C60039177D /* main.m in Sources */,
 				04891D511BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04E44B1C1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
+				04B2E6C91BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D771BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04A94C621BCF7BA30024C341 /* Student.m in Sources */,
@@ -437,11 +437,11 @@
 				04891D781BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04FAC3991BCCD8C60039177D /* __Tests.m in Sources */,
 				04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
-				04B2E6C51BD4CB630029DF1A /* SignUserInfoModel.m in Sources */,
 				04891D521BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C631BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7B1BD4C70800F43261 /* UserInfo.m in Sources */,
+				04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D621BD4B66C00F43261 /* ManageCoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,11 +453,11 @@
 				04891D791BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04FAC3A41BCCD8C60039177D /* __UITests.m in Sources */,
 				04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
-				04B2E6C61BD4CB630029DF1A /* SignUserInfoModel.m in Sources */,
 				04891D531BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C641BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7C1BD4C70800F43261 /* UserInfo.m in Sources */,
+				04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D631BD4B66C00F43261 /* ManageCoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,7 +589,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.testsing.sign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -605,7 +605,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.testsing.sign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

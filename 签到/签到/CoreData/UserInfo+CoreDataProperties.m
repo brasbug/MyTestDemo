@@ -13,21 +13,21 @@
 
 @implementation UserInfo (CoreDataProperties)
 
-@dynamic name;
-@dynamic sexual;
-@dynamic phone;
-@dynamic city;
 @dynamic birthday;
+@dynamic city;
+@dynamic creatTime;
+@dynamic interestLevel;
+@dynamic knowledgeLevel;
 @dynamic mail;
-@dynamic mortlach_RareOld;
 @dynamic mortlach_18YO;
 @dynamic mortlach_25Y;
+@dynamic mortlach_RareOld;
+@dynamic name;
 @dynamic other_Malts;
 @dynamic other_number;
-@dynamic knowledgeLevel;
-@dynamic interestLevel;
+@dynamic phone;
 @dynamic potentialBuyLevel;
-@dynamic creatTime;
+@dynamic sexual;
 @dynamic userID;
 
 @end

@@ -108,7 +108,7 @@
 
 
 
-- (UserInfo *)insertGuestWithModel:(SignUserInfoModel *)model
+- (UserInfo *)insertGuestWithModel:(SigninfoModel *)model
 {
     UserInfo *info = [self fechGuestWithId:model.userID];
     info = [info updateUserInfoWithModel:model];
@@ -117,12 +117,27 @@
 }
 
 
+- (NSArray *)getAllGuestInfolist
+{
+    NSArray *arrlist;
+    
+    NSString *entityName = NSStringFromClass([UserInfo class]);
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creatTime" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    arrlist = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    
+    return arrlist;
+}
+
+
 
 
 - (id)fechGuestWithId:(NSString *)userID
 {
-    NSString *entityName = NSStringFromClass([self class]);
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([self class])];
+    NSString *entityName = NSStringFromClass([UserInfo class]);
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     request.predicate = [NSPredicate predicateWithFormat:@"userID = %@",userID];
     NSArray *arr = [self.managedObjectContext executeFetchRequest:request error:nil];
     if (arr.count) {
@@ -135,30 +150,6 @@
     
     return nil;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

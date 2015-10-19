@@ -10,35 +10,83 @@
 
 #import "testViewController.h"
 #import "ManageCoreData.h"
-#import "SignUserInfoModel.h"
+#import "SigninfoModel.h"
 
 
 @interface HomeViewController ()
+
+@property (nonatomic, strong) UIImageView *backImageView;
+
+
+
 
 @end
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
+- (UIImageView *)backImageView
+{
+    if (_backImageView) {
+        return _backImageView;
+    }
+    _backImageView = [[UIImageView alloc]init];
+    _backImageView.frame = self.view.bounds;
+    _backImageView.image = [UIImage imageNamed:@"backImage"];
+    return _backImageView;
     
-
-    SignUserInfoModel *model = [[SignUserInfoModel alloc]init];
-    model.userID = @"001";
-    model.name = @"asdfasdf";
     
-    
-    [[ManageCoreData instance] insertGuestWithModel:model];
-    
-
 }
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+ 
+    
 
+//    for ( long i = 0; i < 10; i ++) {
+//        NSDate * timeNow = [NSDate date];
+//        sleep(1);
+//        NSInteger timeSpInt = [timeNow timeIntervalSince1970];
+//        SigninfoModel *model = [[SigninfoModel alloc]init];
+//        model.userID = [NSString stringWithFormat:@"%ld",i+1];
+//        model.name = @"asdfasdf";
+//        model.creatTime = timeSpInt;
+//        NSString *filePath = [self dataFilePathWithFileName:@"testFile"];
+//        
+//        NSLog(@"%@",filePath);
+//        [[ManageCoreData instance] insertGuestWithModel:model];
+//    }
+
+    
+    
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    [self testBtnPressed:nil];
+}
+
+-(NSString*)dataFilePathWithFileName:(NSString*)strFileName
+{
+    NSArray* arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //得到沙盒中Docu的完整路径
+    NSString* strReturn = [arrPaths objectAtIndex:0];
+    //   DLog(@"strReturn = %@",strReturn);
+    return [strReturn stringByAppendingPathComponent:strFileName];
+}
 
 - (IBAction)testBtnPressed:(id)sender {
+    NSArray *arrlist = [[ManageCoreData instance]getAllGuestInfolist];
+//    UserInfo *info
+    for ( long i = 0; i < arrlist.count; i ++) {
+        UserInfo *info = arrlist[i];
+        NSLog(@"%@ == > %@",info.userID ,info.creatTime);
+    }
+    
     testViewController *vc = [[testViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     

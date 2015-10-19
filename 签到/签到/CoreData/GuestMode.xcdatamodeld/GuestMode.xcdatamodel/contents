@@ -4,21 +4,22 @@
         <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="creatTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="interestLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="knowledgeLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="interestLevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="knowledgeLevel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mortlach_18YO" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="mortlach_25Y" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="mortlach_RareOld" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="mortlach_18YO" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mortlach_25Y" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mortlach_RareOld" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="other_Malts" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="other_number" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="other_number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="potentialBuyLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="sexual" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="potentialBuyLevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexual" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <fetchRequest name="userInfoList" entity="UserInfo"/>
     <elements>
-        <element name="UserInfo" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="UserInfo" positionX="-63" positionY="-18" width="128" height="283"/>
     </elements>
 </model>

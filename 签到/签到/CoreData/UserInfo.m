@@ -14,7 +14,7 @@
 
 
 
-- (UserInfo *)updateUserInfoWithModel:(SignUserInfoModel *)model
+- (UserInfo *)updateUserInfoWithModel:(SigninfoModel *)model
 {
     [self setValuesForKeysWithDictionary:[model dictionaryRepresentation]];
     return self;

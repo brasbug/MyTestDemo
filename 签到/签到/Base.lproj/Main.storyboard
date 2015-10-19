@@ -8,8 +8,9 @@
         <!--Navigation Controller-->
         <scene sceneID="U68-xl-chD">
             <objects>
-                <navigationController id="Wda-L2-fyr" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="Wda-L2-fyr" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BD7-xh-mxx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -35,16 +36,6 @@
                     <view key="view" contentMode="scaleToFill" id="Z2n-UP-0DA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syf-S2-WVG">
-                                <rect key="frame" x="95" y="200" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="testBtnPressed:" destination="InE-Tf-CpJ" eventType="touchUpInside" id="NEJ-Vi-mCo"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
