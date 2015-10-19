@@ -34,17 +34,44 @@
                         <viewControllerLayoutGuide type="bottom" id="MXx-Fa-1uk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Z2n-UP-0DA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEo-p5-zMr">
+                                <rect key="frame" x="224" y="765" width="320" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="DkA-ni-QnD"/>
+                                    <constraint firstAttribute="height" constant="100" id="JqM-vF-3ka"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="下一步" backgroundImage="btnbackImage">
+                                    <color key="titleColor" red="0.56862745098039214" green="0.40392156862745099" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signBtnPressed:" destination="InE-Tf-CpJ" eventType="touchUpInside" id="fvO-N9-GNh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gEo-p5-zMr" firstAttribute="centerX" secondItem="Z2n-UP-0DA" secondAttribute="centerX" id="GB9-FU-V0m"/>
+                            <constraint firstItem="MXx-Fa-1uk" firstAttribute="top" secondItem="gEo-p5-zMr" secondAttribute="bottom" constant="159" id="iCh-i3-pYS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WRF-9S-WPQ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="signBtn" destination="gEo-p5-zMr" id="WhD-Cw-eei"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxl-rx-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-242" y="705"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btnbackImage" width="320" height="95"/>
+    </resources>
 </document>

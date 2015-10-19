@@ -31,6 +31,21 @@
 		04B2E6C91BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D11BD4ED920029DF1A /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6CE1BD4ED920029DF1A /* NSDate+Category.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D21BD4ED920029DF1A /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6CE1BD4ED920029DF1A /* NSDate+Category.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D31BD4ED920029DF1A /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6CE1BD4ED920029DF1A /* NSDate+Category.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D41BD4ED920029DF1A /* NSDate+GMT.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D51BD4ED920029DF1A /* NSDate+GMT.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D61BD4ED920029DF1A /* NSDate+GMT.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6D91BD4F1090029DF1A /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D81BD4F1090029DF1A /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6DA1BD4F1090029DF1A /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D81BD4F1090029DF1A /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6DB1BD4F1090029DF1A /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6D81BD4F1090029DF1A /* UIViewExt.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6E81BD4FA240029DF1A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6E61BD4FA240029DF1A /* SignInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6E91BD4FA240029DF1A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6E61BD4FA240029DF1A /* SignInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6EA1BD4FA240029DF1A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6E61BD4FA240029DF1A /* SignInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		04B2E6EB1BD4FA240029DF1A /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		04B2E6EC1BD4FA240029DF1A /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		04B2E6ED1BD4FA240029DF1A /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		04E44B1C1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -77,6 +92,15 @@
 		04A94C661BCF7D290024C341 /* SQFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQFileItem.m; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.m"; sourceTree = "<group>"; };
 		04B2E6C71BD4CEFD0029DF1A /* SigninfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninfoModel.h; sourceTree = "<group>"; };
 		04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninfoModel.m; sourceTree = "<group>"; };
+		04B2E6CD1BD4ED920029DF1A /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		04B2E6CE1BD4ED920029DF1A /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		04B2E6CF1BD4ED920029DF1A /* NSDate+GMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GMT.h"; sourceTree = "<group>"; };
+		04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GMT.m"; sourceTree = "<group>"; };
+		04B2E6D71BD4F1090029DF1A /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		04B2E6D81BD4F1090029DF1A /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		04B2E6E51BD4FA240029DF1A /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		04B2E6E61BD4FA240029DF1A /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		04FAC37B1BCCD8C60039177D /* 签到.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "签到.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +184,19 @@
 			path = ManageCoreData;
 			sourceTree = "<group>";
 		};
+		04B2E6CC1BD4ED790029DF1A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				04B2E6D71BD4F1090029DF1A /* UIViewExt.h */,
+				04B2E6D81BD4F1090029DF1A /* UIViewExt.m */,
+				04B2E6CD1BD4ED920029DF1A /* NSDate+Category.h */,
+				04B2E6CE1BD4ED920029DF1A /* NSDate+Category.m */,
+				04B2E6CF1BD4ED920029DF1A /* NSDate+GMT.h */,
+				04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		04FAC3721BCCD8C60039177D = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +222,7 @@
 		04FAC37D1BCCD8C60039177D /* 签到 */ = {
 			isa = PBXGroup;
 			children = (
+				04B2E6CC1BD4ED790029DF1A /* Lib */,
 				04891D5E1BD4B55400F43261 /* ManageCoreData */,
 				04891D4E1BD49A3800F43261 /* CoreData */,
 				0468C6A01BCF700600B4E6B4 /* HelpModel */,
@@ -192,6 +230,9 @@
 				04FAC3821BCCD8C60039177D /* AppDelegate.m */,
 				04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */,
 				04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */,
+				04B2E6E51BD4FA240029DF1A /* SignInViewController.h */,
+				04B2E6E61BD4FA240029DF1A /* SignInViewController.m */,
+				04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */,
 				04FAC3841BCCD8C60039177D /* testViewController.h */,
 				04FAC3851BCCD8C60039177D /* testViewController.m */,
 				04891D7D1BD4C82000F43261 /* testViewController.xib */,
@@ -353,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B2E6EB1BD4FA240029DF1A /* SignInViewController.xib in Resources */,
 				04FAC38E1BCCD8C60039177D /* LaunchScreen.storyboard in Resources */,
 				04FAC38B1BCCD8C60039177D /* Assets.xcassets in Resources */,
 				04891D7E1BD4C82000F43261 /* testViewController.xib in Resources */,
@@ -364,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B2E6EC1BD4FA240029DF1A /* SignInViewController.xib in Resources */,
 				04891D7F1BD4C82000F43261 /* testViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B2E6ED1BD4FA240029DF1A /* SignInViewController.xib in Resources */,
 				04891D801BD4C82000F43261 /* testViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,14 +460,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B2E6D91BD4F1090029DF1A /* UIViewExt.m in Sources */,
 				04891D611BD4B66C00F43261 /* ManageCoreData.m in Sources */,
 				04FAC3861BCCD8C60039177D /* testViewController.m in Sources */,
 				04FAC3831BCCD8C60039177D /* AppDelegate.m in Sources */,
+				04B2E6D41BD4ED920029DF1A /* NSDate+GMT.m in Sources */,
 				04891D7A1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04FAC3801BCCD8C60039177D /* main.m in Sources */,
 				04891D511BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04E44B1C1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				04B2E6C91BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
+				04B2E6E81BD4FA240029DF1A /* SignInViewController.m in Sources */,
+				04B2E6D11BD4ED920029DF1A /* NSDate+Category.m in Sources */,
 				04891D771BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04A94C621BCF7BA30024C341 /* Student.m in Sources */,
@@ -436,13 +484,17 @@
 			files = (
 				04891D781BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04FAC3991BCCD8C60039177D /* __Tests.m in Sources */,
+				04B2E6D21BD4ED920029DF1A /* NSDate+Category.m in Sources */,
 				04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
+				04B2E6E91BD4FA240029DF1A /* SignInViewController.m in Sources */,
+				04B2E6DA1BD4F1090029DF1A /* UIViewExt.m in Sources */,
 				04891D521BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C631BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7B1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D621BD4B66C00F43261 /* ManageCoreData.m in Sources */,
+				04B2E6D51BD4ED920029DF1A /* NSDate+GMT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,13 +504,17 @@
 			files = (
 				04891D791BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04FAC3A41BCCD8C60039177D /* __UITests.m in Sources */,
+				04B2E6D31BD4ED920029DF1A /* NSDate+Category.m in Sources */,
 				04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
+				04B2E6EA1BD4FA240029DF1A /* SignInViewController.m in Sources */,
+				04B2E6DB1BD4F1090029DF1A /* UIViewExt.m in Sources */,
 				04891D531BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C641BCF7BA30024C341 /* Student.m in Sources */,
 				04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7C1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D631BD4B66C00F43261 /* ManageCoreData.m in Sources */,
+				04B2E6D61BD4ED920029DF1A /* NSDate+GMT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-4x-Ifm">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <animations/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAn-rp-her">
+                    <rect key="frame" x="224" y="765" width="320" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="hZ2-qJ-Um7"/>
+                        <constraint firstAttribute="width" constant="320" id="o00-y2-72v"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <state key="normal" title="请点击签到" backgroundImage="btnbackImage">
+                        <color key="titleColor" red="0.56862745100000001" green="0.4039215686" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="signBtnPressed:" destination="-1" eventType="touchUpInside" id="7aR-ys-YaY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="TAn-rp-her" secondAttribute="bottom" constant="159" id="6Ct-Ql-Mmu"/>
+                <constraint firstItem="8y7-4x-Ifm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7yh-Jb-Opr"/>
+                <constraint firstItem="TAn-rp-her" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NHw-ad-kZa"/>
+                <constraint firstAttribute="trailing" secondItem="8y7-4x-Ifm" secondAttribute="trailing" id="kMI-vr-k1a"/>
+                <constraint firstAttribute="bottom" secondItem="8y7-4x-Ifm" secondAttribute="bottom" id="kfq-nY-GuE"/>
+                <constraint firstItem="8y7-4x-Ifm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vgf-aE-ApD"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backImage" width="886" height="1169"/>
+        <image name="btnbackImage" width="320" height="95"/>
+    </resources>
+</document>
