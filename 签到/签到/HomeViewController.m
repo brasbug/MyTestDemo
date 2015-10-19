@@ -8,6 +8,9 @@
 
 #import "HomeViewController.h"
 
+#import "testViewController.h"
+
+
 @interface HomeViewController ()
 
 @end
@@ -17,6 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+
+
+
+
+
+
+
+}
+- (IBAction)testBtnPressed:(id)sender {
+    testViewController *vc = [[testViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

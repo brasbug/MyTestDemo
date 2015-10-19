@@ -5,41 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
-        <scene sceneID="kuU-yx-MLn">
-            <objects>
-                <viewController id="p39-P4-h9H" customClass="testViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rV6-8Q-g4l"/>
-                        <viewControllerLayoutGuide type="bottom" id="kZ5-Gv-Aw2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="soX-u0-Yel">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOO-pl-BkR">
-                                <rect key="frame" x="427" y="200" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="backBtn:" destination="p39-P4-h9H" eventType="touchUpInside" id="hOF-j4-jQe"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tch-gk-gwA"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K0r-2R-mdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-283" y="1422"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="U68-xl-chD">
             <objects>
                 <navigationController id="Wda-L2-fyr" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BD7-xh-mxx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -71,7 +41,7 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="p39-P4-h9H" kind="push" id="dDP-bu-y6h"/>
+                                    <action selector="testBtnPressed:" destination="InE-Tf-CpJ" eventType="touchUpInside" id="NEJ-Vi-mCo"/>
                                 </connections>
                             </button>
                         </subviews>

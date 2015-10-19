@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
 //    设置应用程序的状态栏到指定的方向
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
     //view旋转
@@ -56,11 +57,11 @@
 }
 - (IBAction)backBtn:(id)sender {
     //状态栏旋转
-//    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
     
-    
+    return;
     
     //生产CSV表格文件
     NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

@@ -247,7 +247,7 @@ typedef NS_ENUM(NSUInteger, TableColumnSortType) {
             
             CGFloat width = [[columnPointCollection objectAtIndex:i] floatValue];
             
-            UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cellW, 0)];
+            UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cellW, cellH)];
             subView.center = CGPointMake(width, cellH / 2.0f);
             subView.clipsToBounds = YES;
             if (i == 1) {
@@ -279,7 +279,7 @@ typedef NS_ENUM(NSUInteger, TableColumnSortType) {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20.0f;
+    return 0.0f;
 }
 
 
