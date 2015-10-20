@@ -8,9 +8,12 @@
 
 #import "GuestListTableViewController.h"
 #import "GuestTableViewCell.h"
+#import "ManageCoreData.h"
+#import "testViewController.h"
 
+@interface GuestListTableViewController ()<UIAlertViewDelegate>
 
-@interface GuestListTableViewController ()
+@property (nonatomic, strong) NSArray *arrlist;
 
 @end
 
@@ -18,12 +21,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _arrlist = [[ManageCoreData instance]getAllGuestInfolist];
+    //    UserInfo *info
+//    for ( long i = 0; i < arrlist.count; i ++) {
+//        UserInfo *info = arrlist[i];
+//        NSLog(@"%@ == > %@",info.userID ,info.creatTime);
+//    }
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     [self setNavBar];
 }
 
@@ -43,18 +51,32 @@
     self.navigationItem.leftBarButtonItem = backButtonItem;
     
     UIButton *Deletebtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    Deletebtn.frame = CGRectMake(0, 0, 100, 44);
-    [Deletebtn setTitle:@"清除签到记录" forState:UIControlStateNormal];
+    Deletebtn.frame = CGRectMake(0, 0, 60, 44);
+    [Deletebtn setTitle:@"清除记录" forState:UIControlStateNormal];
     //    [backbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [Deletebtn setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 20)];
     [Deletebtn addTarget: self action: @selector(DeletebtnPressed) forControlEvents: UIControlEventTouchUpInside];
     UIBarButtonItem *deleteButtonItem =[[UIBarButtonItem alloc]initWithCustomView:Deletebtn];
-    self.navigationItem.rightBarButtonItem = deleteButtonItem;
     
+    UIButton *allListBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    allListBtn.frame = CGRectMake(0, 0, 60, 44);
+    [allListBtn setTitle:@"预览" forState:UIControlStateNormal];
+    //    [backbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [allListBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 20)];
+    [allListBtn addTarget: self action: @selector(checkAllRecode) forControlEvents: UIControlEventTouchUpInside];
+    UIBarButtonItem *alllistButtonItem =[[UIBarButtonItem alloc]initWithCustomView:allListBtn];
+//    self.navigationItem.rightBarButtonItem = deleteButtonItem;
+    [self.navigationItem setRightBarButtonItems:@[alllistButtonItem, deleteButtonItem]];
     
 }
 
-
+- (void)checkAllRecode
+{
+    
+    
+    testViewController *vc = [[testViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)DeletebtnPressed
 {
@@ -63,6 +85,11 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    if (buttonIndex == 1) {
+        [[ManageCoreData instance]deleteAllGuestInfo];
+        self.arrlist = @[];
+        [self.tableView reloadData];
+    }
     
 }
 
@@ -81,7 +108,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 5;
+    return _arrlist.count;
 }
 
 /**/
@@ -91,7 +118,15 @@
     if (!cell) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"GuestTableViewCell" owner:self options:nil].firstObject;
     }
+    UserInfo *info = _arrlist[indexPath.row];
+    [cell setContentData:info];
+    cell.numberLine.text = [NSString stringWithFormat:@"%d",indexPath.row +1];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

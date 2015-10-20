@@ -220,7 +220,8 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackView)];
     [self.view addGestureRecognizer:tapGesture];
     
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+
     
     
 //    for ( long i = 0; i < 10; i ++) {
@@ -274,9 +275,6 @@
         NSLog(@"%@ == > %@",info.userID ,info.creatTime);
     }
     
-    testViewController *vc = [[testViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
     
 }
 
@@ -292,29 +290,29 @@
 }
 
 
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-//
-//{
-//    
-//    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
-//    
-//}
-//
-//- (BOOL)shouldAutorotate
-//
-//{
-//    
-//    return NO;
-//    
-//}
-//
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-//
-//{
-//    return UIInterfaceOrientationMaskPortrait;//只支持这一个方向(正常的方向)
-//    
-//}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+
+{
+    
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+    
+}
+
+- (BOOL)shouldAutorotate
+
+{
+    
+    return NO;
+    
+}
+
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+
+{
+    return UIInterfaceOrientationMaskPortrait;//只支持这一个方向(正常的方向)
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

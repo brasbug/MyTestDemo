@@ -2,7 +2,7 @@
 //  UserInfo+CoreDataProperties.m
 //  签到
 //
-//  Created by Jack on 15/10/19.
+//  Created by Jack on 15/10/20.
 //  Copyright © 2015年 Jack. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -29,5 +29,6 @@
 @dynamic potentialBuyLevel;
 @dynamic sexual;
 @dynamic userID;
+@dynamic signTime;
 
 @end

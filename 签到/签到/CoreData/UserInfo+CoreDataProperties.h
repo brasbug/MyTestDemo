@@ -2,7 +2,7 @@
 //  UserInfo+CoreDataProperties.h
 //  签到
 //
-//  Created by Jack on 15/10/19.
+//  Created by Jack on 15/10/20.
 //  Copyright © 2015年 Jack. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *potentialBuyLevel;
 @property (nullable, nonatomic, retain) NSString *sexual;
 @property (nullable, nonatomic, retain) NSString *userID;
+@property (nullable, nonatomic, retain) NSString *signTime;
 
 @end
 

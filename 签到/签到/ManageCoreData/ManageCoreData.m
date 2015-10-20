@@ -131,6 +131,21 @@
     
     return arrlist;
 }
+- (void)deleteAllGuestInfo
+{
+    NSArray *arrlist;
+    
+    NSString *entityName = NSStringFromClass([UserInfo class]);
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creatTime" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    arrlist = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    for (long i = 0; i < arrlist.count; i ++) {
+        UserInfo *info = arrlist[i];
+        [self.managedObjectContext deleteObject:info];
+    }
+}
 
 
 

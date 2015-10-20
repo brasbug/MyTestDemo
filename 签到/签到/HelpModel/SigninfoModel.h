@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSString *otherNumber;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *mail;
+@property (nonatomic, strong) NSString *signTime;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

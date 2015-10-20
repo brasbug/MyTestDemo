@@ -11,9 +11,20 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "ZipArchive.h"
 #import "SQFileItem.h"
+#import "XCMultiSortTableView.h"
+#import "ManageCoreData/ManageCoreData.h"
 
 
-@interface testViewController ()<MFMailComposeViewControllerDelegate>
+
+
+@interface testViewController ()<MFMailComposeViewControllerDelegate,XCMultiTableViewDataSource>
+{
+    NSMutableArray *headData;
+    NSMutableArray *leftTableData;
+    NSMutableArray *rightTableData;
+}
+@property (nonatomic, strong) UIButton *backBtn;
+
 
 @property (nonatomic, strong) MFMailComposeViewController *maillController;
 
@@ -29,12 +40,252 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     self.view.backgroundColor = [UIColor whiteColor];
 //    设置应用程序的状态栏到指定的方向
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+    [[UIApplication sharedApplication]setStatusBarHidden:YES];
     //view旋转
     [self.view setTransform:CGAffineTransformMakeRotation(M_PI/2)];
     // Do any additional setup after loading the view, typically from a nib.
+    [self initData];
+
+    
+    XCMultiTableView *tableView = [[XCMultiTableView alloc] initWithFrame:CGRectInset(self.view.bounds, 5.0f, 5.0f)];
+    tableView.leftHeaderEnable = YES;
+    tableView.datasource = self;
+    [self.view addSubview:tableView];
+    
+    
+    self.backBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    self.backBtn.frame = CGRectMake(10, 10, 44, 44);
+    [self.backBtn addTarget:self action:@selector(backBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.backBtn];
+
+    
+    
+}
+
+- (void)initData {
+    headData = [NSMutableArray arrayWithCapacity:10];
+    [headData addObject:@"日期"];
+    [headData addObject:@"城市"];
+    [headData addObject:@"姓名"];
+    [headData addObject:@"性别"];
+    [headData addObject:@"联系电话"];
+    [headData addObject:@"电子邮件"];
+    [headData addObject:@"Rare Old"];
+    [headData addObject:@"18YO"];
+    [headData addObject:@"25YO"];
+    [headData addObject:@"Other品牌"];
+    [headData addObject:@"Other数量"];
+    [headData addObject:@"知识水平"];
+    [headData addObject:@"感兴趣程度"];
+    [headData addObject:@"潜在购买力"];
+    leftTableData = [NSMutableArray arrayWithCapacity:10];
+    NSMutableArray *one = [NSMutableArray arrayWithCapacity:10];
+    
+    NSArray *arrlist = [[ManageCoreData instance]getAllGuestInfolist];
+    
+    
+    for (int i = 0; i < arrlist.count; i++) {
+        [one addObject:[NSString stringWithFormat:@"%i",i]];
+    }
+    [leftTableData addObject:one];
+    
+    
+    
+    rightTableData = [NSMutableArray arrayWithCapacity:10];
+    
+    NSMutableArray *oneR = [NSMutableArray arrayWithCapacity:10];
+    for (int i = 0; i < arrlist.count; i++) {
+        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:10];
+        UserInfo *info = arrlist[i];
+        if (info.signTime) {
+            [tempArr addObject:info.signTime];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+        }
+        
+        if (info.city) {
+            [tempArr addObject:info.city];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+
+        }
+        
+        if (info.name) {
+            [tempArr addObject:info.name];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.sexual) {
+            [tempArr addObject:info.sexual];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.phone) {
+            [tempArr addObject:info.phone];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.mail) {
+            [tempArr addObject:info.mail];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.mortlach_RareOld) {
+            [tempArr addObject:info.mortlach_RareOld];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.mortlach_18YO) {
+            [tempArr addObject:info.mortlach_18YO];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.mortlach_25Y) {
+            [tempArr addObject:info.mortlach_25Y];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.other_Malts) {
+            [tempArr addObject:info.other_Malts];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.other_number) {
+            [tempArr addObject:info.other_number];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.knowledgeLevel) {
+            [tempArr addObject:info.knowledgeLevel];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.interestLevel) {
+            [tempArr addObject:info.interestLevel];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        if (info.potentialBuyLevel) {
+            [tempArr addObject:info.potentialBuyLevel];
+        }
+        else
+        {
+            [tempArr addObject:@""];
+            
+        }
+        
+        
+ 
+        [oneR addObject:tempArr];
+    }
+    [rightTableData addObject:oneR];
+    
+    
+}
+
+
+#pragma mark - XCMultiTableViewDataSource
+
+
+- (NSArray *)arrayDataForTopHeaderInTableView:(XCMultiTableView *)tableView {
+    return [headData copy];
+}
+- (NSArray *)arrayDataForLeftHeaderInTableView:(XCMultiTableView *)tableView InSection:(NSUInteger)section {
+    return [leftTableData objectAtIndex:section];
+}
+
+- (NSArray *)arrayDataForContentInTableView:(XCMultiTableView *)tableView InSection:(NSUInteger)section {
+    return [rightTableData objectAtIndex:section];
+}
+
+
+- (NSUInteger)numberOfSectionsInTableView:(XCMultiTableView *)tableView {
+    return 1;
+}
+
+- (CGFloat)tableView:(XCMultiTableView *)tableView contentTableCellWidth:(NSUInteger)column {
+   
+    if (column > 5) {
+        return 90;
+    }
+    return 120;
+}
+
+- (CGFloat)tableView:(XCMultiTableView *)tableView cellHeightInRow:(NSUInteger)row InSection:(NSUInteger)section {
+    if (section == 0) {
+        return 60.0f;
+    }else {
+        return 30.0f;
+    }
+}
+
+- (UIColor *)tableView:(XCMultiTableView *)tableView bgColorInSection:(NSUInteger)section InRow:(NSUInteger)row InColumn:(NSUInteger)column {
+    if (row == 1 && section == 0) {
+        return [UIColor whiteColor];
+    }
+    return [UIColor clearColor];
+}
+
+- (UIColor *)tableView:(XCMultiTableView *)tableView headerBgColorInColumn:(NSUInteger)column {
+    if (column == -1) {
+        return [UIColor whiteColor];
+    }else if (column == 1) {
+        return [UIColor whiteColor];
+    }
+    return [UIColor clearColor];
 }
 
 
@@ -45,52 +296,54 @@
     //隐藏navigationController
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     //隐藏状态栏
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];}
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     //显示状态栏
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     //显示navigationController
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     
 }
-- (IBAction)backBtn:(id)sender {
+- (void)backBtn:(id)sender {
     //状态栏旋转
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     
-    return;
+//    return;
     
     //生产CSV表格文件
-    NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docementDir = [documents objectAtIndex:0];
-    NSString *filePath = [docementDir stringByAppendingPathComponent:@"student.csv"];
-    [self formatDates];
-    [self createFile:filePath];
-    [self exportCSV:filePath];
-//    ZipArchive *za = [[ZipArchive alloc] init];
-//    NSString *zipFilePath = [docementDir stringByAppendingPathComponent:@"sign.zip"];
-//    [za CreateZipFile2: zipFilePath];
-//    [za addFileToZip:filePath newname:@"student.csv"];
-
-    
-    
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    
-    _maillController = [[MFMailComposeViewController alloc]init];
-    _maillController.mailComposeDelegate = self;
-    
-    if (![[MFMailComposeViewController class]canSendMail]) {
-        return;
-    }
-    
-    [_maillController addAttachmentData:data mimeType:@"csv" fileName:filePath];
-    
-    UIWindow *keyWindow = [[UIApplication sharedApplication]keyWindow];
-    [keyWindow.rootViewController presentViewController:_maillController animated:YES completion:^{
-    }];
+//    NSArray *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *docementDir = [documents objectAtIndex:0];
+//    NSString *filePath = [docementDir stringByAppendingPathComponent:@"student.csv"];
+//    [self formatDates];
+//    [self createFile:filePath];
+//    [self exportCSV:filePath];
+////    ZipArchive *za = [[ZipArchive alloc] init];
+////    NSString *zipFilePath = [docementDir stringByAppendingPathComponent:@"sign.zip"];
+////    [za CreateZipFile2: zipFilePath];
+////    [za addFileToZip:filePath newname:@"student.csv"];
+//
+//    
+//    
+//    NSData *data = [NSData dataWithContentsOfFile:filePath];
+//    
+//    _maillController = [[MFMailComposeViewController alloc]init];
+//    _maillController.mailComposeDelegate = self;
+//    
+//    if (![[MFMailComposeViewController class]canSendMail]) {
+//        return;
+//    }
+//    
+//    [_maillController addAttachmentData:data mimeType:@"csv" fileName:filePath];
+//    
+//    UIWindow *keyWindow = [[UIApplication sharedApplication]keyWindow];
+//    [keyWindow.rootViewController presentViewController:_maillController animated:YES completion:^{
+//    }];
     
     
 }
@@ -206,11 +459,5 @@
     return NO;
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

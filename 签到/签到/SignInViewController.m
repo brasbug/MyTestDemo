@@ -56,9 +56,11 @@
 
     self.phoneTextField.layer.masksToBounds = YES;
     self.phoneTextField.layer.cornerRadius = 10;
-    
+    self.eMailTextField.keyboardType = UIKeyboardTypeNumberPad;
+
     self.eMailTextField.layer.masksToBounds = YES;
     self.eMailTextField.layer.cornerRadius = 10;
+    self.eMailTextField.keyboardType = UIKeyboardTypeEmailAddress;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackView)];
     [self.view addGestureRecognizer:tapGesture];
@@ -88,18 +90,41 @@
     {
         self.model.sexual = @"女";
     }
-    self.model.creatTime = [[NSDate date]timeIntervalSince1970];
+    NSDate *date = [NSDate date];
+    
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    
+    NSInteger interval = [zone secondsFromGMTForDate: date];
+    
+    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+    
+    self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
+    self.model.creatTime = [localeDate timeIntervalSince1970];
     self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime,self.model.name];
     UserInfo *info =     [[ManageCoreData instance]insertGuestWithModel:self.model];
+//    for ( long i = 0 ; i < 100; i ++) {
+//
+//        NSDate *date = [NSDate date];
+//        
+//        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//        
+//        NSInteger interval = [zone secondsFromGMTForDate: date];
+//        
+//        NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+//        
+//        self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
+//        self.model.creatTime = [localeDate timeIntervalSince1970];
+//        self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime + 1,self.model.name];
+//        [[ManageCoreData instance]insertGuestWithModel:self.model];
+//    }
+    
     if (info) {
         [self.navigationController popViewControllerAnimated:NO];
         [self showAlertViewWith:@"签到成功"];
-
     }
     else
     {
         [self showAlertViewWith:@"签到失败"];
-        
     }
    
     

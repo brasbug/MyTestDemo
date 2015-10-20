@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0408EFB11BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAB1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB21BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAB1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB31BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAB1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB41BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAD1BD639EA00BB1EF1 /* XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB51BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAD1BD639EA00BB1EF1 /* XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB61BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAD1BD639EA00BB1EF1 /* XCMultiSortTableView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB71BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB81BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		0408EFB91BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */; settings = {ASSET_TAGS = (); }; };
 		045C0AC91BD5EC3E00473271 /* GuestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		045C0ACA1BD5EC3E00473271 /* GuestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		045C0ACB1BD5EC3E00473271 /* GuestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -87,6 +96,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0408EFAA1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XCMultiSortTableView.h"; sourceTree = "<group>"; };
+		0408EFAB1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XCMultiSortTableView.m"; sourceTree = "<group>"; };
+		0408EFAC1BD639EA00BB1EF1 /* XCMultiSortTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCMultiSortTableView.h; sourceTree = "<group>"; };
+		0408EFAD1BD639EA00BB1EF1 /* XCMultiSortTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCMultiSortTableView.m; sourceTree = "<group>"; };
+		0408EFAE1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCMultiSortTableViewBGScrollView.h; sourceTree = "<group>"; };
+		0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCMultiSortTableViewBGScrollView.m; sourceTree = "<group>"; };
+		0408EFB01BD639EA00BB1EF1 /* XCMultiSortTableViewDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCMultiSortTableViewDefault.h; sourceTree = "<group>"; };
 		045C0AC71BD5EC3D00473271 /* GuestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestListTableViewController.h; sourceTree = "<group>"; };
 		045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestListTableViewController.m; sourceTree = "<group>"; };
 		045C0ACD1BD5F47200473271 /* GuestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestTableViewCell.h; sourceTree = "<group>"; };
@@ -164,6 +180,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0408EFA91BD639EA00BB1EF1 /* XCMultiSortTableView */ = {
+			isa = PBXGroup;
+			children = (
+				0408EFAA1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.h */,
+				0408EFAB1BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m */,
+				0408EFAC1BD639EA00BB1EF1 /* XCMultiSortTableView.h */,
+				0408EFAD1BD639EA00BB1EF1 /* XCMultiSortTableView.m */,
+				0408EFAE1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.h */,
+				0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */,
+				0408EFB01BD639EA00BB1EF1 /* XCMultiSortTableViewDefault.h */,
+			);
+			path = XCMultiSortTableView;
+			sourceTree = "<group>";
+		};
 		045C0ACC1BD5F45900473271 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +241,7 @@
 		04B2E6CC1BD4ED790029DF1A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				0408EFA91BD639EA00BB1EF1 /* XCMultiSortTableView */,
 				04B2E6D71BD4F1090029DF1A /* UIViewExt.h */,
 				04B2E6D81BD4F1090029DF1A /* UIViewExt.m */,
 				04B2E6CD1BD4ED920029DF1A /* NSDate+Category.h */,
@@ -491,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B2E6D91BD4F1090029DF1A /* UIViewExt.m in Sources */,
+				0408EFB71BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */,
 				04891D611BD4B66C00F43261 /* ManageCoreData.m in Sources */,
 				04FAC3861BCCD8C60039177D /* testViewController.m in Sources */,
 				04FAC3831BCCD8C60039177D /* AppDelegate.m in Sources */,
@@ -507,6 +539,8 @@
 				04891D771BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
 				04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04A94C621BCF7BA30024C341 /* Student.m in Sources */,
+				0408EFB11BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */,
+				0408EFB41BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +554,8 @@
 				04E44B1D1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				045C0AD11BD5F47200473271 /* GuestTableViewCell.m in Sources */,
 				04B2E6E91BD4FA240029DF1A /* SignInViewController.m in Sources */,
+				0408EFB51BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */,
+				0408EFB81BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */,
 				04B2E6DA1BD4F1090029DF1A /* UIViewExt.m in Sources */,
 				04891D521BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C631BCF7BA30024C341 /* Student.m in Sources */,
@@ -527,6 +563,7 @@
 				04891D7B1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D621BD4B66C00F43261 /* ManageCoreData.m in Sources */,
+				0408EFB21BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */,
 				045C0ACA1BD5EC3E00473271 /* GuestListTableViewController.m in Sources */,
 				04B2E6D51BD4ED920029DF1A /* NSDate+GMT.m in Sources */,
 			);
@@ -542,6 +579,8 @@
 				04E44B1E1BCDFE1C00A69DB6 /* HomeViewController.m in Sources */,
 				045C0AD21BD5F47200473271 /* GuestTableViewCell.m in Sources */,
 				04B2E6EA1BD4FA240029DF1A /* SignInViewController.m in Sources */,
+				0408EFB61BD639EA00BB1EF1 /* XCMultiSortTableView.m in Sources */,
+				0408EFB91BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m in Sources */,
 				04B2E6DB1BD4F1090029DF1A /* UIViewExt.m in Sources */,
 				04891D531BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C641BCF7BA30024C341 /* Student.m in Sources */,
@@ -549,6 +588,7 @@
 				04891D7C1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D631BD4B66C00F43261 /* ManageCoreData.m in Sources */,
+				0408EFB31BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */,
 				045C0ACB1BD5EC3E00473271 /* GuestListTableViewController.m in Sources */,
 				04B2E6D61BD4ED920029DF1A /* NSDate+GMT.m in Sources */,
 			);

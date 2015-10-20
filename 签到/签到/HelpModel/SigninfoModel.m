@@ -24,7 +24,7 @@ NSString *const kSigninfoModelCity = @"city";
 NSString *const kSigninfoModelOtherNumber = @"other_number";
 NSString *const kSigninfoModelName = @"name";
 NSString *const kSigninfoModelMail = @"mail";
-
+NSString *const kSignInfoModelSigntime = @"signTime";
 
 @interface SigninfoModel ()
 
@@ -50,7 +50,7 @@ NSString *const kSigninfoModelMail = @"mail";
 @synthesize otherNumber = _otherNumber;
 @synthesize name = _name;
 @synthesize mail = _mail;
-
+@synthesize signTime = _signTime;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict
 {
@@ -80,7 +80,7 @@ NSString *const kSigninfoModelMail = @"mail";
             self.otherNumber = [self objectOrNilForKey:kSigninfoModelOtherNumber fromDictionary:dict];
             self.name = [self objectOrNilForKey:kSigninfoModelName fromDictionary:dict];
             self.mail = [self objectOrNilForKey:kSigninfoModelMail fromDictionary:dict];
-
+        self.signTime = [self objectOrNilForKey:kSignInfoModelSigntime fromDictionary:dict];
     }
     
     return self;
@@ -106,7 +106,7 @@ NSString *const kSigninfoModelMail = @"mail";
     [mutableDict setValue:self.otherNumber forKey:kSigninfoModelOtherNumber];
     [mutableDict setValue:self.name forKey:kSigninfoModelName];
     [mutableDict setValue:self.mail forKey:kSigninfoModelMail];
-
+    [mutableDict setValue:self.signTime forKey:kSignInfoModelSigntime];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 
@@ -145,6 +145,7 @@ NSString *const kSigninfoModelMail = @"mail";
     self.otherNumber = [aDecoder decodeObjectForKey:kSigninfoModelOtherNumber];
     self.name = [aDecoder decodeObjectForKey:kSigninfoModelName];
     self.mail = [aDecoder decodeObjectForKey:kSigninfoModelMail];
+    self.signTime = [aDecoder decodeObjectForKey:kSignInfoModelSigntime];
     return self;
 }
 
@@ -167,6 +168,7 @@ NSString *const kSigninfoModelMail = @"mail";
     [aCoder encodeObject:_otherNumber forKey:kSigninfoModelOtherNumber];
     [aCoder encodeObject:_name forKey:kSigninfoModelName];
     [aCoder encodeObject:_mail forKey:kSigninfoModelMail];
+    [aCoder encodeObject:_signTime forKey:kSignInfoModelSigntime];
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -191,6 +193,7 @@ NSString *const kSigninfoModelMail = @"mail";
         copy.otherNumber = [self.otherNumber copyWithZone:zone];
         copy.name = [self.name copyWithZone:zone];
         copy.mail = [self.mail copyWithZone:zone];
+        copy.signTime = [self.signTime copyWithZone:zone];
     }
     
     return copy;

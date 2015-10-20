@@ -34,4 +34,7 @@
 - (NSArray *)getAllGuestInfolist;
 
 
+- (void)deleteAllGuestInfo;
+
+
 @end
