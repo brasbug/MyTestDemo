@@ -42,8 +42,8 @@
                                 <rect key="frame" x="224" y="765" width="320" height="100"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="DkA-ni-QnD"/>
-                                    <constraint firstAttribute="height" constant="100" id="JqM-vF-3ka"/>
+                                    <constraint firstAttribute="height" constant="100" id="0Jy-cO-2Wp"/>
+                                    <constraint firstAttribute="width" constant="320" id="NDF-Lo-6aH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="下一步" backgroundImage="btnbackImage">
@@ -57,18 +57,21 @@
                                 <rect key="frame" x="668" y="0.0" width="100" height="100"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="f1T-hm-GBC"/>
-                                    <constraint firstAttribute="width" constant="100" id="soz-Vq-Ucp"/>
+                                    <constraint firstAttribute="height" constant="100" id="tMk-SW-0gQ"/>
+                                    <constraint firstAttribute="width" constant="100" id="vdf-Dr-3xe"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="showListBtnPressed:" destination="InE-Tf-CpJ" eventType="touchUpInside" id="VJi-SJ-jTf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xHy-QR-mFX" secondAttribute="trailing" constant="-20" id="85j-My-27v"/>
-                            <constraint firstItem="gEo-p5-zMr" firstAttribute="centerX" secondItem="Z2n-UP-0DA" secondAttribute="centerX" id="GB9-FU-V0m"/>
-                            <constraint firstItem="xHy-QR-mFX" firstAttribute="top" secondItem="fAC-KG-GQJ" secondAttribute="bottom" id="Pyk-cq-TUl"/>
-                            <constraint firstItem="MXx-Fa-1uk" firstAttribute="top" secondItem="gEo-p5-zMr" secondAttribute="bottom" constant="159" id="iCh-i3-pYS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xHy-QR-mFX" secondAttribute="trailing" constant="-20" id="7Rm-eo-4tG"/>
+                            <constraint firstItem="gEo-p5-zMr" firstAttribute="centerX" secondItem="Z2n-UP-0DA" secondAttribute="centerX" id="7gl-ra-lJ7"/>
+                            <constraint firstItem="MXx-Fa-1uk" firstAttribute="top" secondItem="gEo-p5-zMr" secondAttribute="bottom" constant="159" id="GS1-VA-Zdn"/>
+                            <constraint firstItem="xHy-QR-mFX" firstAttribute="top" secondItem="fAC-KG-GQJ" secondAttribute="bottom" id="jRk-3q-vhs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WRF-9S-WPQ"/>
