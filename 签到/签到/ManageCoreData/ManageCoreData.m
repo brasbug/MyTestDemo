@@ -145,6 +145,7 @@
         UserInfo *info = arrlist[i];
         [self.managedObjectContext deleteObject:info];
     }
+    [self saveContext];
 }
 
 
