@@ -82,9 +82,9 @@
 }
 - (IBAction)signBtnPressed:(id)sender {
     
-//    if ([self isEmpty]) {
-//        return;
-//    }
+    if ([self isEmpty]) {
+        return;
+    }
     
     self.model.name = self.nameTextField.text;
     self.model.phone = self.phoneTextField.text;
@@ -107,8 +107,25 @@
     self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
     self.model.creatTime = [localeDate timeIntervalSince1970];
     self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime,self.model.name];
+    
+    
     UserInfo *info =     [[ManageCoreData instance]insertGuestWithModel:self.model];
-
+    
+//    for (long i = 0; i < 1000; i ++) {
+//        NSDate *date = [NSDate date];
+//        
+//        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//        
+//        NSInteger interval = [zone secondsFromGMTForDate: date];
+//        
+//        NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+//        
+//        self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
+//        self.model.creatTime = [localeDate timeIntervalSince1970];
+//        self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime + i *10,self.model.name];
+//        [[ManageCoreData instance]insertGuestWithModel:self.model];
+//        
+//    }
     
     
     if (info) {

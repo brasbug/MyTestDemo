@@ -11,6 +11,7 @@
 #import "ManageCoreData.h"
 #import "testViewController.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import "UserInfoEditTableViewController.h"
 
 
 
@@ -45,7 +46,12 @@
 }
 
 
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    _arrlist = [[ManageCoreData instance]getAllGuestInfolist];
+    [self.tableView reloadData];
+}
 
 - (void)setNavBar
 {
@@ -101,7 +107,7 @@
     [self createFile:filePath];
     [self exportCSV:filePath];
     NSArray *Address = @[@"369495368@qq.com"];
-    NSString *emailBody =[NSString stringWithFormat: @"发送用户记录,下载附件，修改附件后缀名为.csv  使用mac电脑的Numbers打开"];
+    NSString *emailBody =[NSString stringWithFormat: @"发送用户记录,下载附件，修改附件后缀名为.csv   可以使用金山WPS的表格打开 或者参考链接:http://jingyan.baidu.com/article/76a7e409bf9a3ffc3b6e1535.html 使用office的表格打开"];
     
     
     NSData *data = [NSData dataWithContentsOfFile:filePath];
@@ -176,13 +182,20 @@
     }
     UserInfo *info = _arrlist[indexPath.row];
     [cell setContentData:info];
-    cell.numberLine.text = [NSString stringWithFormat:@"%d",indexPath.row +1];
+    cell.numberLine.text = [NSString stringWithFormat:@"%ld",indexPath.row +1];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UserInfo *info = _arrlist[indexPath.row];
+    UserInfoEditTableViewController *vc = [[UserInfoEditTableViewController alloc]init];
+    vc.info = info;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+    
 }
 
 
