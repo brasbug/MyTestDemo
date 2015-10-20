@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -52,11 +53,21 @@
                                     <action selector="signBtnPressed:" destination="InE-Tf-CpJ" eventType="touchUpInside" id="fvO-N9-GNh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHy-QR-mFX">
+                                <rect key="frame" x="668" y="0.0" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="f1T-hm-GBC"/>
+                                    <constraint firstAttribute="width" constant="100" id="soz-Vq-Ucp"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xHy-QR-mFX" secondAttribute="trailing" constant="-20" id="85j-My-27v"/>
                             <constraint firstItem="gEo-p5-zMr" firstAttribute="centerX" secondItem="Z2n-UP-0DA" secondAttribute="centerX" id="GB9-FU-V0m"/>
+                            <constraint firstItem="xHy-QR-mFX" firstAttribute="top" secondItem="fAC-KG-GQJ" secondAttribute="bottom" id="Pyk-cq-TUl"/>
                             <constraint firstItem="MXx-Fa-1uk" firstAttribute="top" secondItem="gEo-p5-zMr" secondAttribute="bottom" constant="159" id="iCh-i3-pYS"/>
                         </constraints>
                     </view>
@@ -68,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxl-rx-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="705"/>
+            <point key="canvasLocation" x="-250" y="837"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import "SignInViewController.h"
+#import "ManageCoreData.h"
 
 @interface SignInViewController ()
 @property (nonatomic, strong) UIImageView *backImageView;
@@ -73,10 +74,40 @@
 }
 - (IBAction)signBtnPressed:(id)sender {
     
+    if ([self isEmpty]) {
+        return;
+    }
+    
+    self.model.name = self.nameTextField.text;
+    self.model.phone = self.phoneTextField.text;
+    self.model.mail = self.eMailTextField.text;
+    if (self.maleBtn1.enabled) {
+        self.model.sexual = @"男";
+    }
+    else
+    {
+        self.model.sexual = @"女";
+    }
+    self.model.creatTime = [[NSDate date]timeIntervalSince1970];
+    self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime,self.model.name];
+    UserInfo *info =     [[ManageCoreData instance]insertGuestWithModel:self.model];
+    if (info) {
+        [self.navigationController popViewControllerAnimated:NO];
+        [self showAlertViewWith:@"签到成功"];
+
+    }
+    else
+    {
+        [self showAlertViewWith:@"签到失败"];
+        
+    }
+   
     
     
     
-    [self.navigationController popViewControllerAnimated:NO];
+    
+    
+    
 }
 
 
@@ -90,12 +121,12 @@
         [self showAlertViewWith:@"请输入您的手机号"];
         return YES;
     }
-    if (self.nameTextField.text.length == 0 ) {
+    if (self.eMailTextField.text.length == 0 ) {
         [self showAlertViewWith:@"请输入您的邮箱"];
         return YES;
     }
     
-    return YES;
+    return NO;
 }
 
 

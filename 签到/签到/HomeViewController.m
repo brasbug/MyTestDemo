@@ -16,6 +16,7 @@
 #import "SigninfoModel.h"
 
 #import "SignInViewController.h"
+#import "GuestListTableViewController.h"
 
 
 #define KWindow [[UIApplication sharedApplication]keyWindow]
@@ -167,7 +168,7 @@
     NSDate *selectedDate = self.datePicker.date;
     NSString *birthday    = [dateFormatter stringFromDate:selectedDate];
     [self.birthdayBtn setTitle:birthday forState:UIControlStateNormal];
-    self.model.date = birthday;
+    self.model.birthday = birthday;
     _isBirthdaySelected = YES;
     self.signBtn.enabled = YES;
 
@@ -204,7 +205,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blackColor];
-
+    self.model = [[SigninfoModel alloc]init];
     [self.view addSubview:self.backImageView];
     _isBirthdaySelected = NO;
     self.signBtn.enabled = NO;
@@ -216,6 +217,8 @@
     [self.view addSubview:self.toolBarView];
     
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapBackView)];
+    [self.view addGestureRecognizer:tapGesture];
     
     
     
@@ -234,11 +237,19 @@
 //        [[ManageCoreData instance] insertGuestWithModel:model];
 //    }
 
+    NSString *filePath = [self dataFilePathWithFileName:@"testFile"];
     
+    NSLog(@"%@",filePath);
+
     
     
 }
 
+- (void)tapBackView
+{
+    [self pickerViewdoneButtonAction];
+    
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -266,6 +277,42 @@
     testViewController *vc = [[testViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
+    
+}
+
+
+
+- (IBAction)showListBtnPressed:(id)sender {
+    
+    GuestListTableViewController *vc =  [[GuestListTableViewController alloc]init];
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:navc animated:YES completion:^{
+        
+    }];
+}
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+
+{
+    
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+    
+}
+
+- (BOOL)shouldAutorotate
+
+{
+    
+    return NO;
+    
+}
+
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+
+{
+    return UIInterfaceOrientationMaskPortrait;//只支持这一个方向(正常的方向)
     
 }
 

@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSString *mortlach18YO;
 @property (nonatomic, strong) NSString *interestLevel;
 @property (nonatomic, strong) NSString *otherMalts;
-@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *birthday;
 @property (nonatomic, strong) NSString *mortlach25Y;
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *otherNumber;
