@@ -107,13 +107,27 @@
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plZ-aQ-lNz">
+                    <rect key="frame" x="8" y="0.0" width="85" height="60"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="bdk-AS-fl8"/>
+                        <constraint firstAttribute="width" constant="85" id="wOF-Uh-kQy"/>
+                    </constraints>
+                    <state key="normal" title="返回上级"/>
+                    <connections>
+                        <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="Bls-OJ-rnD"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="plZ-aQ-lNz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="0zc-5l-CXb"/>
                 <constraint firstAttribute="bottom" secondItem="TAn-rp-her" secondAttribute="bottom" constant="159" id="6Ct-Ql-Mmu"/>
                 <constraint firstItem="8y7-4x-Ifm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7yh-Jb-Opr"/>
                 <constraint firstItem="TAn-rp-her" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NHw-ad-kZa"/>
+                <constraint firstItem="plZ-aQ-lNz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RgZ-2N-3oh"/>
                 <constraint firstAttribute="trailing" secondItem="8y7-4x-Ifm" secondAttribute="trailing" id="kMI-vr-k1a"/>
                 <constraint firstAttribute="bottom" secondItem="8y7-4x-Ifm" secondAttribute="bottom" id="kfq-nY-GuE"/>
                 <constraint firstItem="8y7-4x-Ifm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vgf-aE-ApD"/>

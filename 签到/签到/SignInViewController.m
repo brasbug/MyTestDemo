@@ -69,6 +69,12 @@
     
 }
 
+
+- (IBAction)backBtnPressed:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 - (void)tapBackView
 {
     [self.view endEditing:YES];
@@ -76,9 +82,9 @@
 }
 - (IBAction)signBtnPressed:(id)sender {
     
-    if ([self isEmpty]) {
-        return;
-    }
+//    if ([self isEmpty]) {
+//        return;
+//    }
     
     self.model.name = self.nameTextField.text;
     self.model.phone = self.phoneTextField.text;
@@ -102,21 +108,8 @@
     self.model.creatTime = [localeDate timeIntervalSince1970];
     self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime,self.model.name];
     UserInfo *info =     [[ManageCoreData instance]insertGuestWithModel:self.model];
-//    for ( long i = 0 ; i < 100; i ++) {
-//
-//        NSDate *date = [NSDate date];
-//        
-//        NSTimeZone *zone = [NSTimeZone systemTimeZone];
-//        
-//        NSInteger interval = [zone secondsFromGMTForDate: date];
-//        
-//        NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
-//        
-//        self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
-//        self.model.creatTime = [localeDate timeIntervalSince1970];
-//        self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime + 1,self.model.name];
-//        [[ManageCoreData instance]insertGuestWithModel:self.model];
-//    }
+
+    
     
     if (info) {
         [self.navigationController popViewControllerAnimated:NO];

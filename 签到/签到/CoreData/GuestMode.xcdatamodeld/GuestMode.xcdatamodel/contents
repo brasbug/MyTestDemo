@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
-        <attribute name="birthday" optional="YES" attributeType="String" defaultValueString="  " syncable="YES"/>
-        <attribute name="city" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
         <attribute name="creatTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="interestLevel" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="knowledgeLevel" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="mail" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="mortlach_18YO" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="mortlach_25Y" optional="YES" attributeType="String" defaultValueString="  " syncable="YES"/>
-        <attribute name="mortlach_RareOld" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="other_Malts" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="other_number" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="potentialBuyLevel" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="sexual" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="signTime" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
+        <attribute name="interestLevel" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="knowledgeLevel" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="mortlach_18YO" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="mortlach_25Y" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="mortlach_RareOld" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="other_Malts" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="other_number" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="potentialBuyLevel" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="sexual" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="signTime" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" defaultValueString="-" syncable="YES"/>
     </entity>
     <fetchRequest name="userInfoList" entity="UserInfo"/>
     <elements>
