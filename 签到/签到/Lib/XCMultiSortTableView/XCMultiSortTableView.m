@@ -230,6 +230,10 @@ typedef NS_ENUM(NSUInteger, TableColumnSortType) {
     }
     [target selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.datasource && [self.datasource respondsToSelector:@selector(xcmultiSortTableView:didSelectRowAtIndexPath:)]) {
+        [self.datasource xcmultiSortTableView:self didSelectRowAtIndexPath:indexPath];
+    }
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

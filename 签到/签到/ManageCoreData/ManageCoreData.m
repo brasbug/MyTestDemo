@@ -124,7 +124,7 @@
     
     NSString *entityName = NSStringFromClass([UserInfo class]);
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creatTime" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"creatTime" ascending:NO];
     [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     arrlist = [self.managedObjectContext executeFetchRequest:request error:nil];
     

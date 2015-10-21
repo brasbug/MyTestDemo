@@ -13,6 +13,7 @@
 #import "SQFileItem.h"
 #import "XCMultiSortTableView.h"
 #import "ManageCoreData/ManageCoreData.h"
+#import "UserInfoEditTableViewController.h"
 
 
 
@@ -22,6 +23,8 @@
     NSMutableArray *headData;
     NSMutableArray *leftTableData;
     NSMutableArray *rightTableData;
+    NSArray *arrlist;
+    XCMultiTableView *tableView;
 }
 @property (nonatomic, strong) UIButton *backBtn;
 
@@ -51,7 +54,7 @@
     [self initData];
 
     
-    XCMultiTableView *tableView = [[XCMultiTableView alloc] initWithFrame:CGRectInset(self.view.bounds, 5.0f, 5.0f)];
+    tableView = [[XCMultiTableView alloc] initWithFrame:CGRectInset(self.view.bounds, 5.0f, 5.0f)];
     tableView.leftHeaderEnable = YES;
     tableView.datasource = self;
     [self.view addSubview:tableView];
@@ -64,6 +67,14 @@
     [self.view addSubview:self.backBtn];
 
     
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self initData];
+    [tableView reloadData];
     
 }
 
@@ -86,7 +97,7 @@
     leftTableData = [NSMutableArray arrayWithCapacity:10];
     NSMutableArray *one = [NSMutableArray arrayWithCapacity:10];
     
-    NSArray *arrlist = [[ManageCoreData instance]getAllGuestInfolist];
+    arrlist = [[ManageCoreData instance]getAllGuestInfolist];
     
     
     for (int i = 0; i < arrlist.count; i++) {
@@ -239,7 +250,13 @@
 
 #pragma mark - XCMultiTableViewDataSource
 
-
+- (void)xcmultiSortTableView:(XCMultiTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UserInfoEditTableViewController *vc = [[UserInfoEditTableViewController alloc]init];
+    UserInfo *info = arrlist[indexPath.row];
+    vc.info = info;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (NSArray *)arrayDataForTopHeaderInTableView:(XCMultiTableView *)tableView {
     return [headData copy];
 }
@@ -257,8 +274,15 @@
 }
 
 - (CGFloat)tableView:(XCMultiTableView *)tableView contentTableCellWidth:(NSUInteger)column {
-   
+    if (column == 3) {
+        return 50;
+    }if (column == 5) {
+        return 140;
+    }
     if (column > 5) {
+        return 85;
+    }
+    if (column > 10) {
         return 90;
     }
     return 120;

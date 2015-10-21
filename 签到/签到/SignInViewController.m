@@ -121,7 +121,7 @@
 //        NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
 //        self.model.name = [NSString stringWithFormat:@"test- > %ld",i];
 //        self.model.signTime = [NSString stringWithFormat:@"%@",localeDate];
-//        self.model.creatTime = [localeDate timeIntervalSince1970];
+//        self.model.creatTime = [localeDate timeIntervalSince1970] + i* 10;
 //        self.model.userID = [[NSString alloc]initWithFormat:@"%ld-%@",(long)self.model.creatTime + i *10,self.model.name];
 //        [[ManageCoreData instance]insertGuestWithModel:self.model];
 //        
