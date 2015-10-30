@@ -111,7 +111,7 @@
     
     UserInfo *info =     [[ManageCoreData instance]insertGuestWithModel:self.model];
     
-//    for (long i = 0; i < 1000; i ++) {
+//    for (long i = 0; i < 200; i ++) {
 //        NSDate *date = [NSDate date];
 //        
 //        NSTimeZone *zone = [NSTimeZone systemTimeZone];
