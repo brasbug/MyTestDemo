@@ -91,8 +91,8 @@
     [headData addObject:@"25YO"];
     [headData addObject:@"Other品牌"];
     [headData addObject:@"Other数量"];
-    [headData addObject:@"知识水平"];
-    [headData addObject:@"感兴趣程度"];
+    [headData addObject:@"威士忌知识水平"];
+    [headData addObject:@"威士忌感兴趣程度"];
     [headData addObject:@"潜在购买力"];
     leftTableData = [NSMutableArray arrayWithCapacity:10];
     NSMutableArray *one = [NSMutableArray arrayWithCapacity:10];

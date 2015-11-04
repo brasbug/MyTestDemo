@@ -17,6 +17,8 @@
 
 #import "SignInViewController.h"
 #import "GuestListTableViewController.h"
+#import "PassWordViewController.h"
+
 
 
 #define KWindow [[UIApplication sharedApplication]keyWindow]
@@ -256,6 +258,11 @@
 {
     [super viewDidAppear:animated];
 //    [self testBtnPressed:nil];
+//    PassWordViewController *vc = [[PassWordViewController alloc]init];
+//    [self presentViewController:vc animated:YES completion:^{
+//        
+//    }];
+    
 }
 
 -(NSString*)dataFilePathWithFileName:(NSString*)strFileName

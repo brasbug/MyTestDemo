@@ -87,8 +87,8 @@
     [_headData addObject:@"25YO"];
     [_headData addObject:@"Other品牌"];
     [_headData addObject:@"Other数量"];
-    [_headData addObject:@"知识水平"];
-    [_headData addObject:@"感兴趣程度"];
+    [_headData addObject:@"威士忌知识水平"];
+    [_headData addObject:@"威士忌感兴趣程度"];
     [_headData addObject:@"潜在购买力"];
 
 }

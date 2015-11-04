@@ -404,9 +404,15 @@ typedef NS_ENUM(NSUInteger, TableColumnSortType) {
         view.tag = i;
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.frame = CGRectMake(0, 0, topHeaderW, topHeaderH);
         label.text = [[datasource arrayDataForTopHeaderInTableView:self] objectAtIndex:i];
-        
-        [label sizeToFit];
+        label.font = [UIFont systemFontOfSize:13];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontSizeToFitWidth = YES;
+        label.numberOfLines = 2;
+        label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+
+//        [label sizeToFit];
         label.center = CGPointMake(topHeaderW / 2.0f, topHeaderH / 2.0f);
         
         UIColor *color = [self headerBgColorColumn:i];
