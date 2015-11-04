@@ -106,7 +106,8 @@
 
     [self createFile:filePath];
     [self exportCSV:filePath];
-    NSArray *Address = @[@"369495368@qq.com"];
+    NSArray *Address = @[@"jason.li@xiwu-ad.com"];
+    NSArray *cAddress = @[@"perseus.wang@xiwu-ad.com"];
     NSString *emailBody =[NSString stringWithFormat: @"发送用户记录,下载附件，修改附件后缀名为.csv   可以使用金山WPS的表格打开 或者参考链接:http://jingyan.baidu.com/article/76a7e409bf9a3ffc3b6e1535.html 使用office的表格打开"];
     
     
@@ -115,6 +116,7 @@
     _maillController = [[MFMailComposeViewController alloc]init];
     _maillController.mailComposeDelegate = self;
     [_maillController setToRecipients:Address];
+    [_maillController setCcRecipients:cAddress];
     [_maillController setMessageBody:emailBody isHTML:NO];
     [_maillController setSubject:@"签到记录"];
     if (![[MFMailComposeViewController class]canSendMail]) {
