@@ -114,16 +114,16 @@
 		0408EFAE1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCMultiSortTableViewBGScrollView.h; sourceTree = "<group>"; };
 		0408EFAF1BD639EA00BB1EF1 /* XCMultiSortTableViewBGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCMultiSortTableViewBGScrollView.m; sourceTree = "<group>"; };
 		0408EFB01BD639EA00BB1EF1 /* XCMultiSortTableViewDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCMultiSortTableViewDefault.h; sourceTree = "<group>"; };
-		0446C0A11BE705A900D590DC /* PassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassWordViewController.h; sourceTree = "<group>"; };
-		0446C0A21BE705A900D590DC /* PassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassWordViewController.m; sourceTree = "<group>"; };
-		0446C0A31BE705A900D590DC /* PassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassWordViewController.xib; sourceTree = "<group>"; };
-		045C0AC71BD5EC3D00473271 /* GuestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestListTableViewController.h; sourceTree = "<group>"; };
-		045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestListTableViewController.m; sourceTree = "<group>"; };
+		0446C0A11BE705A900D590DC /* PassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PassWordViewController.h; path = ../PassWordViewController.h; sourceTree = "<group>"; };
+		0446C0A21BE705A900D590DC /* PassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PassWordViewController.m; path = ../PassWordViewController.m; sourceTree = "<group>"; };
+		0446C0A31BE705A900D590DC /* PassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PassWordViewController.xib; path = ../PassWordViewController.xib; sourceTree = "<group>"; };
+		045C0AC71BD5EC3D00473271 /* GuestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuestListTableViewController.h; path = ../GuestListTableViewController.h; sourceTree = "<group>"; };
+		045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuestListTableViewController.m; path = ../GuestListTableViewController.m; sourceTree = "<group>"; };
 		045C0ACD1BD5F47200473271 /* GuestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestTableViewCell.h; sourceTree = "<group>"; };
 		045C0ACE1BD5F47200473271 /* GuestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestTableViewCell.m; sourceTree = "<group>"; };
 		045C0ACF1BD5F47200473271 /* GuestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuestTableViewCell.xib; sourceTree = "<group>"; };
-		045F07AE1BD65C5E00663AEA /* UserInfoEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditTableViewController.h; sourceTree = "<group>"; };
-		045F07AF1BD65C5E00663AEA /* UserInfoEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditTableViewController.m; sourceTree = "<group>"; };
+		045F07AE1BD65C5E00663AEA /* UserInfoEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoEditTableViewController.h; path = ../UserInfoEditTableViewController.h; sourceTree = "<group>"; };
+		045F07AF1BD65C5E00663AEA /* UserInfoEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoEditTableViewController.m; path = ../UserInfoEditTableViewController.m; sourceTree = "<group>"; };
 		045F07B31BD65E4800663AEA /* UserInfoEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditTableViewCell.h; sourceTree = "<group>"; };
 		045F07B41BD65E4800663AEA /* UserInfoEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditTableViewCell.m; sourceTree = "<group>"; };
 		045F07B51BD65E4800663AEA /* UserInfoEditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoEditTableViewCell.xib; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		04891D741BD4C70800F43261 /* UserInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
 		04891D751BD4C70800F43261 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		04891D761BD4C70800F43261 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
-		04891D7D1BD4C82000F43261 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
+		04891D7D1BD4C82000F43261 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = testViewController.xib; path = ../testViewController.xib; sourceTree = "<group>"; };
 		04A94C601BCF7BA30024C341 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Student.h; path = ../../../blockAndPopMenu/Demo/Student.h; sourceTree = "<group>"; };
 		04A94C611BCF7BA30024C341 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = ../../../blockAndPopMenu/Demo/Student.m; sourceTree = "<group>"; };
 		04A94C651BCF7D290024C341 /* SQFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQFileItem.h; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.h"; sourceTree = "<group>"; };
@@ -147,17 +147,17 @@
 		04B2E6D01BD4ED920029DF1A /* NSDate+GMT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GMT.m"; sourceTree = "<group>"; };
 		04B2E6D71BD4F1090029DF1A /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		04B2E6D81BD4F1090029DF1A /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
-		04B2E6E51BD4FA240029DF1A /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		04B2E6E61BD4FA240029DF1A /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
-		04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		04B2E6E51BD4FA240029DF1A /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignInViewController.h; path = ../SignInViewController.h; sourceTree = "<group>"; };
+		04B2E6E61BD4FA240029DF1A /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignInViewController.m; path = ../SignInViewController.m; sourceTree = "<group>"; };
+		04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInViewController.xib; path = ../SignInViewController.xib; sourceTree = "<group>"; };
+		04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		04FAC37B1BCCD8C60039177D /* 签到.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "签到.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04FAC37F1BCCD8C60039177D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04FAC3811BCCD8C60039177D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04FAC3821BCCD8C60039177D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04FAC3841BCCD8C60039177D /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
-		04FAC3851BCCD8C60039177D /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
+		04FAC3841BCCD8C60039177D /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = testViewController.h; path = ../testViewController.h; sourceTree = "<group>"; };
+		04FAC3851BCCD8C60039177D /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = testViewController.m; path = ../testViewController.m; sourceTree = "<group>"; };
 		04FAC3881BCCD8C60039177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04FAC38A1BCCD8C60039177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04FAC38D1BCCD8C60039177D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -211,6 +211,28 @@
 				0408EFB01BD639EA00BB1EF1 /* XCMultiSortTableViewDefault.h */,
 			);
 			path = XCMultiSortTableView;
+			sourceTree = "<group>";
+		};
+		04391C621BEAFE6D00367B16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */,
+				04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */,
+				04B2E6E51BD4FA240029DF1A /* SignInViewController.h */,
+				04B2E6E61BD4FA240029DF1A /* SignInViewController.m */,
+				04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */,
+				045C0AC71BD5EC3D00473271 /* GuestListTableViewController.h */,
+				045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */,
+				045F07AE1BD65C5E00663AEA /* UserInfoEditTableViewController.h */,
+				045F07AF1BD65C5E00663AEA /* UserInfoEditTableViewController.m */,
+				04FAC3841BCCD8C60039177D /* testViewController.h */,
+				04FAC3851BCCD8C60039177D /* testViewController.m */,
+				0446C0A11BE705A900D590DC /* PassWordViewController.h */,
+				0446C0A21BE705A900D590DC /* PassWordViewController.m */,
+				0446C0A31BE705A900D590DC /* PassWordViewController.xib */,
+				04891D7D1BD4C82000F43261 /* testViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		045C0ACC1BD5F45900473271 /* SubViews */ = {
@@ -299,32 +321,12 @@
 		04FAC37D1BCCD8C60039177D /* 签到 */ = {
 			isa = PBXGroup;
 			children = (
+				04391C621BEAFE6D00367B16 /* Controllers */,
 				045C0ACC1BD5F45900473271 /* SubViews */,
 				04B2E6CC1BD4ED790029DF1A /* Lib */,
 				04891D5E1BD4B55400F43261 /* ManageCoreData */,
 				04891D4E1BD49A3800F43261 /* CoreData */,
 				0468C6A01BCF700600B4E6B4 /* HelpModel */,
-				04FAC3811BCCD8C60039177D /* AppDelegate.h */,
-				04FAC3821BCCD8C60039177D /* AppDelegate.m */,
-				04E44B1A1BCDFE1C00A69DB6 /* HomeViewController.h */,
-				04E44B1B1BCDFE1C00A69DB6 /* HomeViewController.m */,
-				04B2E6E51BD4FA240029DF1A /* SignInViewController.h */,
-				04B2E6E61BD4FA240029DF1A /* SignInViewController.m */,
-				04B2E6E71BD4FA240029DF1A /* SignInViewController.xib */,
-				045C0AC71BD5EC3D00473271 /* GuestListTableViewController.h */,
-				045C0AC81BD5EC3E00473271 /* GuestListTableViewController.m */,
-				045F07AE1BD65C5E00663AEA /* UserInfoEditTableViewController.h */,
-				045F07AF1BD65C5E00663AEA /* UserInfoEditTableViewController.m */,
-				04FAC3841BCCD8C60039177D /* testViewController.h */,
-				04FAC3851BCCD8C60039177D /* testViewController.m */,
-				0446C0A11BE705A900D590DC /* PassWordViewController.h */,
-				0446C0A21BE705A900D590DC /* PassWordViewController.m */,
-				0446C0A31BE705A900D590DC /* PassWordViewController.xib */,
-				04891D7D1BD4C82000F43261 /* testViewController.xib */,
-				04FAC3871BCCD8C60039177D /* Main.storyboard */,
-				04FAC38A1BCCD8C60039177D /* Assets.xcassets */,
-				04FAC38C1BCCD8C60039177D /* LaunchScreen.storyboard */,
-				04FAC38F1BCCD8C60039177D /* Info.plist */,
 				04FAC37E1BCCD8C60039177D /* Supporting Files */,
 			);
 			path = "签到";
@@ -333,6 +335,12 @@
 		04FAC37E1BCCD8C60039177D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04FAC3811BCCD8C60039177D /* AppDelegate.h */,
+				04FAC3821BCCD8C60039177D /* AppDelegate.m */,
+				04FAC3871BCCD8C60039177D /* Main.storyboard */,
+				04FAC38A1BCCD8C60039177D /* Assets.xcassets */,
+				04FAC38C1BCCD8C60039177D /* LaunchScreen.storyboard */,
+				04FAC38F1BCCD8C60039177D /* Info.plist */,
 				04FAC37F1BCCD8C60039177D /* main.m */,
 			);
 			name = "Supporting Files";
