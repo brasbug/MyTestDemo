@@ -54,9 +54,6 @@
 		04A94C621BCF7BA30024C341 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C611BCF7BA30024C341 /* Student.m */; };
 		04A94C631BCF7BA30024C341 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C611BCF7BA30024C341 /* Student.m */; };
 		04A94C641BCF7BA30024C341 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C611BCF7BA30024C341 /* Student.m */; };
-		04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; };
-		04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; };
-		04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A94C661BCF7D290024C341 /* SQFileItem.m */; };
 		04B2E6C91BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; };
 		04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; };
 		04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */; };
@@ -137,8 +134,6 @@
 		04891D7D1BD4C82000F43261 /* testViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testViewController.xib; sourceTree = "<group>"; };
 		04A94C601BCF7BA30024C341 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Student.h; path = ../../../blockAndPopMenu/Demo/Student.h; sourceTree = "<group>"; };
 		04A94C611BCF7BA30024C341 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = ../../../blockAndPopMenu/Demo/Student.m; sourceTree = "<group>"; };
-		04A94C651BCF7D290024C341 /* SQFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQFileItem.h; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.h"; sourceTree = "<group>"; };
-		04A94C661BCF7D290024C341 /* SQFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQFileItem.m; path = "../../../../../../GitHub/Whosv-SQClientV3/Whosv-SQClientV3/Controllers/BaseViewControllers/ActionHelpMethd/SQFileItem.m"; sourceTree = "<group>"; };
 		04B2E6C71BD4CEFD0029DF1A /* SigninfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninfoModel.h; sourceTree = "<group>"; };
 		04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninfoModel.m; sourceTree = "<group>"; };
 		04B2E6CD1BD4ED920029DF1A /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
@@ -231,8 +226,6 @@
 			children = (
 				04B2E6C71BD4CEFD0029DF1A /* SigninfoModel.h */,
 				04B2E6C81BD4CEFD0029DF1A /* SigninfoModel.m */,
-				04A94C651BCF7D290024C341 /* SQFileItem.h */,
-				04A94C661BCF7D290024C341 /* SQFileItem.m */,
 				04A94C601BCF7BA30024C341 /* Student.h */,
 				04A94C611BCF7BA30024C341 /* Student.m */,
 			);
@@ -443,7 +436,6 @@
 				TargetAttributes = {
 					04FAC37A1BCCD8C60039177D = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = BRH78G7TM3;
 					};
 					04FAC3931BCCD8C60039177D = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -586,7 +578,6 @@
 				045F07B01BD65C5E00663AEA /* UserInfoEditTableViewController.m in Sources */,
 				04B2E6D11BD4ED920029DF1A /* NSDate+Category.m in Sources */,
 				04891D771BD4C70800F43261 /* UserInfo+CoreDataProperties.m in Sources */,
-				04A94C671BCF7D290024C341 /* SQFileItem.m in Sources */,
 				045F07B61BD65E4800663AEA /* UserInfoEditTableViewCell.m in Sources */,
 				04A94C621BCF7BA30024C341 /* Student.m in Sources */,
 				0408EFB11BD639EA00BB1EF1 /* UIView+XCMultiSortTableView.m in Sources */,
@@ -611,7 +602,6 @@
 				045F07B71BD65E4800663AEA /* UserInfoEditTableViewCell.m in Sources */,
 				04891D521BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C631BCF7BA30024C341 /* Student.m in Sources */,
-				04A94C681BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7B1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CA1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D621BD4B66C00F43261 /* ManageCoreData.m in Sources */,
@@ -638,7 +628,6 @@
 				045F07B81BD65E4800663AEA /* UserInfoEditTableViewCell.m in Sources */,
 				04891D531BD49A4400F43261 /* GuestMode.xcdatamodeld in Sources */,
 				04A94C641BCF7BA30024C341 /* Student.m in Sources */,
-				04A94C691BCF7D290024C341 /* SQFileItem.m in Sources */,
 				04891D7C1BD4C70800F43261 /* UserInfo.m in Sources */,
 				04B2E6CB1BD4CEFE0029DF1A /* SigninfoModel.m in Sources */,
 				04891D631BD4B66C00F43261 /* ManageCoreData.m in Sources */,

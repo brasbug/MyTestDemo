@@ -10,7 +10,6 @@
 #import "Student.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "ZipArchive.h"
-#import "SQFileItem.h"
 #import "XCMultiSortTableView.h"
 #import "ManageCoreData/ManageCoreData.h"
 #import "UserInfoEditTableViewController.h"
@@ -32,7 +31,6 @@
 @property (nonatomic, strong) MFMailComposeViewController *maillController;
 
 @property (nonatomic,strong) NSMutableArray *mutArr;
-@property (nonatomic, strong) SQFileItem *zipFileItem;
 
 
 

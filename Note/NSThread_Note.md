@@ -1,4 +1,4 @@
-NSThread:
+NSThread: 
 优点：NSThread 比其他两个轻量级
 缺点：需要自己管理线程的生命周期，线程同步。线程同步对数据的加锁会有一定的系统开销.
 
@@ -23,6 +23,8 @@ NSThread:
 
 
  多个线程同时做一件事情， 保证数据同步就需要有一个同步锁了。
+
+tuan_4.0.0_shanhuibusinesscompass
 
 
 //取消线程
