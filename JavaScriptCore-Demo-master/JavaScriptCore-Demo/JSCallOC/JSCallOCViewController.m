@@ -8,7 +8,7 @@
 
 #import "JSCallOCViewController.h"
 #import "SecondViewController.h"
-@interface JSCallOCViewController ()
+@interface JSCallOCViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -67,16 +67,16 @@
     {
         NSLog(@"%@", str);
     };
-    
+    __weak __typeof__(self) weakSelf = self;
     // 以 block 形式关联 JavaScript function
     self.context[@"alert"] =
-    ^(NSString *str)
+    ^(NSString *str,NSString *str1,NSString *str2)
     {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"msg from js" message:str delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"msg from js" message:str delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:str1,str2, nil];
+        alert.delegate = weakSelf;
         [alert show];
     };
     
-    __block typeof(self) weakSelf = self;
     self.context[@"addSubView"] =
     ^(NSString *viewname)
     {
@@ -88,6 +88,11 @@
     };
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.context[@"showResult"] callWithArguments:@[[alertView buttonTitleAtIndex:buttonIndex]]];
+
+}
 #pragma mark - JSExport Methods
 
 - (void)handleFactorialCalculateWithNumber:(NSNumber *)number
