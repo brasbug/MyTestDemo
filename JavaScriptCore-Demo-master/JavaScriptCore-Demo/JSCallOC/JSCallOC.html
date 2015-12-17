@@ -39,6 +39,11 @@
             //alert(resultNumber);
             document.getElementById("result").innerText = resultNumber;
         }
+        function showalert(resultNumber)
+        {
+            alert(resultNumber);
+            //document.getElementById("result").innerText = resultNumber;
+        }
     
     </script>
     
@@ -61,16 +66,21 @@
         <center>
             
             <br/>
-            <input type="button" value="计算阶乘" onclick="native.calculateForJS(input.value);" />
+            <input type="button" value="计算阶乘1" onclick="native1.calculateForJS1(input.value);" />
             <br/>
             <br/>
             
+            <br/>
+            <input type="button" value="计算阶乘2" onclick="native2.calculateForJS2(input.value);" />
+            <br/>
+            <br/>
             
+           
             <input type="button" value="测试log" onclick="log('测试');" />
             <br/>
             <br/>
             
-            <input type="button" value="oc原生Alert" onclick="alert('alert','呵呵哒','测试');" />
+            <input type="button" value="oc原生Alert" onclick="showalert111('alert');" />
             <br/>
             <br/>
             

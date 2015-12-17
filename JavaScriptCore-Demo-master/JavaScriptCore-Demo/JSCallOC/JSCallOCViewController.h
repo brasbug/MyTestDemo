@@ -3,7 +3,7 @@
 //  JavaScriptCore-Demo
 //
 //  Created by Jakey on 14/12/26.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Copyright (c) 2014 com.test All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,9 +11,14 @@
 
 @protocol TestJSExport <JSExport>
 JSExportAs
-(calculateForJS
+(calculateForJS1
  /** handleFactorialCalculateWithNumber 作为js方法的别名 */,
- - (void)handleFactorialCalculateWithNumber:(NSNumber *)number
+ - (void)handleFactorialCalculateWithNumber1:(NSNumber *)number
+ );
+JSExportAs
+(calculateForJS2
+ /** handleFactorialCalculateWithNumber 作为js方法的别名 */,
+ - (void)handleFactorialCalculateWithNumber2:(NSNumber *)number
  );
 
 - (void)pushViewController:(NSString *)view title:(NSString *)title;

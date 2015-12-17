@@ -3,12 +3,14 @@
 //  SocketIO-Demo
 //
 //  Created by Jakey on 14/12/25.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Copyright (c) 2014 com.test All rights reserved.
 //
 
 #import "RootViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 @interface RootViewController ()
+@property (strong, nonatomic) JSContext *context;
+
 
 @end
 
@@ -17,14 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+}
+
+
+- (IBAction)testBtnPressed:(id)sender {
     
 }
-- (NSString *)loadJsFile:(NSString*)fileName
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"js"];
-    NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    return jsScript;
-}
+
+
+
 
 - (IBAction)JSCallOC:(id)sender {
     JSCallOCViewController *jsCallOC = [[JSCallOCViewController alloc]init];

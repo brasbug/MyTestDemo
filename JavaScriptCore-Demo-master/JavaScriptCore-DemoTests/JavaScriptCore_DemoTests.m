@@ -3,7 +3,7 @@
 //  JavaScriptCore-DemoTests
 //
 //  Created by Jakey on 14/12/26.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Copyright (c) 2014 com.test All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

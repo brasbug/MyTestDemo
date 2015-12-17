@@ -3,7 +3,7 @@
 //  JavaScriptCore-Demo
 //
 //  Created by Jakey on 14/12/26.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Copyright (c) 2014 com.test All rights reserved.
 //
 
 #import "JSCallOCViewController.h"
@@ -35,7 +35,11 @@
 }
 
 #pragma mark - UIWebViewDelegate
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    self.context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
 
+}
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     // 以 html title 设置 导航栏 title
@@ -59,8 +63,9 @@
     };
     
     // 以 JSExport 协议关联 native 的方法
-    self.context[@"native"] = self;
-    
+    self.context[@"native1"] = self;
+    self.context[@"native2"] = self;
+
     // 以 block 形式关联 JavaScript function
     self.context[@"log"] =
     ^(NSString *str)
@@ -69,7 +74,7 @@
     };
     __weak __typeof__(self) weakSelf = self;
     // 以 block 形式关联 JavaScript function
-    self.context[@"alert"] =
+    self.context[@"showalert111"] =
     ^(NSString *str,NSString *str1,NSString *str2)
     {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"msg from js" message:str delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:str1,str2, nil];
@@ -95,7 +100,17 @@
 }
 #pragma mark - JSExport Methods
 
-- (void)handleFactorialCalculateWithNumber:(NSNumber *)number
+- (void)handleFactorialCalculateWithNumber1:(NSNumber *)number
+{
+    NSLog(@"%@", number);
+    
+    NSNumber *result = [self calculateFactorialOfNumber:number];
+    
+    NSLog(@"%@", result);
+    
+    [self.context[@"showalert"] callWithArguments:@[result]];
+}
+- (void)handleFactorialCalculateWithNumber2:(NSNumber *)number
 {
     NSLog(@"%@", number);
     

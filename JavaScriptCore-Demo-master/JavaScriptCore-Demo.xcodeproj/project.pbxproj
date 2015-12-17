@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042539921C1AC0460083835E /* TestMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 042539911C1AC0460083835E /* TestMethod.m */; };
+		042539931C1AC0460083835E /* TestMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 042539911C1AC0460083835E /* TestMethod.m */; };
 		A21E7E211A4CE721009BEB8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E7E201A4CE721009BEB8E /* main.m */; };
 		A21E7E241A4CE721009BEB8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E7E231A4CE721009BEB8E /* AppDelegate.m */; };
 		A21E7E2C1A4CE721009BEB8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21E7E2B1A4CE721009BEB8E /* Images.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042539901C1AC0460083835E /* TestMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMethod.h; sourceTree = "<group>"; };
+		042539911C1AC0460083835E /* TestMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMethod.m; sourceTree = "<group>"; };
 		A21E7E1B1A4CE721009BEB8E /* JavaScriptCore-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JavaScriptCore-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21E7E1F1A4CE721009BEB8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21E7E201A4CE721009BEB8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				A262691C1A4CF7AA00E566D7 /* JSCallOCViewController.m */,
 				A262691D1A4CF7AA00E566D7 /* JSCallOCViewController.xib */,
 				A21E7E4B1A4CFB81009BEB8E /* JSCallOC.html */,
+				042539901C1AC0460083835E /* TestMethod.h */,
+				042539911C1AC0460083835E /* TestMethod.m */,
 			);
 			path = JSCallOC;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042539921C1AC0460083835E /* TestMethod.m in Sources */,
 				A21E7E501A4CFCA8009BEB8E /* SecondViewController.m in Sources */,
 				A21E7E241A4CE721009BEB8E /* AppDelegate.m in Sources */,
 				A262691E1A4CF7AA00E566D7 /* JSCallOCViewController.m in Sources */,
@@ -313,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042539931C1AC0460083835E /* TestMethod.m in Sources */,
 				A21E7E3B1A4CE721009BEB8E /* JavaScriptCore_DemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
