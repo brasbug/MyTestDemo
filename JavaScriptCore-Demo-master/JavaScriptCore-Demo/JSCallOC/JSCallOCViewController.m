@@ -65,6 +65,8 @@
     // 以 JSExport 协议关联 native 的方法
     self.context[@"native1"] = self;
     self.context[@"native2"] = self;
+    self.context[@"native"] = self;
+
 
     // 以 block 形式关联 JavaScript function
     self.context[@"log"] =
